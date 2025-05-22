@@ -1,5 +1,6 @@
 import Head from "next/head"
 import "../styles/globals.css"
+import WhatsAppButton from "../components/WhatsAppButton"
 
 const MyApp = ({ Component, pageProps }) => (
   <>
@@ -56,6 +57,7 @@ const MyApp = ({ Component, pageProps }) => (
       <link rel="stylesheet" href="https://stijndv.com/fonts/Eudoxus-Sans.css" />
     </Head>
     <Component {...pageProps} />
+    <WhatsAppButton />
   </>
 )
 

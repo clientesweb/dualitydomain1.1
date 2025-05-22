@@ -33,28 +33,16 @@ const Navbar = () => {
 
         <div className="hidden md:flex items-center gap-8">
           <Link
-            href="/#explore"
-            className="font-normal text-[16px] text-white hover:text-secondary-white transition-colors"
-          >
-            Servicios
-          </Link>
-          <Link
-            href="/#projects"
-            className="font-normal text-[16px] text-white hover:text-secondary-white transition-colors"
-          >
-            Proyectos
-          </Link>
-          <Link
-            href="/#testimonials"
-            className="font-normal text-[16px] text-white hover:text-secondary-white transition-colors"
-          >
-            Testimonios
-          </Link>
-          <Link
             href="/#about"
             className="font-normal text-[16px] text-white hover:text-secondary-white transition-colors"
           >
             Nosotros
+          </Link>
+          <Link
+            href="/#explore"
+            className="font-normal text-[16px] text-white hover:text-secondary-white transition-colors"
+          >
+            Servicios
           </Link>
           <Link
             href="/blog"
@@ -65,7 +53,12 @@ const Navbar = () => {
           <Link href="#" className="font-normal text-[16px] text-white hover:text-secondary-white transition-colors">
             Contacto
           </Link>
-          <button className="bg-[#25618B] py-2 px-4 rounded-[20px] text-white font-medium">Comenzar</button>
+          <Link
+            href="/solicitar-demo"
+            className="bg-[#25618B] py-2 px-4 rounded-[20px] text-white font-medium hover:bg-[#1a4a6e] transition-colors"
+          >
+            Solicitar demo
+          </Link>
         </div>
 
         <div className="md:hidden relative">
@@ -80,32 +73,18 @@ const Navbar = () => {
             <div className="absolute top-10 right-0 bg-[#1A232E] p-5 rounded-lg shadow-lg z-50 min-w-[200px]">
               <div className="flex flex-col gap-4">
                 <Link
-                  href="/#explore"
-                  className="font-normal text-[16px] text-white hover:text-secondary-white transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Servicios
-                </Link>
-                <Link
-                  href="/#projects"
-                  className="font-normal text-[16px] text-white hover:text-secondary-white transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Proyectos
-                </Link>
-                <Link
-                  href="/#testimonials"
-                  className="font-normal text-[16px] text-white hover:text-secondary-white transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Testimonios
-                </Link>
-                <Link
                   href="/#about"
                   className="font-normal text-[16px] text-white hover:text-secondary-white transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Nosotros
+                </Link>
+                <Link
+                  href="/#explore"
+                  className="font-normal text-[16px] text-white hover:text-secondary-white transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Servicios
                 </Link>
                 <Link
                   href="/blog"
@@ -121,7 +100,13 @@ const Navbar = () => {
                 >
                   Contacto
                 </Link>
-                <button className="bg-[#25618B] py-2 px-4 rounded-[20px] text-white font-medium">Comenzar</button>
+                <Link
+                  href="/solicitar-demo"
+                  className="bg-[#25618B] py-2 px-4 rounded-[20px] text-white font-medium hover:bg-[#1a4a6e] transition-colors text-center"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Solicitar demo
+                </Link>
               </div>
             </div>
           )}

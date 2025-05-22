@@ -5,7 +5,7 @@ import styles from "../styles"
 import { fadeIn, staggerContainer } from "../utils/motion"
 
 const About = () => (
-  <section className={`${styles.paddings} relative z-10`}>
+  <section className={`${styles.paddings} relative z-10`} id="about">
     <div className="gradient-02 z-0" />
     <motion.div
       variants={staggerContainer}
@@ -20,12 +20,13 @@ const About = () => (
         variants={fadeIn("up", "tween", 0.2, 1)}
         className="mt-[10px] font-normal sm:text-[32px] text-[20px] text-center text-secondary-white "
       >
-        Creamos soluciones de <span className="font-extrabold text-white">vanguardia</span> que combinan
-        <span className="font-extrabold text-white"> creatividad </span>
-        con excelencia técnica. Nuestro
-        <span className="font-extrabold text-white"> equipo de expertos </span>
-        entrega paginas web personalizadas que
-        <span className="font-extrabold text-white"> impulsa tu negocio</span>.
+        <span className="font-extrabold text-white">Duality Domain</span> es una empresa de desarrollo web profesional
+        ubicada en
+        <span className="font-extrabold text-white"> Villa del Dique, Córdoba, Argentina</span>. Con presencia en LATAM.
+        Se especializa en ofrecer
+        <span className="font-extrabold text-white"> soluciones digitales personalizadas </span>
+        que combinan creatividad y excelencia técnica para
+        <span className="font-extrabold text-white"> impulsar el crecimiento de los negocios</span>.
       </motion.p>
 
       <motion.img

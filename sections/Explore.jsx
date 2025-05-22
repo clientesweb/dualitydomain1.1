@@ -7,7 +7,7 @@ import { TypingText, ExploreCard, TitleText } from "../components"
 import { exploreWorlds } from "../constants"
 
 const Explore = () => {
-  const [activeCard, setActiveCard] = useState("world-2")
+  const [activeCard, setActiveCard] = useState("world-1")
   return (
     <section className={`${styles.paddings}`} id="explore">
       <motion.div

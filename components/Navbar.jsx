@@ -26,7 +26,10 @@ const Navbar = () => (
     >
       <Image src={search || "/placeholder.svg"} alt="search-Icon" className="w-[24px] h-[24px] object-contain" />
 
-      <h2 className="font-extrabold text-[24px] leading-[30px] text-white ">INNOVALINE</h2>
+      <div className="flex items-center">
+        <Image src="/logo.png" alt="Duality Domain Logo" width={180} height={40} className="object-contain" />
+      </div>
+
       <Image src={menu || "/placeholder.svg"} alt="menu-Icon" className="w-[24px] h-[24px] object-contain" />
     </motion.div>
   </nav>

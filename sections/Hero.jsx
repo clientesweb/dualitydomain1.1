@@ -1,11 +1,11 @@
-"use client";
+"use client"
 
-import Image from "next/image";
-import { motion } from "framer-motion";
-import styles from "../styles";
-import { slideIn, staggerContainer, textVariant } from "../utils/motion";
-import stamp from "../public/stamp.png";
-import cover from "../public/cover.png";
+import Image from "next/image"
+import { motion } from "framer-motion"
+import styles from "../styles"
+import { slideIn, staggerContainer, textVariant } from "../utils/motion"
+import stamp from "../public/stamp.png"
+import cover from "../public/cover.png"
 
 const Hero = () => (
   <section className={`${styles.yPaddings} sm:pl-16 pl-6`}>
@@ -18,27 +18,30 @@ const Hero = () => (
       className={`${styles.innerWidth} mx-auto flex flex-col`}
     >
       <div className="flex justify-center items-center flex-col relative z-10">
-        <motion.h1 variants={textVariant(1.1)} className={styles.heroHeading}>
-          Metaverse
-        </motion.h1>
-        <motion.div
-          variants={textVariant(1.2)}
-          className="flex flex-row justify-center items-center"
+        <motion.h1
+          variants={textVariant(1.1)}
+          className={`${styles.heroHeading} text-center sm:text-[80px] text-[40px]`}
         >
-          <h1 className={styles.heroHeading}>Ma</h1>
+          Transforma,
+        </motion.h1>
+        <motion.div variants={textVariant(1.2)} className="flex flex-row justify-center items-center flex-wrap">
+          <h1 className={styles.heroHeading}>inno</h1>
           <div className={styles.heroDText} />
-          <h1 className={styles.heroHeading}>Ness</h1>
+          <h1 className={styles.heroHeading}>a</h1>
         </motion.div>
+        <motion.h1
+          variants={textVariant(1.3)}
+          className={`${styles.heroHeading} text-center sm:text-[80px] text-[40px]`}
+        >
+          y eleva tu presencia digital
+        </motion.h1>
       </div>
 
       {/* NOTE "-mt-[20px]" means "minus 20px margin top" */}
-      <motion.div
-        variants={slideIn("right", "tween", 0.2, 1)}
-        className="relative w-full md:-mt-[20px] -mt-[12px] "
-      >
+      <motion.div variants={slideIn("right", "tween", 0.2, 1)} className="relative w-full md:-mt-[20px] -mt-[12px] ">
         <div className="absolute w-full h-[300px] hero-gradient rounded-tl-[140px] z-10 -top-[30px]" />
         <Image
-          src={cover}
+          src={cover || "/placeholder.svg"}
           alt="cover"
           placeholder="blur"
           priority
@@ -48,7 +51,7 @@ const Hero = () => (
         <a href="#explore">
           <div className="w-full flex justify-end sm:-mt-[70px] -mt-[50px] pr-[40px] relative z-10 ">
             <Image
-              src={stamp}
+              src={stamp || "/placeholder.svg"}
               alt="stamp"
               placeholder="blur"
               priority
@@ -59,6 +62,6 @@ const Hero = () => (
       </motion.div>
     </motion.div>
   </section>
-);
+)
 
-export default Hero;
+export default Hero

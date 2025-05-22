@@ -6,7 +6,7 @@ import { fadeIn } from "../utils/motion"
 import headset from "../public/headset.svg"
 
 // We are getting this "id, imgUrl, title" props from "{...world} spread".
-const ExploreCard = ({ id, imgUrl, title, index, active, handleClick }) => (
+const ExploreCard = ({ id, imgUrl, title, index, active, handleClick, description }) => (
   <motion.div
     variants={fadeIn("right", "spring", index * 0.5, 0.75)}
     className={`relative ${active === id ? "lg:flex-[3.5] flex-[10]" : "lg:flex-[0.5] flex-[2]"} ${
@@ -17,7 +17,8 @@ const ExploreCard = ({ id, imgUrl, title, index, active, handleClick }) => (
     <Image
       src={imgUrl || "/placeholder.svg"}
       alt={title}
-      placeholder="blur"
+      width={800}
+      height={600}
       className="absolute w-full h-full object-cover rounded-[24px]"
     />
     {active !== id ? (
@@ -31,13 +32,7 @@ const ExploreCard = ({ id, imgUrl, title, index, active, handleClick }) => (
         </div>
         <p className="font-normal text-[16px] leading-[20px] text-white uppercase ">Explora nuestros servicios</p>
         <h2 className="mt-[24px] font-semibold sm:text-[32px] text-[24px] text-white ">{title}</h2>
-        {/* Add description for specific services */}
-        {id === "world-2" && (
-          <p className="mt-[16px] font-normal text-[14px] leading-[20px] text-white opacity-80">
-            Creamos tiendas online únicas, adaptadas a tus necesidades, con integración de pagos seguros y una
-            experiencia de compra sencilla y efectiva.
-          </p>
-        )}
+        <p className="mt-[16px] font-normal text-[14px] leading-[20px] text-white opacity-80">{description}</p>
       </div>
     )}
   </motion.div>

@@ -1,8 +1,8 @@
-"use client";
-import { motion } from "framer-motion";
-import { TypingText } from "../components";
-import styles from "../styles";
-import { fadeIn, staggerContainer } from "../utils/motion";
+"use client"
+import { motion } from "framer-motion"
+import { TypingText } from "../components"
+import styles from "../styles"
+import { fadeIn, staggerContainer } from "../utils/motion"
 
 const About = () => (
   <section className={`${styles.paddings} relative z-10`}>
@@ -20,19 +20,12 @@ const About = () => (
         variants={fadeIn("up", "tween", 0.2, 1)}
         className="mt-[10px] font-normal sm:text-[32px] text-[20px] text-center text-secondary-white "
       >
-        <span className="font-extrabold text-white">Metaverse</span> is a new
-        thing in the future, where you can enjoy the virtual world by feeling
-        like it's really real, you can feel what you feel in this metaverse
-        world, because this is really the{" "}
-        <span className="font-extrabold text-white">
-          {" "}
-          madness of the metaverse{" "}
-        </span>{" "}
-        of today, using only{" "}
-        <span className="font-extrabold text-white"> VR </span> devices you can
-        easily explore the world you want, turn your dreams into reality. Let's{" "}
-        <span className="font-extrabold text-white">explore</span> the madness
-        of the metaverse by scrolling down
+        Creamos soluciones de <span className="font-extrabold text-white">vanguardia</span> que combinan
+        <span className="font-extrabold text-white"> creatividad </span>
+        con excelencia técnica. Nuestro
+        <span className="font-extrabold text-white"> equipo de expertos </span>
+        entrega paginas web personalizadas que
+        <span className="font-extrabold text-white"> impulsa tu negocio</span>.
       </motion.p>
 
       <motion.img
@@ -43,6 +36,6 @@ const About = () => (
       />
     </motion.div>
   </section>
-);
+)
 
-export default About;
+export default About

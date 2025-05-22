@@ -21,10 +21,13 @@ const Footer = () => (
         <h4 className="font-bold md:text-[64px] text-[44px] text-white">
           ¿Listo para transformar tu presencia digital?
         </h4>
-        <button type="button" className="flex items-center h-fit py-4 px-6 bg-[#25618B] rounded-[32px] gap-[12px]">
+        <Link
+          href="/solicitar-demo"
+          className="flex items-center h-fit py-4 px-6 bg-[#25618B] rounded-[32px] gap-[12px] hover:bg-[#1a4a6e] transition-colors"
+        >
           <Image src={headset || "/placeholder.svg"} alt="headset" className="w-[24px] h-[24px] object-contain" />
-          <span className="font-normal text-[16px] text-white">Contactar ahora</span>
-        </button>
+          <span className="font-normal text-[16px] text-white">Solicitar demo</span>
+        </Link>
 
         <div className="flex flex-col w-full">
           <div className="mb-[50px] h-[2px] bg-white opacity-10" />
@@ -34,23 +37,13 @@ const Footer = () => (
               <h5 className="text-white font-bold text-[18px] mb-4">Navegación</h5>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/#explore" className="text-secondary-white hover:text-white transition-colors">
-                    Servicios
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/#projects" className="text-secondary-white hover:text-white transition-colors">
-                    Proyectos
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/#testimonials" className="text-secondary-white hover:text-white transition-colors">
-                    Testimonios
-                  </Link>
-                </li>
-                <li>
                   <Link href="/#about" className="text-secondary-white hover:text-white transition-colors">
                     Nosotros
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#explore" className="text-secondary-white hover:text-white transition-colors">
+                    Servicios
                   </Link>
                 </li>
                 <li>
@@ -61,6 +54,11 @@ const Footer = () => (
                 <li>
                   <Link href="#" className="text-secondary-white hover:text-white transition-colors">
                     Contacto
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/solicitar-demo" className="text-secondary-white hover:text-white transition-colors">
+                    Solicitar demo
                   </Link>
                 </li>
               </ul>

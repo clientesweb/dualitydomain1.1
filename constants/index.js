@@ -1,4 +1,3 @@
-import Planet_2 from "../public/planet-02.png"
 import Planet_3 from "../public/planet-03.png"
 import Planet_4 from "../public/planet-04.png"
 import Planet_5 from "../public/planet-05.png"
@@ -20,8 +19,8 @@ export const exploreWorlds = [
   },
   {
     id: "world-2",
-    imgUrl: Planet_2,
-    title: "The Upside Down",
+    imgUrl: "/ecommerce.png",
+    title: "E-Commerce Personalizado",
   },
   {
     id: "world-3",

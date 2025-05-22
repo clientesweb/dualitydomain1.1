@@ -11,7 +11,8 @@ const InsightCard = ({ id, imgUrl, title, subtitle, index }) => (
     <Image
       src={imgUrl || "/placeholder.svg"}
       alt={title}
-      placeholder="blur"
+      width={270}
+      height={250}
       className="md:w-[270px] w-full h-[250px] rounded-[32px] object-cover"
     />
 

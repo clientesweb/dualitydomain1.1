@@ -5,6 +5,7 @@ import { socials } from "../constants"
 import styles from "../styles"
 import { footerVariants } from "../utils/motion"
 import Image from "next/image"
+import Link from "next/link"
 import headset from "../public/headset.svg"
 
 const Footer = () => (
@@ -28,28 +29,98 @@ const Footer = () => (
         <div className="flex flex-col w-full">
           <div className="mb-[50px] h-[2px] bg-white opacity-10" />
 
-          <div className="flex flex-wrap justify-between items-center gap-4">
-            <div className="flex flex-col">
-              <h4 className="font-extrabold text-[24px] text-white">DUALITY DOMAIN</h4>
-              <p className="font-normal text-[14px] text-white opacity-50 mt-2">Villa del Dique, Córdoba, Argentina</p>
-              <p className="font-normal text-[14px] text-white opacity-50">+54 9 3546 50-1537</p>
-              <p className="font-normal text-[14px] text-white opacity-50">info@dualitydomain.com</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div>
+              <h5 className="text-white font-bold text-[18px] mb-4">Navegación</h5>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="/#explore" className="text-secondary-white hover:text-white transition-colors">
+                    Servicios
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#projects" className="text-secondary-white hover:text-white transition-colors">
+                    Proyectos
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#about" className="text-secondary-white hover:text-white transition-colors">
+                    Nosotros
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog" className="text-secondary-white hover:text-white transition-colors">
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="text-secondary-white hover:text-white transition-colors">
+                    Contacto
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h5 className="text-white font-bold text-[18px] mb-4">Servicios</h5>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="/#explore" className="text-secondary-white hover:text-white transition-colors">
+                    Diseño y desarrollo web
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#explore" className="text-secondary-white hover:text-white transition-colors">
+                    E-Commerce Personalizado
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#explore" className="text-secondary-white hover:text-white transition-colors">
+                    Optimización Web y SEO
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#explore" className="text-secondary-white hover:text-white transition-colors">
+                    Desarrollo de Aplicaciones Web
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#explore" className="text-secondary-white hover:text-white transition-colors">
+                    Investigación y Mejora de UX
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h5 className="text-white font-bold text-[18px] mb-4">Contacto</h5>
+              <ul className="space-y-2">
+                <li className="text-secondary-white">Villa del Dique, Córdoba, Argentina</li>
+                <li className="text-secondary-white">+54 9 3546 50-1537</li>
+                <li className="text-secondary-white">info@dualitydomain.com</li>
+              </ul>
+              <div className="flex gap-4 mt-4">
+                {socials.map((social) => (
+                  <Link key={social.name} href="#" className="hover:opacity-80 transition-opacity">
+                    <Image
+                      src={social.url || "/placeholder.svg"}
+                      alt={social.name}
+                      className="w-[24px] h-[24px] object-contain cursor-pointer"
+                    />
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap justify-between items-center gap-4 pt-8 border-t border-white border-opacity-10">
+            <div className="flex items-center">
+              <Image src="/logo.png" alt="Duality Domain Logo" width={120} height={30} className="object-contain" />
             </div>
 
             <p className="font-normal text-[14px] text-white opacity-50">
               Copyright © {new Date().getFullYear()} Duality Domain. Todos los derechos reservados.
             </p>
-
-            <div className="flex gap-4">
-              {socials.map((social) => (
-                <Image
-                  key={social.name}
-                  src={social.url || "/placeholder.svg"}
-                  alt={social.name}
-                  className="w-[24px] h-[24px] object-contain cursor-pointer"
-                />
-              ))}
-            </div>
           </div>
         </div>
       </div>

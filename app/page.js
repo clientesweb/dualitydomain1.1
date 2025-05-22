@@ -1,14 +1,5 @@
-import { Footer, Navbar } from "../components";
-import {
-  About,
-  Explore,
-  Feedback,
-  GetStarted,
-  Hero,
-  Insights,
-  WhatsNew,
-  World,
-} from "../sections";
+import { Footer, Navbar } from "../components"
+import { About, Explore, GetStarted, Hero, Insights, WhatsNew, World, Projects, Testimonials } from "../sections"
 
 const Page = () => (
   <div className="bg-primary-black overflow-hidden">
@@ -20,6 +11,11 @@ const Page = () => (
       <Explore />
     </div>
     <div className="relative">
+      <Projects />
+      <div className="gradient-04 z-0" />
+      <Testimonials />
+    </div>
+    <div className="relative">
       <GetStarted />
       <div className="gradient-04 z-0" />
       <WhatsNew />
@@ -28,10 +24,9 @@ const Page = () => (
     <div className="relative">
       <Insights />
       <div className="gradient-04 z-0" />
-      <Feedback />
     </div>
     <Footer />
   </div>
-);
+)
 
-export default Page;
+export default Page

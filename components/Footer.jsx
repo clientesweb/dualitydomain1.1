@@ -44,6 +44,11 @@ const Footer = () => (
                   </Link>
                 </li>
                 <li>
+                  <Link href="/#testimonials" className="text-secondary-white hover:text-white transition-colors">
+                    Testimonios
+                  </Link>
+                </li>
+                <li>
                   <Link href="/#about" className="text-secondary-white hover:text-white transition-colors">
                     Nosotros
                   </Link>
@@ -105,6 +110,8 @@ const Footer = () => (
                     <Image
                       src={social.url || "/placeholder.svg"}
                       alt={social.name}
+                      width={24}
+                      height={24}
                       className="w-[24px] h-[24px] object-contain cursor-pointer"
                     />
                   </Link>

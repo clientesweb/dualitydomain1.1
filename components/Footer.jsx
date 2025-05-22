@@ -104,7 +104,13 @@ const Footer = () => (
               </ul>
               <div className="flex gap-4 mt-4">
                 {socials.map((social) => (
-                  <Link key={social.name} href="#" className="hover:opacity-80 transition-opacity">
+                  <Link
+                    key={social.name}
+                    href={social.link || "#"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:opacity-80 transition-opacity"
+                  >
                     <Image
                       src={social.url || "/placeholder.svg"}
                       alt={social.name}

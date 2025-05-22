@@ -45,6 +45,12 @@ const Navbar = () => {
             Proyectos
           </Link>
           <Link
+            href="/#testimonials"
+            className="font-normal text-[16px] text-white hover:text-secondary-white transition-colors"
+          >
+            Testimonios
+          </Link>
+          <Link
             href="/#about"
             className="font-normal text-[16px] text-white hover:text-secondary-white transition-colors"
           >
@@ -86,6 +92,13 @@ const Navbar = () => {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Proyectos
+                </Link>
+                <Link
+                  href="/#testimonials"
+                  className="font-normal text-[16px] text-white hover:text-secondary-white transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Testimonios
                 </Link>
                 <Link
                   href="/#about"

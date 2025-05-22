@@ -1,5 +1,5 @@
 import { Footer, Navbar } from "../components"
-import { About, Explore, GetStarted, Hero, Insights, WhatsNew, World, Projects, Feedback } from "../sections"
+import { About, Explore, GetStarted, Hero, Insights, WhatsNew, World, Projects } from "../sections"
 import Head from "next/head"
 
 const Home = () => (
@@ -22,7 +22,6 @@ const Home = () => (
       <div className="relative">
         <Projects />
         <div className="gradient-04 z-0" />
-        <Feedback />
       </div>
       <div className="relative">
         <GetStarted />

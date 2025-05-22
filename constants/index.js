@@ -374,6 +374,7 @@ export const socials = [
   {
     name: "instagram",
     url: instagram,
+    link: "https://www.instagram.com/dualitydomain?igsh=MXFjZXJsbmZtaWphcw==",
   },
   {
     name: "facebook",

@@ -1,41 +1,48 @@
-import Planet_3 from "../public/planet-03.png"
-import Planet_4 from "../public/planet-04.png"
-import Planet_5 from "../public/planet-05.png"
-import Planet_6 from "../public/planet-06.png"
-import Planet_7 from "../public/planet-07.png"
-import Planet_8 from "../public/planet-08.png"
 import vrpano from "../public/vrpano.svg"
 import headset from "../public/headset.svg"
 import twitter from "../public/twitter.svg"
 import linkedin from "../public/linkedin.svg"
 import instagram from "../public/instagram.svg"
 import facebook from "../public/facebook.svg"
+import Planet_6 from "../public/planet-06.png"
+import Planet_7 from "../public/planet-07.png"
+import Planet_8 from "../public/planet-08.png"
 
 export const exploreWorlds = [
   {
     id: "world-1",
     imgUrl: "/diseno-desarrollo-web.png",
     title: "Diseño y desarrollo web",
+    description:
+      "Creamos sitios web modernos, responsivos y optimizados que representan perfectamente tu marca y conectan con tu audiencia.",
   },
   {
     id: "world-2",
     imgUrl: "/ecommerce.png",
     title: "E-Commerce Personalizado",
+    description:
+      "Creamos tiendas online únicas, adaptadas a tus necesidades, con integración de pagos seguros y una experiencia de compra sencilla y efectiva.",
   },
   {
     id: "world-3",
-    imgUrl: Planet_3,
-    title: "Kadirojo Permai",
+    imgUrl: "/optimizacion-seo.png",
+    title: "Optimización Web y SEO",
+    description:
+      "Mejoramos la velocidad de carga, rendimiento y visibilidad de tu sitio web para asegurar una excelente experiencia de usuario y un alto posicionamiento en los motores de búsqueda.",
   },
   {
     id: "world-4",
-    imgUrl: Planet_4,
-    title: "Paradise Island",
+    imgUrl: "/aplicaciones-web.png",
+    title: "Desarrollo de Aplicaciones Web",
+    description:
+      "Creamos aplicaciones web interactivas y funcionales que mejoran la interacción con tus usuarios y optimizan procesos internos.",
   },
   {
     id: "world-5",
-    imgUrl: Planet_5,
-    title: "Hawkins Labs",
+    imgUrl: "/ux-research.png",
+    title: "Investigación y Mejora de UX",
+    description:
+      "Estudiamos el comportamiento de tus usuarios para crear soluciones que mejoren la navegación y la satisfacción general de los visitantes en tu sitio web.",
   },
 ]
 

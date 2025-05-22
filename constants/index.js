@@ -1,23 +1,22 @@
-import Planet_1 from "../public/planet-01.png";
-import Planet_2 from "../public/planet-02.png";
-import Planet_3 from "../public/planet-03.png";
-import Planet_4 from "../public/planet-04.png";
-import Planet_5 from "../public/planet-05.png";
-import Planet_6 from "../public/planet-06.png";
-import Planet_7 from "../public/planet-07.png";
-import Planet_8 from "../public/planet-08.png";
-import vrpano from "../public/vrpano.svg";
-import headset from "../public/headset.svg";
-import twitter from "../public/twitter.svg";
-import linkedin from "../public/linkedin.svg";
-import instagram from "../public/instagram.svg";
-import facebook from "../public/facebook.svg";
+import Planet_2 from "../public/planet-02.png"
+import Planet_3 from "../public/planet-03.png"
+import Planet_4 from "../public/planet-04.png"
+import Planet_5 from "../public/planet-05.png"
+import Planet_6 from "../public/planet-06.png"
+import Planet_7 from "../public/planet-07.png"
+import Planet_8 from "../public/planet-08.png"
+import vrpano from "../public/vrpano.svg"
+import headset from "../public/headset.svg"
+import twitter from "../public/twitter.svg"
+import linkedin from "../public/linkedin.svg"
+import instagram from "../public/instagram.svg"
+import facebook from "../public/facebook.svg"
 
 export const exploreWorlds = [
   {
     id: "world-1",
-    imgUrl: Planet_1,
-    title: "The Hogwarts",
+    imgUrl: "/diseno-desarrollo-web.png",
+    title: "Diseño y desarrollo web",
   },
   {
     id: "world-2",
@@ -39,28 +38,26 @@ export const exploreWorlds = [
     imgUrl: Planet_5,
     title: "Hawkins Labs",
   },
-];
+]
 
 export const startingFeatures = [
   "Find a world that suits you and you want to enter",
   "Enter the world by reading Har Har Mahadev to be safe",
   "No need to beat around the bush, just stay on the gas and have fun",
-];
+]
 
 export const newFeatures = [
   {
     imgUrl: vrpano,
     title: "A new world",
-    subtitle:
-      "we have the latest update with new world for you to try never mind",
+    subtitle: "we have the latest update with new world for you to try never mind",
   },
   {
     imgUrl: headset,
     title: "More realistic",
-    subtitle:
-      "In the latest update, your eyes are narrow, making the world more realistic than ever",
+    subtitle: "In the latest update, your eyes are narrow, making the world more realistic than ever",
   },
-];
+]
 
 export const insights = [
   {
@@ -81,7 +78,7 @@ export const insights = [
     subtitle:
       "Quam quisque id diam vel quam elementum. Viverra nam libero justo laoreet sit amet cursus sit. Mauris in aliquam sem",
   },
-];
+]
 
 export const socials = [
   {
@@ -100,4 +97,4 @@ export const socials = [
     name: "facebook",
     url: facebook,
   },
-];
+]

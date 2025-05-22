@@ -47,42 +47,44 @@ export const exploreWorlds = [
 ]
 
 export const startingFeatures = [
-  "Find a world that suits you and you want to enter",
-  "Enter the world by reading Har Har Mahadev to be safe",
-  "No need to beat around the bush, just stay on the gas and have fun",
+  "Contáctanos y cuéntanos sobre tu proyecto y objetivos",
+  "Recibe una propuesta personalizada adaptada a tus necesidades",
+  "Trabajamos juntos para crear la solución digital perfecta para tu negocio",
 ]
 
 export const newFeatures = [
   {
     imgUrl: vrpano,
-    title: "A new world",
-    subtitle: "we have the latest update with new world for you to try never mind",
+    title: "Experiencia y profesionalismo",
+    subtitle:
+      "Nuestro equipo cuenta con amplia experiencia en el desarrollo de soluciones digitales para diversos sectores.",
   },
   {
     imgUrl: headset,
-    title: "More realistic",
-    subtitle: "In the latest update, your eyes are narrow, making the world more realistic than ever",
+    title: "Soporte continuo",
+    subtitle:
+      "Ofrecemos soporte técnico y mantenimiento continuo para garantizar el óptimo funcionamiento de tu proyecto.",
   },
 ]
 
 export const insights = [
   {
     imgUrl: Planet_6,
-    title: "The launch of the Metaverse makes Elon musk ketar-ketir",
+    title: "Cómo un buen diseño web puede aumentar tus conversiones",
     subtitle:
-      "Magna etiam tempor orci eu lobortis elementum nibh tellus molestie. Diam maecenas sed enim ut sem viverra alique.",
+      "Descubre cómo implementar estrategias de diseño centradas en el usuario que mejoran la experiencia y aumentan las conversiones.",
   },
   {
     imgUrl: Planet_7,
-    title: "7 tips to easily master the madness of the Metaverse",
+    title: "7 elementos esenciales que toda tienda online debe tener",
     subtitle:
-      "Vitae congue eu consequat ac felis donec. Et magnis dis parturient montes nascetur ridiculus mus. Convallis tellus id interdum",
+      "Conoce los componentes fundamentales que hacen que una tienda en línea sea exitosa y genere confianza en los usuarios.",
   },
   {
     imgUrl: Planet_8,
-    title: "With one platform you can explore the whole world virtually",
+    title: "La importancia del SEO en tu estrategia digital",
     subtitle:
-      "Quam quisque id diam vel quam elementum. Viverra nam libero justo laoreet sit amet cursus sit. Mauris in aliquam sem",
+      "Aprende por qué el posicionamiento en buscadores es crucial para aumentar la visibilidad de tu negocio y atraer tráfico cualificado.",
   },
 ]
 

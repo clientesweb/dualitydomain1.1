@@ -150,7 +150,7 @@ Enviado desde: dualitydomain.com/solicitar-demo`
                     height={400}
                     className="w-full max-w-[400px] object-contain mb-8"
                   />
-                  <div className="bg-[rgba(0,0,0,0.3)] p-6 rounded-[20px] w-full">
+                  <div className="bg-[#1A232E] border border-[#304f6e] p-6 rounded-[20px] w-full">
                     <h3 className="text-white font-bold text-[20px] mb-4">¿Qué sucede después?</h3>
                     <ul className="space-y-4">
                       <li className="flex items-start gap-3">
@@ -184,7 +184,7 @@ Enviado desde: dualitydomain.com/solicitar-demo`
 
               <motion.div
                 variants={fadeIn("left", "tween", 0.4, 1)}
-                className="glassmorphism p-6 md:p-8 rounded-[24px]"
+                className="bg-[#1A232E] border border-[#304f6e] p-6 md:p-8 rounded-[24px]"
               >
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
@@ -197,8 +197,8 @@ Enviado desde: dualitydomain.com/solicitar-demo`
                       name="nombre"
                       value={formData.nombre}
                       onChange={handleChange}
-                      className={`w-full bg-[rgba(255,255,255,0.1)] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#25618B] ${
-                        errors.nombre ? "border-2 border-red-500" : ""
+                      className={`w-full bg-[#323f5d] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#25618B] ${
+                        errors.nombre ? "border-2 border-red-500" : "border border-[#304f6e]"
                       }`}
                       placeholder="Tu nombre completo"
                     />
@@ -215,8 +215,8 @@ Enviado desde: dualitydomain.com/solicitar-demo`
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className={`w-full bg-[rgba(255,255,255,0.1)] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#25618B] ${
-                        errors.email ? "border-2 border-red-500" : ""
+                      className={`w-full bg-[#323f5d] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#25618B] ${
+                        errors.email ? "border-2 border-red-500" : "border border-[#304f6e]"
                       }`}
                       placeholder="tu@email.com"
                     />
@@ -233,8 +233,8 @@ Enviado desde: dualitydomain.com/solicitar-demo`
                       name="telefono"
                       value={formData.telefono}
                       onChange={handleChange}
-                      className={`w-full bg-[rgba(255,255,255,0.1)] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#25618B] ${
-                        errors.telefono ? "border-2 border-red-500" : ""
+                      className={`w-full bg-[#323f5d] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#25618B] ${
+                        errors.telefono ? "border-2 border-red-500" : "border border-[#304f6e]"
                       }`}
                       placeholder="+54 9 11 1234-5678"
                     />
@@ -250,19 +250,37 @@ Enviado desde: dualitydomain.com/solicitar-demo`
                       name="tipoProyecto"
                       value={formData.tipoProyecto}
                       onChange={handleChange}
-                      className={`w-full bg-[rgba(255,255,255,0.1)] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#25618B] ${
-                        errors.tipoProyecto ? "border-2 border-red-500" : ""
+                      className={`w-full bg-[#323f5d] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#25618B] ${
+                        errors.tipoProyecto ? "border-2 border-red-500" : "border border-[#304f6e]"
                       }`}
                     >
-                      <option value="">Selecciona el tipo de proyecto</option>
-                      <option value="Sitio web corporativo">Sitio web corporativo</option>
-                      <option value="E-commerce">E-commerce / Tienda online</option>
-                      <option value="Aplicación web">Aplicación web</option>
-                      <option value="Landing page">Landing page</option>
-                      <option value="Blog/Portal de noticias">Blog/Portal de noticias</option>
-                      <option value="Rediseño de sitio existente">Rediseño de sitio existente</option>
-                      <option value="Optimización SEO">Optimización SEO</option>
-                      <option value="Otro">Otro</option>
+                      <option value="" className="bg-[#1A232E] text-white">
+                        Selecciona el tipo de proyecto
+                      </option>
+                      <option value="Sitio web corporativo" className="bg-[#1A232E] text-white">
+                        Sitio web corporativo
+                      </option>
+                      <option value="E-commerce" className="bg-[#1A232E] text-white">
+                        E-commerce / Tienda online
+                      </option>
+                      <option value="Aplicación web" className="bg-[#1A232E] text-white">
+                        Aplicación web
+                      </option>
+                      <option value="Landing page" className="bg-[#1A232E] text-white">
+                        Landing page
+                      </option>
+                      <option value="Blog/Portal de noticias" className="bg-[#1A232E] text-white">
+                        Blog/Portal de noticias
+                      </option>
+                      <option value="Rediseño de sitio existente" className="bg-[#1A232E] text-white">
+                        Rediseño de sitio existente
+                      </option>
+                      <option value="Optimización SEO" className="bg-[#1A232E] text-white">
+                        Optimización SEO
+                      </option>
+                      <option value="Otro" className="bg-[#1A232E] text-white">
+                        Otro
+                      </option>
                     </select>
                     {errors.tipoProyecto && <p className="text-red-400 text-sm mt-1">{errors.tipoProyecto}</p>}
                   </div>
@@ -277,8 +295,8 @@ Enviado desde: dualitydomain.com/solicitar-demo`
                       value={formData.descripcionProyecto}
                       onChange={handleChange}
                       rows={4}
-                      className={`w-full bg-[rgba(255,255,255,0.1)] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#25618B] ${
-                        errors.descripcionProyecto ? "border-2 border-red-500" : ""
+                      className={`w-full bg-[#323f5d] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#25618B] ${
+                        errors.descripcionProyecto ? "border-2 border-red-500" : "border border-[#304f6e]"
                       }`}
                       placeholder="Describe tu proyecto, qué necesitas, objetivos principales, etc."
                     />
@@ -296,15 +314,29 @@ Enviado desde: dualitydomain.com/solicitar-demo`
                       name="presupuesto"
                       value={formData.presupuesto}
                       onChange={handleChange}
-                      className="w-full bg-[rgba(255,255,255,0.1)] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#25618B]"
+                      className="w-full bg-[#323f5d] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#25618B] border border-[#304f6e]"
                     >
-                      <option value="">Selecciona tu presupuesto</option>
-                      <option value="$50.000 - $100.000">$50.000 - $100.000</option>
-                      <option value="$100.000 - $200.000">$100.000 - $200.000</option>
-                      <option value="$200.000 - $500.000">$200.000 - $500.000</option>
-                      <option value="$500.000 - $1.000.000">$500.000 - $1.000.000</option>
-                      <option value="Más de $1.000.000">Más de $1.000.000</option>
-                      <option value="A definir">A definir</option>
+                      <option value="" className="bg-[#1A232E] text-white">
+                        Selecciona tu presupuesto
+                      </option>
+                      <option value="$50.000 - $100.000" className="bg-[#1A232E] text-white">
+                        $50.000 - $100.000
+                      </option>
+                      <option value="$100.000 - $200.000" className="bg-[#1A232E] text-white">
+                        $100.000 - $200.000
+                      </option>
+                      <option value="$200.000 - $500.000" className="bg-[#1A232E] text-white">
+                        $200.000 - $500.000
+                      </option>
+                      <option value="$500.000 - $1.000.000" className="bg-[#1A232E] text-white">
+                        $500.000 - $1.000.000
+                      </option>
+                      <option value="Más de $1.000.000" className="bg-[#1A232E] text-white">
+                        Más de $1.000.000
+                      </option>
+                      <option value="A definir" className="bg-[#1A232E] text-white">
+                        A definir
+                      </option>
                     </select>
                   </div>
 
@@ -312,7 +344,7 @@ Enviado desde: dualitydomain.com/solicitar-demo`
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className={`w-full bg-[#25618B] text-white py-4 px-8 rounded-[32px] font-semibold text-lg hover:bg-[#1a4a6e] transition-colors ${
+                      className={`w-full bg-[#25618B] text-white py-4 px-8 rounded-full font-semibold text-lg hover:bg-[#1a4a6e] transition-colors ${
                         isSubmitting ? "opacity-50 cursor-not-allowed" : ""
                       }`}
                     >
@@ -329,7 +361,7 @@ Enviado desde: dualitydomain.com/solicitar-demo`
             {/* Información adicional para móviles */}
             <motion.div
               variants={fadeIn("up", "tween", 0.5, 1)}
-              className="mt-12 bg-[rgba(0,0,0,0.2)] p-6 rounded-[20px] text-center md:hidden"
+              className="mt-12 bg-[#1A232E] border border-[#304f6e] p-6 rounded-[20px] text-center md:hidden"
             >
               <h3 className="text-white font-bold text-[20px] mb-4">¿Qué sucede después?</h3>
               <div className="space-y-4">

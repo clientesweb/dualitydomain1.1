@@ -37,6 +37,11 @@ const Footer = () => (
               <h5 className="text-white font-bold text-[18px] mb-4">Navegación</h5>
               <ul className="space-y-2">
                 <li>
+                  <Link href="/" className="text-secondary-white hover:text-white transition-colors">
+                    Inicio
+                  </Link>
+                </li>
+                <li>
                   <Link href="/#about" className="text-secondary-white hover:text-white transition-colors">
                     Nosotros
                   </Link>
@@ -49,11 +54,6 @@ const Footer = () => (
                 <li>
                   <Link href="/blog" className="text-secondary-white hover:text-white transition-colors">
                     Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-secondary-white hover:text-white transition-colors">
-                    Contacto
                   </Link>
                 </li>
                 <li>

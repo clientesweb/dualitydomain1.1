@@ -22,19 +22,13 @@ const Hero = () => (
           variants={textVariant(1.1)}
           className={`${styles.heroHeading} text-center sm:text-[80px] text-[40px]`}
         >
-          Transforma,
+          Duality
         </motion.h1>
         <motion.div variants={textVariant(1.2)} className="flex flex-row justify-center items-center flex-wrap">
-          <h1 className={styles.heroHeading}>inno</h1>
+          <h1 className={styles.heroHeading}>D</h1>
           <div className={styles.heroDText} />
-          <h1 className={styles.heroHeading}>a</h1>
+          <h1 className={styles.heroHeading}>main</h1>
         </motion.div>
-        <motion.h1
-          variants={textVariant(1.3)}
-          className={`${styles.heroHeading} text-center sm:text-[80px] text-[40px]`}
-        >
-          y eleva tu presencia digital
-        </motion.h1>
       </div>
 
       {/* NOTE "-mt-[20px]" means "minus 20px margin top" */}

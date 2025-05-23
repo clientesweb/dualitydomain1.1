@@ -27,9 +27,19 @@ const Navbar = () => {
         whileInView="show"
         className={`${styles.innerWidth} mx-auto flex justify-between items-center`}
       >
-        <Link href="/" className="flex items-center">
-          <Image src="/logo.png" alt="Duality Domain Logo" width={180} height={40} className="object-contain" />
-        </Link>
+        {/* Logo for desktop */}
+        <div className="hidden md:block">
+          <Link href="/" className="flex items-center">
+            <Image src="/logo.png" alt="Duality Domain Logo" width={180} height={40} className="object-contain" />
+          </Link>
+        </div>
+
+        {/* Centered logo for mobile */}
+        <div className="md:hidden absolute left-1/2 transform -translate-x-1/2 z-10">
+          <Link href="/" className="flex items-center">
+            <Image src="/logo-header.png" alt="Duality Domain Logo" width={60} height={60} className="object-contain" />
+          </Link>
+        </div>
 
         <div className="hidden md:flex items-center gap-8">
           <Link href="/" className="font-normal text-[16px] text-white hover:text-secondary-white transition-colors">

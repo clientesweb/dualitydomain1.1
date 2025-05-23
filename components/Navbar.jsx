@@ -32,6 +32,9 @@ const Navbar = () => {
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
+          <Link href="/" className="font-normal text-[16px] text-white hover:text-secondary-white transition-colors">
+            Inicio
+          </Link>
           <Link
             href="/#about"
             className="font-normal text-[16px] text-white hover:text-secondary-white transition-colors"
@@ -49,9 +52,6 @@ const Navbar = () => {
             className="font-normal text-[16px] text-white hover:text-secondary-white transition-colors"
           >
             Blog
-          </Link>
-          <Link href="#" className="font-normal text-[16px] text-white hover:text-secondary-white transition-colors">
-            Contacto
           </Link>
           <Link
             href="/solicitar-demo"
@@ -73,6 +73,13 @@ const Navbar = () => {
             <div className="absolute top-10 right-0 bg-[#1A232E] p-5 rounded-lg shadow-lg z-50 min-w-[200px]">
               <div className="flex flex-col gap-4">
                 <Link
+                  href="/"
+                  className="font-normal text-[16px] text-white hover:text-secondary-white transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Inicio
+                </Link>
+                <Link
                   href="/#about"
                   className="font-normal text-[16px] text-white hover:text-secondary-white transition-colors"
                   onClick={() => setIsMenuOpen(false)}
@@ -92,13 +99,6 @@ const Navbar = () => {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Blog
-                </Link>
-                <Link
-                  href="#"
-                  className="font-normal text-[16px] text-white hover:text-secondary-white transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Contacto
                 </Link>
                 <Link
                   href="/solicitar-demo"

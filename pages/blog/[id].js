@@ -7,6 +7,7 @@ import { insights } from "../../constants"
 import Image from "next/image"
 import Link from "next/link"
 import Head from "next/head"
+import styles from "../../styles"
 
 const BlogPostPage = () => {
   const router = useRouter()
@@ -22,46 +23,10 @@ const BlogPostPage = () => {
 
   if (!post) {
     return (
-      <div
-        style={{
-          backgroundColor: "#000000",
-          minHeight: "100vh",
-          position: "relative",
-          zIndex: 9999,
-        }}
-      >
-        <Navbar />
-        <div
-          style={{
-            textAlign: "center",
-            marginTop: "100px",
-            position: "relative",
-            zIndex: 10000,
-            padding: "20px",
-          }}
-        >
-          <h2
-            style={{
-              color: "#FF0000",
-              fontSize: "24px",
-              fontWeight: "bold",
-              border: "2px solid red",
-              padding: "10px",
-              backgroundColor: "white",
-            }}
-          >
-            Cargando artículo...
-          </h2>
-          <Link
-            href="/blog"
-            style={{
-              color: "#0000FF",
-              textDecoration: "underline",
-              fontSize: "18px",
-              backgroundColor: "yellow",
-              padding: "5px",
-            }}
-          >
+      <div className="bg-primary-black min-h-screen flex items-center justify-center">
+        <div className="text-white text-center">
+          <h2 className="text-2xl font-bold mb-4">Cargando artículo...</h2>
+          <Link href="/blog" className="text-[#25618B] hover:underline">
             Volver al blog
           </Link>
         </div>
@@ -74,382 +39,178 @@ const BlogPostPage = () => {
       <Head>
         <title>{post.title} | Blog de Duality Domain</title>
         <meta name="description" content={post.subtitle} />
+        <meta property="og:title" content={`${post.title} | Blog de Duality Domain`} />
+        <meta property="og:description" content={post.subtitle} />
+        <meta property="og:image" content={post.imgUrl} />
+        <meta property="og:type" content="article" />
+        <meta property="article:published_time" content={post.date} />
+        <meta property="article:author" content={post.author} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:description" content={post.subtitle} />
+        <meta name="twitter:image" content={post.imgUrl} />
       </Head>
 
-      {/* Contenedor principal con z-index muy alto y sin overlays */}
-      <div
-        style={{
-          backgroundColor: "#000000",
-          minHeight: "100vh",
-          position: "relative",
-          zIndex: 9999,
-          overflow: "visible",
-        }}
-      >
+      <div className="bg-primary-black overflow-hidden">
         <Navbar />
 
-        {/* Contenido principal */}
-        <div
-          style={{
-            maxWidth: "1200px",
-            margin: "0 auto",
-            padding: "40px 20px",
-            position: "relative",
-            zIndex: 10000,
-            backgroundColor: "#111111",
-            border: "3px solid #FF0000",
-          }}
-        >
-          {/* Elemento de debug visible */}
-          <div
-            style={{
-              backgroundColor: "#FF0000",
-              color: "#FFFFFF",
-              padding: "10px",
-              marginBottom: "20px",
-              fontSize: "18px",
-              fontWeight: "bold",
-              border: "2px solid white",
-              textAlign: "center",
-            }}
-          >
-            🔴 DEBUG: Si puedes ver este texto rojo, el contenedor funciona
-          </div>
-
-          {/* Navegación de vuelta */}
-          <div style={{ marginBottom: "20px", position: "relative", zIndex: 10001 }}>
-            <Link
-              href="/blog"
-              style={{
-                color: "#00FF00",
-                textDecoration: "underline",
-                display: "flex",
-                alignItems: "center",
-                gap: "8px",
-                fontSize: "18px",
-                backgroundColor: "#000000",
-                padding: "10px",
-                border: "2px solid green",
-              }}
-            >
-              <span>←</span> Volver al blog
-            </Link>
-          </div>
-
-          {/* Imagen del artículo */}
-          <div
-            style={{
-              position: "relative",
-              height: "300px",
-              width: "100%",
-              marginBottom: "30px",
-              border: "3px solid #0000FF",
-              backgroundColor: "#333333",
-            }}
-          >
-            <Image
-              src={post.imgUrl || "/placeholder.svg"}
-              alt={post.title}
-              layout="fill"
-              objectFit="cover"
-              style={{ position: "relative", zIndex: 10002 }}
-            />
-          </div>
-
-          {/* Título del artículo */}
-          <div
-            style={{
-              marginBottom: "30px",
-              position: "relative",
-              zIndex: 10003,
-              backgroundColor: "#222222",
-              padding: "20px",
-              border: "2px solid #FFFF00",
-            }}
-          >
-            <h1
-              style={{
-                color: "#FFFFFF",
-                fontSize: "32px",
-                fontWeight: "bold",
-                lineHeight: "1.2",
-                marginBottom: "20px",
-                textShadow: "2px 2px 4px #000000",
-                backgroundColor: "#333333",
-                padding: "10px",
-              }}
-            >
-              {post.title}
-            </h1>
-            <div
-              style={{
-                backgroundColor: "#444444",
-                padding: "16px",
-                border: "1px solid #FFFFFF",
-              }}
-            >
-              <p
-                style={{
-                  color: "#FFFF00",
-                  fontSize: "14px",
-                  marginBottom: "5px",
-                }}
-              >
-                Publicado el {post.date}
-              </p>
-              <p
-                style={{
-                  color: "#00FFFF",
-                  fontWeight: "600",
-                  marginBottom: "5px",
-                }}
-              >
-                {post.author}
-              </p>
-              <p
-                style={{
-                  color: "#FF00FF",
-                  fontSize: "14px",
-                }}
-              >
-                {post.authorRole}
-              </p>
-            </div>
-          </div>
-
-          {/* Contenido principal del artículo */}
-          <div
-            style={{
-              backgroundColor: "#1a1a1a",
-              padding: "40px",
-              border: "5px solid #00FF00",
-              marginBottom: "60px",
-              position: "relative",
-              zIndex: 10004,
-            }}
-          >
-            {/* Elemento de debug dentro del contenido */}
-            <div
-              style={{
-                backgroundColor: "#00FF00",
-                color: "#000000",
-                padding: "15px",
-                marginBottom: "30px",
-                fontSize: "16px",
-                fontWeight: "bold",
-                textAlign: "center",
-                border: "3px solid #FFFFFF",
-              }}
-            >
-              🟢 DEBUG: Si puedes ver este texto verde, el área de contenido funciona
+        <section className={`${styles.paddings} relative z-10`}>
+          <div className={`${styles.innerWidth} mx-auto flex flex-col`}>
+            <div className="mb-8">
+              <Link href="/blog" className="text-[#25618B] hover:underline flex items-center gap-2">
+                <span>←</span> Volver al blog
+              </Link>
             </div>
 
-            <h2
-              style={{
-                color: "#FFFFFF",
-                fontSize: "28px",
-                fontWeight: "bold",
-                marginBottom: "20px",
-                backgroundColor: "#333333",
-                padding: "15px",
-                border: "2px solid #FFFFFF",
-                textShadow: "1px 1px 2px #000000",
-              }}
-            >
-              {post.title}
-            </h2>
+            <div className="relative h-[400px] w-full mb-8 rounded-[20px] overflow-hidden">
+              <Image
+                src={post.imgUrl || "/placeholder.svg"}
+                alt={post.title}
+                width={1200}
+                height={400}
+                className="w-full h-full object-cover"
+              />
+            </div>
 
-            <p
-              style={{
-                color: "#FFFFFF",
-                fontSize: "18px",
-                lineHeight: "1.6",
-                marginBottom: "25px",
-                backgroundColor: "#2a2a2a",
-                padding: "20px",
-                border: "1px solid #FFFFFF",
-                textShadow: "1px 1px 1px #000000",
-              }}
-            >
-              {post.subtitle}
-            </p>
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+              <h1 className="font-bold text-white text-[32px] md:text-[48px] leading-tight">{post.title}</h1>
+              <div className="bg-[rgba(0,0,0,0.3)] p-4 rounded-lg">
+                <div className="text-white">
+                  <p className="text-sm opacity-60">Publicado el {post.date}</p>
+                  <p className="font-semibold mt-1">{post.author}</p>
+                  <p className="text-sm opacity-60">{post.authorRole}</p>
+                </div>
+              </div>
+            </div>
 
-            {/* Contenido del artículo con colores extremos */}
-            <div
-              style={{
-                backgroundColor: "#0a0a0a",
-                padding: "30px",
-                border: "3px solid #FFFF00",
-                marginBottom: "20px",
-              }}
-            >
-              <p
+            <article className="bg-[rgba(255,255,255,0.05)] p-8 rounded-[20px] shadow-xl">
+              <div
+                className="prose prose-lg max-w-none text-white"
                 style={{
-                  color: "#FFFFFF",
-                  fontSize: "16px",
-                  lineHeight: "1.8",
-                  marginBottom: "20px",
-                  backgroundColor: "#333333",
-                  padding: "15px",
-                  border: "1px solid #FFFFFF",
+                  "--tw-prose-headings": "rgb(255, 255, 255)",
+                  "--tw-prose-body": "rgb(220, 220, 220)",
+                  "--tw-prose-bold": "rgb(255, 255, 255)",
+                  "--tw-prose-links": "rgb(59, 130, 246)",
+                  "--tw-prose-counters": "rgb(220, 220, 220)",
+                  "--tw-prose-bullets": "rgb(220, 220, 220)",
                 }}
-              >
-                🔵 CONTENIDO PRINCIPAL: En el competitivo mundo digital actual, tener un sitio web no es suficiente. La
-                calidad del diseño de tu sitio web puede ser el factor determinante entre el éxito y el fracaso de tu
-                presencia online.
-              </p>
+                dangerouslySetInnerHTML={{ __html: post.content }}
+              />
+            </article>
 
-              <p
-                style={{
-                  color: "#00FFFF",
-                  fontSize: "16px",
-                  lineHeight: "1.8",
-                  marginBottom: "20px",
-                  backgroundColor: "#1a1a1a",
-                  padding: "15px",
-                  border: "1px solid #00FFFF",
-                }}
-              >
-                🟡 PÁRRAFO 2: Un buen diseño web no solo atrae visualmente a los usuarios, sino que también los guía
-                estratégicamente hacia la conversión. Las tasas de conversión son un indicador clave del rendimiento de
-                tu sitio web.
-              </p>
+            <div className="mt-16 flex flex-col md:flex-row justify-between items-center gap-8 bg-[rgba(0,0,0,0.3)] p-8 rounded-[20px]">
+              <div>
+                <h3 className="text-white font-bold text-[24px] mb-4">¿Te gustó este artículo?</h3>
+                <p className="text-secondary-white">
+                  Compártelo en tus redes sociales o contáctanos para discutir cómo podemos ayudarte con tu proyecto.
+                </p>
+              </div>
+              <div className="flex gap-4">
+                <Link
+                  href="#"
+                  className="bg-[#25618B] text-white py-3 px-6 rounded-lg hover:bg-[#1a4a6e] transition-colors"
+                >
+                  Contactar ahora
+                </Link>
+                <div className="flex gap-2">
+                  <a
+                    href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+                      post.title,
+                    )}&url=${encodeURIComponent(`https://dualitydomain.com/blog/${post.id}`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#1DA1F2] text-white p-3 rounded-full hover:opacity-80 transition-opacity"
+                    aria-label="Compartir en Twitter"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                    </svg>
+                  </a>
+                  <a
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+                      `https://dualitydomain.com/blog/${post.id}`,
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#1877F2] text-white p-3 rounded-full hover:opacity-80 transition-opacity"
+                    aria-label="Compartir en Facebook"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                    </svg>
+                  </a>
+                  <a
+                    href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(
+                      `https://dualitydomain.com/blog/${post.id}`,
+                    )}&title=${encodeURIComponent(post.title)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#0A66C2] text-white p-3 rounded-full hover:opacity-80 transition-opacity"
+                    aria-label="Compartir en LinkedIn"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
 
-              <p
-                style={{
-                  color: "#FF00FF",
-                  fontSize: "16px",
-                  lineHeight: "1.8",
-                  marginBottom: "20px",
-                  backgroundColor: "#2a2a2a",
-                  padding: "15px",
-                  border: "1px solid #FF00FF",
-                }}
-              >
-                🟣 PÁRRAFO 3: En Duality Domain, nos especializamos en crear diseños web que no solo se ven bien, sino
-                que también están estratégicamente diseñados para aumentar las conversiones. Contáctanos hoy para
-                descubrir cómo podemos ayudarte.
-              </p>
-
-              <h3
-                style={{
-                  color: "#FFFF00",
-                  fontSize: "24px",
-                  fontWeight: "bold",
-                  marginTop: "30px",
-                  marginBottom: "15px",
-                  backgroundColor: "#000000",
-                  padding: "10px",
-                  border: "2px solid #FFFF00",
-                }}
-              >
-                🟡 Elementos clave del diseño web
+            <div className="mt-16">
+              <h3 className="text-white font-bold text-[24px] mb-8 text-center">
+                Otros artículos que te pueden interesar
               </h3>
-
-              <ul
-                style={{
-                  color: "#FFFFFF",
-                  fontSize: "16px",
-                  lineHeight: "1.6",
-                  paddingLeft: "20px",
-                  backgroundColor: "#1a1a1a",
-                  padding: "20px",
-                  border: "1px solid #FFFFFF",
-                }}
-              >
-                <li style={{ marginBottom: "10px", color: "#00FF00" }}>✅ Diseño visual atractivo y profesional</li>
-                <li style={{ marginBottom: "10px", color: "#00FFFF" }}>✅ Navegación intuitiva</li>
-                <li style={{ marginBottom: "10px", color: "#FF00FF" }}>✅ Llamadas a la acción efectivas</li>
-                <li style={{ marginBottom: "10px", color: "#FFFF00" }}>✅ Diseño responsivo</li>
-                <li style={{ marginBottom: "10px", color: "#FF0000" }}>✅ Velocidad de carga optimizada</li>
-              </ul>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {insights
+                  .filter((p) => p.id !== post.id)
+                  .slice(0, 3)
+                  .map((relatedPost, index) => (
+                    <div key={relatedPost.id} className="bg-[rgba(0,0,0,0.3)] rounded-[20px] overflow-hidden">
+                      <div className="relative h-[180px]">
+                        <Image
+                          src={relatedPost.imgUrl || "/placeholder.svg"}
+                          alt={relatedPost.title}
+                          width={400}
+                          height={180}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="p-6">
+                        <h3 className="text-white font-bold text-[18px] mb-3">{relatedPost.title}</h3>
+                        <p className="text-secondary-white text-sm mb-4 line-clamp-2">{relatedPost.subtitle}</p>
+                        <Link href={`/blog/${relatedPost.id}`} className="text-[#25618B] hover:underline">
+                          Leer artículo →
+                        </Link>
+                      </div>
+                    </div>
+                  ))}
+              </div>
             </div>
           </div>
-
-          {/* Sección de contacto */}
-          <div
-            style={{
-              backgroundColor: "#2a2a2a",
-              padding: "30px",
-              border: "3px solid #FF00FF",
-              textAlign: "center",
-              position: "relative",
-              zIndex: 10005,
-            }}
-          >
-            <h3
-              style={{
-                color: "#FFFFFF",
-                fontSize: "24px",
-                fontWeight: "bold",
-                marginBottom: "16px",
-                backgroundColor: "#000000",
-                padding: "10px",
-              }}
-            >
-              ¿Te gustó este artículo?
-            </h3>
-            <p
-              style={{
-                color: "#FFFFFF",
-                marginBottom: "20px",
-                fontSize: "16px",
-                backgroundColor: "#1a1a1a",
-                padding: "10px",
-              }}
-            >
-              Contáctanos para discutir cómo podemos ayudarte con tu proyecto.
-            </p>
-            <Link
-              href="/solicitar-demo"
-              style={{
-                backgroundColor: "#25618B",
-                color: "#FFFFFF",
-                padding: "15px 30px",
-                borderRadius: "8px",
-                fontWeight: "500",
-                textDecoration: "none",
-                border: "2px solid #FFFFFF",
-                fontSize: "18px",
-              }}
-            >
-              Contactar ahora
-            </Link>
-          </div>
-        </div>
+        </section>
 
         <Footer />
       </div>
     </>
   )
-}
-
-// Funciones necesarias para Next.js
-export async function getStaticPaths() {
-  const paths = insights.map((post) => ({
-    params: { id: post.id },
-  }))
-
-  return {
-    paths,
-    fallback: false,
-  }
-}
-
-export async function getStaticProps({ params }) {
-  const post = insights.find((p) => p.id === params.id)
-
-  if (!post) {
-    return {
-      notFound: true,
-    }
-  }
-
-  return {
-    props: {
-      post,
-    },
-  }
 }
 
 export default BlogPostPage

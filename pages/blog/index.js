@@ -38,16 +38,17 @@ const BlogPage = () => {
         <Navbar />
 
         <section className={`${styles.paddings} relative z-10`}>
-          <div className="absolute w-[50%] inset-0 gradient-01" />
+          {/* Cambiado el z-index del gradiente para que esté detrás del contenido */}
+          <div className="absolute w-[50%] inset-0 gradient-01 z-0" />
 
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.25 }}
-            className={`${styles.innerWidth} mx-auto flex flex-col`}
+            className={`${styles.innerWidth} mx-auto flex flex-col relative z-10`}
           >
-            <div className="text-center mb-16">
+            <div className="text-center mb-16 relative z-10">
               <motion.h1
                 variants={fadeIn("up", "tween", 0.2, 1)}
                 className="font-bold text-white text-[42px] md:text-[64px] leading-tight"
@@ -63,12 +64,12 @@ const BlogPage = () => {
               </motion.p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
               {insights.map((post, index) => (
                 <motion.div
                   key={post.id}
                   variants={fadeIn("up", "spring", index * 0.5, 1)}
-                  className="bg-[rgba(0,0,0,0.3)] rounded-[20px] overflow-hidden"
+                  className="bg-[rgba(0,0,0,0.3)] rounded-[20px] overflow-hidden relative z-10"
                 >
                   <div className="relative h-[240px]">
                     <Image

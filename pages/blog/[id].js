@@ -15,11 +15,18 @@ const BlogPostPage = () => {
   const router = useRouter()
   const { id } = router.query
   const [post, setPost] = useState(null)
+  const [relatedPosts, setRelatedPosts] = useState([])
 
   useEffect(() => {
     if (id) {
       const foundPost = insights.find((p) => p.id === id)
       setPost(foundPost)
+
+      // Get related posts (excluding current post)
+      if (foundPost) {
+        const related = insights.filter((p) => p.id !== id).slice(0, 3)
+        setRelatedPosts(related)
+      }
     }
   }, [id])
 
@@ -27,6 +34,7 @@ const BlogPostPage = () => {
     return (
       <div className="bg-primary-black min-h-screen flex items-center justify-center">
         <div className="text-white text-center">
+          <div className="w-16 h-16 border-4 border-[#25618B] border-t-transparent rounded-full animate-spin mx-auto mb-6"></div>
           <h2 className="text-2xl font-bold mb-4">Cargando artículo...</h2>
           <Link href="/blog" className="text-[#25618B] hover:underline">
             Volver al blog
@@ -66,41 +74,60 @@ const BlogPostPage = () => {
             viewport={{ once: false, amount: 0.25 }}
             className={`${styles.innerWidth} mx-auto flex flex-col`}
           >
-            <div className="mb-8">
-              <Link href="/blog" className="text-[#25618B] hover:underline flex items-center gap-2">
-                <span>←</span> Volver al blog
+            {/* Breadcrumb Navigation */}
+            <motion.div variants={fadeIn("up", "tween", 0.1, 1)} className="mb-8">
+              <Link href="/blog" className="text-[#25618B] hover:text-white transition-colors flex items-center gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                Volver al blog
               </Link>
-            </div>
+            </motion.div>
 
-            <motion.div
-              variants={fadeIn("up", "tween", 0.2, 1)}
-              className="relative h-[400px] w-full mb-8 rounded-[24px] overflow-hidden"
-            >
-              <Image
-                src={post.imgUrl || "/placeholder.svg"}
-                alt={post.title}
-                width={1200}
-                height={400}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-8">
-                <div className="flex flex-wrap justify-between items-center gap-4 mb-4">
-                  <span className="bg-[#25618B] text-white text-sm px-4 py-1 rounded-full">{post.date}</span>
-                  <div className="flex items-center gap-2 bg-black/30 px-3 py-1 rounded-full">
-                    <div className="w-8 h-8 rounded-full bg-[#304f6e] flex items-center justify-center text-white font-bold">
-                      {post.author.charAt(0)}
-                    </div>
-                    <span className="text-white text-sm">{post.author}</span>
+            {/* Article Header */}
+            <motion.div variants={fadeIn("up", "tween", 0.2, 1)} className="mb-12">
+              <div className="flex flex-wrap gap-4 mb-4">
+                <span className="bg-[#25618B] text-white text-sm px-4 py-1 rounded-full">{post.date}</span>
+                <div className="flex items-center gap-2 bg-[#323f5d] px-4 py-1 rounded-full">
+                  <div className="w-6 h-6 rounded-full bg-[#25618B] flex items-center justify-center text-white font-bold text-sm">
+                    {post.author.charAt(0)}
                   </div>
+                  <span className="text-white text-sm">{post.author}</span>
+                  <span className="text-secondary-white text-xs">• {post.authorRole}</span>
                 </div>
-                <h1 className="font-bold text-white text-[32px] md:text-[48px] leading-tight">{post.title}</h1>
+              </div>
+
+              <h1 className="font-bold text-white text-[32px] md:text-[48px] leading-tight mb-6">{post.title}</h1>
+              <p className="text-secondary-white text-[18px] max-w-3xl">{post.subtitle}</p>
+            </motion.div>
+
+            {/* Featured Image */}
+            <motion.div variants={fadeIn("up", "tween", 0.3, 1)} className="mb-12">
+              <div className="relative h-[300px] md:h-[500px] w-full rounded-[24px] overflow-hidden">
+                <Image
+                  src={post.imgUrl || "/placeholder.svg"}
+                  alt={post.title}
+                  width={1200}
+                  height={500}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </motion.div>
 
+            {/* Article Content */}
             <motion.article
-              variants={fadeIn("up", "tween", 0.3, 1)}
-              className="glassmorphism p-8 rounded-[24px] shadow-xl"
+              variants={fadeIn("up", "tween", 0.4, 1)}
+              className="bg-[#1A232E] border border-[#304f6e] p-8 md:p-12 rounded-[24px] shadow-xl mb-12"
             >
               <div
                 className="prose prose-lg max-w-none text-white"
@@ -116,7 +143,31 @@ const BlogPostPage = () => {
               />
             </motion.article>
 
-            <motion.div variants={fadeIn("up", "tween", 0.4, 1)} className="mt-12 glassmorphism p-8 rounded-[24px]">
+            {/* Author Bio */}
+            <motion.div
+              variants={fadeIn("up", "tween", 0.5, 1)}
+              className="bg-[#1A232E] border border-[#304f6e] p-8 rounded-[24px] mb-12"
+            >
+              <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
+                <div className="w-20 h-20 rounded-full bg-[#304f6e] flex items-center justify-center text-white font-bold text-2xl flex-shrink-0">
+                  {post.author.charAt(0)}
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-[20px] mb-2">Sobre {post.author}</h3>
+                  <p className="text-secondary-white mb-2">{post.authorRole} en Duality Domain</p>
+                  <p className="text-secondary-white">
+                    Especialista en desarrollo web con amplia experiencia en el sector. Apasionado por crear soluciones
+                    digitales que ayuden a las empresas a crecer y destacar en el mundo online.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Share and CTA */}
+            <motion.div
+              variants={fadeIn("up", "tween", 0.6, 1)}
+              className="bg-[#1A232E] border border-[#304f6e] p-8 rounded-[24px] mb-12"
+            >
               <div className="flex flex-col md:flex-row justify-between items-center gap-8">
                 <div>
                   <h3 className="text-white font-bold text-[24px] mb-4">¿Te gustó este artículo?</h3>
@@ -124,14 +175,14 @@ const BlogPostPage = () => {
                     Compártelo en tus redes sociales o contáctanos para discutir cómo podemos ayudarte con tu proyecto.
                   </p>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex flex-col sm:flex-row gap-4">
                   <Link
                     href="/solicitar-demo"
-                    className="bg-[#25618B] text-white py-3 px-6 rounded-[32px] hover:bg-[#1a4a6e] transition-colors"
+                    className="bg-[#25618B] text-white py-3 px-6 rounded-full hover:bg-[#1a4a6e] transition-colors text-center"
                   >
                     Contactar ahora
                   </Link>
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 justify-center">
                     <a
                       href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
                         post.title,
@@ -213,18 +264,17 @@ const BlogPostPage = () => {
               </div>
             </motion.div>
 
-            <motion.div variants={fadeIn("up", "tween", 0.5, 1)} className="mt-16">
-              <h3 className="text-white font-bold text-[24px] mb-8 text-center">
-                Otros artículos que te pueden interesar
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {insights
-                  .filter((p) => p.id !== post.id)
-                  .slice(0, 3)
-                  .map((relatedPost, index) => (
+            {/* Related Articles */}
+            {relatedPosts.length > 0 && (
+              <motion.div variants={fadeIn("up", "tween", 0.7, 1)}>
+                <h3 className="text-white font-bold text-[28px] mb-8 border-b border-[#304f6e] pb-4">
+                  Artículos relacionados
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {relatedPosts.map((relatedPost, index) => (
                     <div
                       key={relatedPost.id}
-                      className="glassmorphism rounded-[24px] overflow-hidden hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                      className="bg-[#1A232E] border border-[#304f6e] rounded-[24px] overflow-hidden hover:shadow-[0_0_15px_rgba(37,97,139,0.5)] transition-all duration-300 transform hover:-translate-y-1"
                     >
                       <div className="relative h-[180px]">
                         <Image
@@ -234,24 +284,30 @@ const BlogPostPage = () => {
                           height={180}
                           className="w-full h-full object-cover"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#1A232E] to-transparent opacity-70"></div>
                         <div className="absolute bottom-4 left-4 right-4">
-                          <h3 className="text-white font-bold text-[18px] line-clamp-2">{relatedPost.title}</h3>
+                          <span className="inline-block bg-[#25618B] text-white text-xs px-3 py-1 rounded-full mb-2">
+                            {relatedPost.date}
+                          </span>
                         </div>
                       </div>
                       <div className="p-6">
+                        <h4 className="text-white font-bold text-[18px] mb-3 line-clamp-2 min-h-[54px]">
+                          {relatedPost.title}
+                        </h4>
                         <p className="text-secondary-white text-sm mb-4 line-clamp-2">{relatedPost.subtitle}</p>
                         <Link
                           href={`/blog/${relatedPost.id}`}
-                          className="inline-block bg-[#25618B] text-white py-2 px-4 rounded-[32px] hover:bg-[#1a4a6e] transition-colors text-sm"
+                          className="inline-block bg-[#25618B] text-white py-2 px-4 rounded-full hover:bg-[#1a4a6e] transition-colors text-sm"
                         >
                           Leer artículo
                         </Link>
                       </div>
                     </div>
                   ))}
-              </div>
-            </motion.div>
+                </div>
+              </motion.div>
+            )}
           </motion.div>
         </section>
 

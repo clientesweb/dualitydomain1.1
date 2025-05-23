@@ -57,14 +57,14 @@ const BlogPostPage = () => {
         <Navbar />
 
         <section className={`${styles.paddings} relative z-10`}>
-          <div className="absolute w-[50%] inset-0 gradient-01" />
+          <div className="absolute w-[50%] inset-0 gradient-01 z-0" />
 
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.25 }}
-            className={`${styles.innerWidth} mx-auto flex flex-col`}
+            className={`${styles.innerWidth} mx-auto flex flex-col relative z-10`}
           >
             <div className="mb-8">
               <Link href="/blog" className="text-[#25618B] hover:underline flex items-center gap-2">
@@ -95,9 +95,37 @@ const BlogPostPage = () => {
 
             <motion.div
               variants={fadeIn("up", "tween", 0.2, 1)}
-              className="prose prose-lg prose-invert max-w-none bg-[rgba(0,0,0,0.2)] p-8 rounded-[20px]"
-              dangerouslySetInnerHTML={{ __html: post.content }}
-            />
+              className="prose prose-lg max-w-none bg-[rgba(0,0,0,0.2)] p-8 rounded-[20px]"
+            >
+              {/* Renderizar el contenido HTML con estilos mejorados para la legibilidad */}
+              <div
+                className="text-white"
+                dangerouslySetInnerHTML={{
+                  __html: post.content
+                    .replace(/<p>/g, '<p style="color: rgb(220, 220, 220); margin-bottom: 1rem;">')
+                    .replace(
+                      /<h2>/g,
+                      '<h2 style="color: white; font-size: 2rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem;">',
+                    )
+                    .replace(
+                      /<h3>/g,
+                      '<h3 style="color: white; font-size: 1.5rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem;">',
+                    )
+                    .replace(
+                      /<h4>/g,
+                      '<h4 style="color: white; font-size: 1.25rem; font-weight: 600; margin-top: 1.25rem; margin-bottom: 0.5rem;">',
+                    )
+                    .replace(
+                      /<ul>/g,
+                      '<ul style="list-style-type: disc; padding-left: 1.5rem; margin-top: 1rem; margin-bottom: 1rem;">',
+                    )
+                    .replace(
+                      /<li>/g,
+                      '<li style="color: rgb(220, 220, 220); margin-top: 0.5rem; margin-bottom: 0.5rem;">',
+                    ),
+                }}
+              />
+            </motion.div>
 
             <div className="mt-16 flex flex-col md:flex-row justify-between items-center gap-8">
               <div>
@@ -107,7 +135,7 @@ const BlogPostPage = () => {
                 </p>
               </div>
               <Link
-                href="#"
+                href="/solicitar-demo"
                 className="bg-[#25618B] text-white py-3 px-6 rounded-lg hover:bg-[#1a4a6e] transition-colors"
               >
                 Contactar ahora

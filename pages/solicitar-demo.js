@@ -114,14 +114,14 @@ Enviado desde: dualitydomain.com/solicitar-demo`
         <Navbar />
 
         <section className={`${styles.paddings} relative z-10`}>
-          <div className="absolute w-[50%] inset-0 gradient-01" />
+          <div className="absolute w-[50%] inset-0 gradient-01 z-0" />
 
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.25 }}
-            className={`${styles.innerWidth} mx-auto flex flex-col`}
+            className={`${styles.innerWidth} mx-auto flex flex-col relative z-10`}
           >
             <div className="text-center mb-12">
               <motion.h1
@@ -150,7 +150,7 @@ Enviado desde: dualitydomain.com/solicitar-demo`
                     height={400}
                     className="w-full max-w-[400px] object-contain mb-8"
                   />
-                  <div className="bg-[#1A232E] border border-[#304f6e] p-6 rounded-[20px] w-full">
+                  <div className="bg-[rgba(0,0,0,0.3)] p-6 rounded-[20px] w-full">
                     <h3 className="text-white font-bold text-[20px] mb-4">¿Qué sucede después?</h3>
                     <ul className="space-y-4">
                       <li className="flex items-start gap-3">
@@ -184,7 +184,7 @@ Enviado desde: dualitydomain.com/solicitar-demo`
 
               <motion.div
                 variants={fadeIn("left", "tween", 0.4, 1)}
-                className="bg-[#1A232E] border border-[#304f6e] p-6 md:p-8 rounded-[24px]"
+                className="glassmorphism p-6 md:p-8 rounded-[24px] relative z-10"
               >
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
@@ -198,7 +198,7 @@ Enviado desde: dualitydomain.com/solicitar-demo`
                       value={formData.nombre}
                       onChange={handleChange}
                       className={`w-full bg-[#323f5d] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#25618B] ${
-                        errors.nombre ? "border-2 border-red-500" : "border border-[#304f6e]"
+                        errors.nombre ? "border-2 border-red-500" : ""
                       }`}
                       placeholder="Tu nombre completo"
                     />
@@ -216,7 +216,7 @@ Enviado desde: dualitydomain.com/solicitar-demo`
                       value={formData.email}
                       onChange={handleChange}
                       className={`w-full bg-[#323f5d] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#25618B] ${
-                        errors.email ? "border-2 border-red-500" : "border border-[#304f6e]"
+                        errors.email ? "border-2 border-red-500" : ""
                       }`}
                       placeholder="tu@email.com"
                     />
@@ -234,7 +234,7 @@ Enviado desde: dualitydomain.com/solicitar-demo`
                       value={formData.telefono}
                       onChange={handleChange}
                       className={`w-full bg-[#323f5d] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#25618B] ${
-                        errors.telefono ? "border-2 border-red-500" : "border border-[#304f6e]"
+                        errors.telefono ? "border-2 border-red-500" : ""
                       }`}
                       placeholder="+54 9 11 1234-5678"
                     />
@@ -251,7 +251,7 @@ Enviado desde: dualitydomain.com/solicitar-demo`
                       value={formData.tipoProyecto}
                       onChange={handleChange}
                       className={`w-full bg-[#323f5d] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#25618B] ${
-                        errors.tipoProyecto ? "border-2 border-red-500" : "border border-[#304f6e]"
+                        errors.tipoProyecto ? "border-2 border-red-500" : ""
                       }`}
                     >
                       <option value="" className="bg-[#1A232E] text-white">
@@ -296,7 +296,7 @@ Enviado desde: dualitydomain.com/solicitar-demo`
                       onChange={handleChange}
                       rows={4}
                       className={`w-full bg-[#323f5d] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#25618B] ${
-                        errors.descripcionProyecto ? "border-2 border-red-500" : "border border-[#304f6e]"
+                        errors.descripcionProyecto ? "border-2 border-red-500" : ""
                       }`}
                       placeholder="Describe tu proyecto, qué necesitas, objetivos principales, etc."
                     />
@@ -314,7 +314,7 @@ Enviado desde: dualitydomain.com/solicitar-demo`
                       name="presupuesto"
                       value={formData.presupuesto}
                       onChange={handleChange}
-                      className="w-full bg-[#323f5d] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#25618B] border border-[#304f6e]"
+                      className="w-full bg-[#323f5d] text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#25618B]"
                     >
                       <option value="" className="bg-[#1A232E] text-white">
                         Selecciona tu presupuesto
@@ -344,7 +344,7 @@ Enviado desde: dualitydomain.com/solicitar-demo`
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className={`w-full bg-[#25618B] text-white py-4 px-8 rounded-full font-semibold text-lg hover:bg-[#1a4a6e] transition-colors ${
+                      className={`w-full bg-[#25618B] text-white py-4 px-8 rounded-[32px] font-semibold text-lg hover:bg-[#1a4a6e] transition-colors ${
                         isSubmitting ? "opacity-50 cursor-not-allowed" : ""
                       }`}
                     >
@@ -361,7 +361,7 @@ Enviado desde: dualitydomain.com/solicitar-demo`
             {/* Información adicional para móviles */}
             <motion.div
               variants={fadeIn("up", "tween", 0.5, 1)}
-              className="mt-12 bg-[#1A232E] border border-[#304f6e] p-6 rounded-[20px] text-center md:hidden"
+              className="mt-12 bg-[rgba(0,0,0,0.3)] p-6 rounded-[20px] text-center md:hidden relative z-10"
             >
               <h3 className="text-white font-bold text-[20px] mb-4">¿Qué sucede después?</h3>
               <div className="space-y-4">

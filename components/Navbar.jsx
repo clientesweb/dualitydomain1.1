@@ -35,11 +35,21 @@ const Navbar = () => {
         </div>
 
         {/* Centered logo for mobile */}
-        <div className="md:hidden absolute left-1/2 transform -translate-x-1/2 z-10">
+        <motion.div
+          className="md:hidden absolute left-1/2 transform -translate-x-1/2 z-10"
+          animate={{
+            y: [0, -8, 0],
+          }}
+          transition={{
+            duration: 3,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "easeInOut",
+          }}
+        >
           <Link href="/" className="flex items-center">
-            <Image src="/logo-header.png" alt="Duality Domain Logo" width={60} height={60} className="object-contain" />
+            <Image src="/logo-header.png" alt="Duality Domain Logo" width={80} height={80} className="object-contain" />
           </Link>
-        </div>
+        </motion.div>
 
         <div className="hidden md:flex items-center gap-8">
           <Link href="/" className="font-normal text-[16px] text-white hover:text-secondary-white transition-colors">
@@ -71,7 +81,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div className="md:hidden relative">
+        <div className="md:hidden relative z-20">
           <Image
             src={menu || "/placeholder.svg"}
             alt="menu-Icon"

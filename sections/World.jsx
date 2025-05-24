@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import styles from "../styles";
 import { fadeIn, staggerContainer } from "../utils/motion";
 import { TypingText, TitleText } from "../components";
-import fullmap from "../public/fullmap.svg";
+import fullmap from "../public/crea-tu-web.png";
 
 const World = () => (
   <section className={`${styles.paddings} relative z-10`}>
@@ -20,8 +20,8 @@ const World = () => (
       <TitleText
         title={
           <>
-            Track friends around you and invite them to play together in the
-            same world
+            ¿Aún dudas sobre
+            tener tu web?
           </>
         }
         textStyles="text-center"

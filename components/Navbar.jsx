@@ -35,9 +35,9 @@ const Navbar = () => {
         </div>
 
         {/* Mobile layout with perfect centering */}
-        <div className="md:hidden w-full flex items-center justify-between relative">
+        <div className="md:hidden w-full flex items-center justify-center relative h-[80px]">
           {/* Instagram icon - Left side */}
-          <div className="flex items-center z-10">
+          <div className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10">
             <Link
               href="https://www.instagram.com/dualitydomain?igsh=MXFjZXJsbmZtaWphcw=="
               target="_blank"
@@ -54,7 +54,7 @@ const Navbar = () => {
 
           {/* Perfectly centered logo */}
           <motion.div
-            className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
+            className="flex items-center justify-center z-10"
             animate={{
               y: [0, -8, 0],
             }}
@@ -76,7 +76,7 @@ const Navbar = () => {
           </motion.div>
 
           {/* Menu icon - Right side */}
-          <div className="flex items-center z-20">
+          <div className="absolute right-0 top-1/2 transform -translate-y-1/2 z-20">
             <Image
               src={menu || "/placeholder.svg"}
               alt="menu-Icon"

@@ -17,8 +17,8 @@ const Explore = () => {
         viewport={{ once: false, amount: 0.25 }}
         className={`${styles.innerWidth} mx-auto flex flex-col`}
       >
-        <TypingText title="| ¿Qué hacemos?" textStyles="text-center" />
-        <TitleText title={<>Servicios Ofrecidos por Duality Domain</>} textStyles="text-center" />
+        <TypingText title="| ¿Qué hacemos en Duality?" textStyles="text-center" />
+        <TitleText title={<>Nuestros Servicios</>} textStyles="text-center" />
         <div className="mt-[50px] flex lg:flex-row flex-col min-h-[70vh] gap-5 ">
           {exploreWorlds.map((world, index) => (
             <ExploreCard key={world.id} {...world} index={index} active={activeCard} handleClick={setActiveCard} />

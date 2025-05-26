@@ -355,7 +355,7 @@ export const projects = [
     category: "E-commerce",
     client: "J Murrieta",
     date: "2024",
-    link: "https://jmurrieta.com",
+    link: "https://www.jmurrietapcp.com",
   },
 ]
 

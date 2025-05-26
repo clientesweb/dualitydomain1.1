@@ -14,25 +14,29 @@ const Home = () => (
         name="keywords"
         content="desarrollo web Villa del Dique, diseño web Córdoba, empresa desarrollo web Argentina, e-commerce personalizado, SEO Villa del Dique, aplicaciones web Córdoba, sitios web profesionales, desarrollo web LATAM, agencia digital Argentina"
       />
-      <link rel="canonical" href="https://dualitydomain.com" />
+      <link rel="canonical" href="https://www.dualitydomain.com" />
 
       {/* Open Graph */}
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://dualitydomain.com/" />
+      <meta property="og:url" content="https://www.dualitydomain.com/" />
       <meta property="og:title" content="Duality Domain | Desarrollo Web Profesional en Villa del Dique, Córdoba" />
       <meta
         property="og:description"
         content="Empresa líder en desarrollo web profesional ubicada en Villa del Dique, Córdoba, Argentina. Especializada en sitios web, e-commerce, SEO y aplicaciones web personalizadas."
       />
-      <meta property="og:image" content="https://dualitydomain.com/og-image.jpg" />
+      <meta property="og:image" content="https://www.dualitydomain.com/og-image.jpg" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
+      <meta
+        property="og:image:alt"
+        content="Duality Domain - Crea tu Web - Demos gratuitas, actualizaciones constantes y mantenimientos bonificados"
+      />
       <meta property="og:locale" content="es_AR" />
       <meta property="og:site_name" content="Duality Domain" />
 
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content="https://dualitydomain.com/" />
+      <meta property="twitter:url" content="https://www.dualitydomain.com/" />
       <meta
         property="twitter:title"
         content="Duality Domain | Desarrollo Web Profesional en Villa del Dique, Córdoba"
@@ -41,7 +45,7 @@ const Home = () => (
         property="twitter:description"
         content="Empresa líder en desarrollo web profesional ubicada en Villa del Dique, Córdoba, Argentina. Especializada en sitios web, e-commerce, SEO y aplicaciones web personalizadas."
       />
-      <meta property="twitter:image" content="https://dualitydomain.com/og-image.jpg" />
+      <meta property="twitter:image" content="https://www.dualitydomain.com/og-image.jpg" />
 
       {/* Structured Data */}
       <script
@@ -52,10 +56,10 @@ const Home = () => (
             "@type": "WebSite",
             name: "Duality Domain",
             description: "Empresa líder en desarrollo web profesional ubicada en Villa del Dique, Córdoba, Argentina.",
-            url: "https://dualitydomain.com",
+            url: "https://www.dualitydomain.com",
             potentialAction: {
               "@type": "SearchAction",
-              target: "https://dualitydomain.com/blog?search={search_term_string}",
+              target: "https://www.dualitydomain.com/blog?search={search_term_string}",
               "query-input": "required name=search_term_string",
             },
             publisher: {
@@ -63,7 +67,22 @@ const Home = () => (
               name: "Duality Domain",
               logo: {
                 "@type": "ImageObject",
-                url: "https://dualitydomain.com/logo.png",
+                url: "https://www.dualitydomain.com/logo.png",
+              },
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Los Reartes, Cordoba",
+                addressLocality: "Villa del Dique",
+                addressRegion: "Córdoba",
+                postalCode: "X5856",
+                addressCountry: "AR",
+              },
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: "+54-9-3546-45-5010",
+                contactType: "customer service",
+                areaServed: "AR",
+                availableLanguage: ["Spanish"],
               },
             },
           }),

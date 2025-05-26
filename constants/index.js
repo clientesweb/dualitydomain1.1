@@ -321,7 +321,7 @@ export const projects = [
     image: "/electricidad-villa-del-dique.png",
     category: "Sitio Web",
     client: "Electricidad Villa del Dique",
-    date: "2024",
+    date: "2025",
     link: "https://www.electricidadvilladeldique.com.ar",
   },
   {
@@ -332,7 +332,7 @@ export const projects = [
     image: "/perimetrales-las-flores.png",
     category: "E-commerce",
     client: "Perimetrales Las Flores",
-    date: "2024",
+    date: "2025",
     link: "https://www.perimetraleslasflores.com",
   },
   {
@@ -343,7 +343,7 @@ export const projects = [
     image: "/asociacion-de-comercio-villa-del-dique.png",
     category: "Sitio Web",
     client: "Asociación de Comercio",
-    date: "2024",
+    date: "2025",
     link: "https://www.villadeldique.org",
   },
   {
@@ -354,7 +354,7 @@ export const projects = [
     image: "/j-murrieta-rifles.png",
     category: "E-commerce",
     client: "J Murrieta",
-    date: "2024",
+    date: "2025",
     link: "https://www.jmurrietapcp.com",
   },
 ]

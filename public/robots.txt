@@ -1,4 +1,37 @@
+# Robots.txt para Duality Domain
 User-agent: *
 Allow: /
 
+# Permitir acceso a todos los recursos importantes
+Allow: /blog
+Allow: /solicitar-demo
+Allow: /servicios
+Allow: /_next/static/
+Allow: /images/
+Allow: /favicon.ico
+
+# Bloquear archivos administrativos y de desarrollo
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /api/
+Disallow: /.well-known/
+Disallow: /private/
+
+# Configuración específica para bots de búsqueda principales
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+# Sitemap
 Sitemap: https://dualitydomain.com/sitemap.xml
+
+# Host preferido
+Host: dualitydomain.com

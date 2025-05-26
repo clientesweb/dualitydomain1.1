@@ -28,7 +28,22 @@ const ProjectCard = ({ id, title, description, image, category, client, date, in
       <p className="mt-2 text-secondary-white text-[14px]">{description}</p>
       <div className="mt-4 flex justify-between items-center">
         <span className="text-white text-sm opacity-60">Cliente: {client}</span>
-        <a href="#" className="text-[#25618B] font-semibold text-sm hover:underline transition-all duration-300">
+        <a
+          href={
+            client === "Electricidad Villa del Dique"
+              ? "https://www.electricidadvilladeldique.com.ar"
+              : client === "Perimetrales Las Flores"
+                ? "https://www.perimetraleslasflores.com"
+                : client === "Asociación de Comercio"
+                  ? "https://www.villadeldique.org"
+                  : client === "J Murrieta"
+                    ? "https://jmurrieta.com"
+                    : "#"
+          }
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#25618B] font-semibold text-sm hover:underline transition-all duration-300"
+        >
           Ver proyecto
         </a>
       </div>

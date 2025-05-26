@@ -315,12 +315,12 @@ export const testimonials = [
 export const projects = [
   {
     id: "project-1",
-    title: "Sitio Web Corporativo - TechSolutions",
+    title: "Sitio Web con E-commerce Integrado",
     description:
-      "Desarrollo de un sitio web corporativo moderno con diseño responsivo, optimización SEO y sistema de gestión de contenidos para una empresa de tecnología.",
-    image: "/como-tener-un-buen-diseno-web.png",
-    category: "Sitio Web",
-    client: "TechSolutions",
+      "Sitio web de servicios con tienda incorporada para showroom de productos, carrito check-out automatizado a WhatsApp para empresa líder en cercos perimetrales.",
+    images: ["/como-tener-un-buen-diseno-web.png", "/7-elementos-para-tu-tienda-online.png"],
+    category: "E-commerce",
+    client: "Perimetrales Las Flores",
     date: "2024",
     link: "#",
   },
@@ -329,7 +329,7 @@ export const projects = [
     title: "E-commerce Fashion Store",
     description:
       "Tienda online completa con catálogo de productos, carrito de compras, integración de pagos y panel administrativo para gestión de inventario.",
-    image: "/7-elementos-para-tu-tienda-online.png",
+    images: ["/7-elementos-para-tu-tienda-online.png", "/ecommerce.png"],
     category: "E-commerce",
     client: "Fashion Store",
     date: "2024",
@@ -340,7 +340,7 @@ export const projects = [
     title: "Optimización SEO - Educación Online",
     description:
       "Estrategia integral de SEO que aumentó el tráfico orgánico en un 80% y mejoró el posicionamiento en palabras clave relevantes del sector educativo.",
-    image: "/la-importancia-del-seo.png",
+    images: ["/la-importancia-del-seo.png", "/optimizacion-seo.png"],
     category: "SEO",
     client: "Educación Online",
     date: "2023",
@@ -351,7 +351,7 @@ export const projects = [
     title: "Aplicación Web - Logística Express",
     description:
       "Sistema web para gestión logística con seguimiento en tiempo real, generación de reportes y dashboard administrativo para optimizar operaciones.",
-    image: "/como-tener-un-buen-diseno-web.png",
+    images: ["/aplicaciones-web.png", "/como-tener-un-buen-diseno-web.png"],
     category: "Aplicación Web",
     client: "Logística Express",
     date: "2023",

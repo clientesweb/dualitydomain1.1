@@ -1,36 +1,44 @@
 {
-  "name": "Duality Domain - Desarrollo Web Profesional",
+  "name": "Duality Domain - Desarrollo Web Profesional en Villa del Dique, Córdoba",
   "short_name": "Duality Domain",
-  "description": "Empresa de desarrollo web profesional ubicada en Villa del Dique, Córdoba, Argentina. Especializada en soluciones digitales personalizadas.",
+  "description": "Empresa líder en desarrollo web profesional ubicada en Villa del Dique, Córdoba, Argentina. Especializada en sitios web, e-commerce, SEO y aplicaciones web personalizadas para impulsar tu negocio digital.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#1A232E",
   "theme_color": "#25618B",
+  "orientation": "portrait-primary",
+  "categories": ["business", "productivity", "technology"],
+  "lang": "es-AR",
   "icons": [
     {
       "src": "/favicon-16x16.png",
       "sizes": "16x16",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "/favicon-32x32.png",
       "sizes": "32x32",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "/apple-touch-icon.png",
       "sizes": "180x180",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "/android-chrome-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "/android-chrome-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }

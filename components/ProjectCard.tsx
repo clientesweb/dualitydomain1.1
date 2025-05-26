@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import { fadeIn } from "../utils/motion"
 
-const ProjectCard = ({ id, title, description, image, category, client, date, index }) => (
+const ProjectCard = ({ id, title, description, image, category, client, date, index, link }) => (
   <motion.div
     variants={fadeIn("up", "spring", index * 0.5, 1)}
     className="bg-[rgba(0,0,0,0.3)] p-5 rounded-[20px] sm:w-[360px] w-full"
@@ -28,7 +28,12 @@ const ProjectCard = ({ id, title, description, image, category, client, date, in
       <p className="mt-2 text-secondary-white text-[14px]">{description}</p>
       <div className="mt-4 flex justify-between items-center">
         <span className="text-white text-sm opacity-60">Cliente: {client}</span>
-        <a href="#" className="text-[#25618B] font-semibold text-sm hover:underline transition-all duration-300">
+        <a
+          href={link || "#"}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#25618B] font-semibold text-sm hover:underline transition-all duration-300"
+        >
           Ver proyecto
         </a>
       </div>

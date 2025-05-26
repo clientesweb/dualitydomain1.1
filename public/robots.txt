@@ -31,7 +31,7 @@ Allow: /
 Crawl-delay: 2
 
 # Sitemap
-Sitemap: https://dualitydomain.com/sitemap.xml
+Sitemap: https://www.dualitydomain.com/sitemap.xml
 
 # Host preferido
-Host: dualitydomain.com
+Host: www.dualitydomain.com

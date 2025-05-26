@@ -22,7 +22,7 @@ const BlogPage = () => {
           name="keywords"
           content="blog desarrollo web, guías SEO, tutoriales e-commerce, artículos UX, recursos desarrollo web, blog tecnología Villa del Dique, consejos diseño web Córdoba"
         />
-        <link rel="canonical" href="https://dualitydomain.com/blog" />
+        <link rel="canonical" href="https://www.dualitydomain.com/blog" />
 
         {/* Open Graph */}
         <meta property="og:title" content="Blog de Desarrollo Web | Duality Domain - Guías y Recursos" />
@@ -30,9 +30,13 @@ const BlogPage = () => {
           property="og:description"
           content="Artículos especializados sobre desarrollo web, e-commerce, SEO y UX. Guías prácticas y recursos para mejorar tu presencia digital."
         />
-        <meta property="og:image" content="https://dualitydomain.com/og-image.jpg" />
+        <meta property="og:image" content="https://www.dualitydomain.com/og-image.jpg" />
+        <meta
+          property="og:image:alt"
+          content="Duality Domain - Blog de Desarrollo Web - Guías y recursos especializados"
+        />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://dualitydomain.com/blog" />
+        <meta property="og:url" content="https://www.dualitydomain.com/blog" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -41,7 +45,7 @@ const BlogPage = () => {
           property="twitter:description"
           content="Artículos especializados sobre desarrollo web, e-commerce, SEO y UX. Guías prácticas y recursos para mejorar tu presencia digital."
         />
-        <meta name="twitter:image" content="https://dualitydomain.com/og-image.jpg" />
+        <meta name="twitter:image" content="https://www.dualitydomain.com/og-image.jpg" />
 
         {/* Structured Data */}
         <script
@@ -52,26 +56,26 @@ const BlogPage = () => {
               "@type": "Blog",
               name: "Blog de Duality Domain",
               description: "Artículos especializados sobre desarrollo web, e-commerce, SEO y UX",
-              url: "https://dualitydomain.com/blog",
+              url: "https://www.dualitydomain.com/blog",
               publisher: {
                 "@type": "Organization",
                 name: "Duality Domain",
                 logo: {
                   "@type": "ImageObject",
-                  url: "https://dualitydomain.com/logo.png",
+                  url: "https://www.dualitydomain.com/logo.png",
                 },
               },
               blogPost: insights.map((post) => ({
                 "@type": "BlogPosting",
                 headline: post.title,
                 description: post.subtitle,
-                url: `https://dualitydomain.com/blog/${post.id}`,
+                url: `https://www.dualitydomain.com/blog/${post.id}`,
                 datePublished: post.date,
                 author: {
                   "@type": "Person",
                   name: post.author,
                 },
-                image: `https://dualitydomain.com${post.imgUrl}`,
+                image: `https://www.dualitydomain.com${post.imgUrl}`,
               })),
             }),
           }}

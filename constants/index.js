@@ -4,9 +4,6 @@ import twitter from "../public/twitter.svg"
 import linkedin from "../public/linkedin.svg"
 import instagram from "../public/instagram.svg"
 import facebook from "../public/facebook.svg"
-import Planet_6 from "../public/planet-06.png"
-import Planet_7 from "../public/planet-07.png"
-import Planet_8 from "../public/planet-08.png"
 
 export const exploreWorlds = [
   {
@@ -70,7 +67,7 @@ export const newFeatures = [
 export const insights = [
   {
     id: "blog-1",
-    imgUrl: Planet_6,
+    imgUrl: "/como-tener-un-buen-diseno-web.png",
     title: "Cómo un buen diseño web puede aumentar tus conversiones",
     subtitle:
       "Descubre cómo implementar estrategias de diseño centradas en el usuario que mejoran la experiencia y aumentan las conversiones.",
@@ -121,7 +118,7 @@ export const insights = [
   },
   {
     id: "blog-2",
-    imgUrl: Planet_7,
+    imgUrl: "/7-elementos-para-tu-tienda-online.png",
     title: "7 elementos esenciales que toda tienda online debe tener",
     subtitle:
       "Conoce los componentes fundamentales que hacen que una tienda en línea sea exitosa y genere confianza en los usuarios.",
@@ -193,7 +190,7 @@ export const insights = [
   },
   {
     id: "blog-3",
-    imgUrl: Planet_8,
+    imgUrl: "/la-importancia-del-seo.png",
     title: "La importancia del SEO en tu estrategia digital",
     subtitle:
       "Aprende por qué el posicionamiento en buscadores es crucial para aumentar la visibilidad de tu negocio y atraer tráfico cualificado.",

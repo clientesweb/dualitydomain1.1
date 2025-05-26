@@ -2,7 +2,7 @@ import "../styles/globals.css"
 import WhatsAppButton from "../components/WhatsAppButton"
 
 export const metadata = {
-  metadataBase: new URL("https://dualitydomain.com"),
+  metadataBase: new URL("https://www.dualitydomain.com"),
   title: {
     default: "Duality Domain | Desarrollo Web Profesional en Villa del Dique, Córdoba",
     template: "%s | Duality Domain",
@@ -26,7 +26,7 @@ export const metadata = {
     "desarrollo responsive",
     "páginas web empresariales",
   ],
-  authors: [{ name: "Duality Domain", url: "https://dualitydomain.com" }],
+  authors: [{ name: "Duality Domain", url: "https://www.dualitydomain.com" }],
   creator: "Duality Domain",
   publisher: "Duality Domain",
   formatDetection: {
@@ -37,7 +37,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "es_AR",
-    url: "https://dualitydomain.com",
+    url: "https://www.dualitydomain.com",
     siteName: "Duality Domain",
     title: "Duality Domain | Desarrollo Web Profesional en Villa del Dique, Córdoba",
     description:
@@ -47,7 +47,7 @@ export const metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Duality Domain - Desarrollo Web Profesional",
+        alt: "Duality Domain - Crea tu Web - Demos gratuitas, actualizaciones constantes y mantenimientos bonificados",
         type: "image/jpeg",
       },
     ],
@@ -109,10 +109,10 @@ export const metadata = {
     yahoo: "yahoo-site-verification-code-here",
   },
   alternates: {
-    canonical: "https://dualitydomain.com",
+    canonical: "https://www.dualitydomain.com",
     languages: {
-      "es-AR": "https://dualitydomain.com",
-      es: "https://dualitydomain.com",
+      "es-AR": "https://www.dualitydomain.com",
+      es: "https://www.dualitydomain.com",
     },
   },
   other: {
@@ -144,14 +144,14 @@ const RootLayout = ({ children }) => (
             "@type": "Organization",
             name: "Duality Domain",
             description: "Empresa líder en desarrollo web profesional ubicada en Villa del Dique, Córdoba, Argentina.",
-            url: "https://dualitydomain.com",
-            logo: "https://dualitydomain.com/logo.png",
-            image: "https://dualitydomain.com/og-image.jpg",
+            url: "https://www.dualitydomain.com",
+            logo: "https://www.dualitydomain.com/logo.png",
+            image: "https://www.dualitydomain.com/og-image.jpg",
             telephone: "+54-9-3546-50-1537",
-            email: "info@dualitydomain.com",
+            email: "dualitydomainoficial@gmail.com",
             address: {
               "@type": "PostalAddress",
-              streetAddress: "Villa del Dique",
+              streetAddress: "Ruta 5, km 107",
               addressLocality: "Villa del Dique",
               addressRegion: "Córdoba",
               addressCountry: "AR",

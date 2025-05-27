@@ -17,7 +17,7 @@ const Projects = () => (
       viewport={{ once: false, amount: 0.25 }}
       className={`${styles.innerWidth} mx-auto flex flex-col`}
     >
-      <TypingText title="| Nuestros Proyectos" textStyles="text-center" />
+      <TypingText title="| Trabajos Recientes" textStyles="text-center" />
       <TitleText title={<>Proyectos que Impulsan Resultados</>} textStyles="text-center" />
 
       <div className="mt-[50px] flex flex-wrap justify-center gap-[30px]">

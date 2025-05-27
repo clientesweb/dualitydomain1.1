@@ -5,7 +5,6 @@ import GetStarted from "./GetStarted"
 import WhatsNew from "./WhatsNew"
 import World from "./World"
 import Insights from "./Insights"
-import Feedback from "./Feedback"
 import Projects from "./Projects"
 
-export { Hero, About, Explore, GetStarted, WhatsNew, World, Insights, Feedback, Projects }
+export { Hero, About, Explore, GetStarted, WhatsNew, World, Insights, Projects }

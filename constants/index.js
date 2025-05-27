@@ -277,41 +277,6 @@ export const insights = [
   },
 ]
 
-export const testimonials = [
-  {
-    id: "testimonial-1",
-    content:
-      "Trabajar con Duality Domain ha sido una experiencia excepcional. Su equipo entendió perfectamente nuestras necesidades y entregó un sitio web que superó nuestras expectativas. La atención al detalle y su profesionalismo son destacables.",
-    name: "Carlos Rodríguez",
-    title: "CEO, TechSolutions",
-    image: "/placeholder.svg?height=100&width=100",
-  },
-  {
-    id: "testimonial-2",
-    content:
-      "Después de varios intentos fallidos con otras agencias, encontramos a Duality Domain. Su enfoque estratégico y su capacidad para entender nuestro negocio nos permitió tener una tienda online que realmente convierte. Las ventas han aumentado un 45% desde el lanzamiento.",
-    name: "María Fernández",
-    title: "Directora de Marketing, Fashion Store",
-    image: "/placeholder.svg?height=100&width=100",
-  },
-  {
-    id: "testimonial-3",
-    content:
-      "La optimización SEO realizada por Duality Domain transformó nuestra presencia online. En solo 3 meses, nuestro tráfico orgánico aumentó un 80% y las conversiones mejoraron significativamente. Su equipo es profesional, comunicativo y realmente se preocupa por los resultados.",
-    name: "Javier López",
-    title: "Fundador, Educación Online",
-    image: "/placeholder.svg?height=100&width=100",
-  },
-  {
-    id: "testimonial-4",
-    content:
-      "Duality Domain no solo creó una aplicación web funcional para nuestro negocio, sino que también nos guió en todo el proceso con paciencia y profesionalismo. Su soporte post-lanzamiento ha sido excepcional, respondiendo rápidamente a cualquier consulta o ajuste necesario.",
-    name: "Laura Sánchez",
-    title: "Gerente de Operaciones, Logística Express",
-    image: "/placeholder.svg?height=100&width=100",
-  },
-]
-
 export const projects = [
   {
     id: "project-1",

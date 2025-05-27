@@ -18,7 +18,7 @@ const Projects = () => (
       className={`${styles.innerWidth} mx-auto flex flex-col`}
     >
       <TypingText title="| Nuestros Proyectos" textStyles="text-center" />
-      <TitleText title={<>Trabajos destacados que transforman negocios</>} textStyles="text-center" />
+      <TitleText title={<>Proyectos que Impulsan Resultados</>} textStyles="text-center" />
 
       <div className="mt-[50px] flex flex-wrap justify-center gap-[30px]">
         {projects.map((project, index) => (

@@ -3,15 +3,38 @@
 import Head from "next/head"
 import Link from "next/link"
 import Image from "next/image"
+import { useState, useEffect } from "react"
 import { Navbar, Footer } from "../../components"
 import { insights } from "../../constants"
 import styles from "../../styles"
 
 const ArticleSEOImportance = () => {
+  const [isLoading, setIsLoading] = useState(true)
   const article = insights.find((insight) => insight.id === "importancia-seo")
 
+  useEffect(() => {
+    setIsLoading(false)
+  }, [])
+
   if (!article) {
-    return <div>Artículo no encontrado</div>
+    return (
+      <div className="bg-primary-black min-h-screen flex items-center justify-center">
+        <div className="text-white text-center">
+          <h1 className="text-2xl font-bold mb-4">Artículo no encontrado</h1>
+          <Link href="/articulos" className="text-[#25618B] hover:underline">
+            Volver a artículos
+          </Link>
+        </div>
+      </div>
+    )
+  }
+
+  if (isLoading) {
+    return (
+      <div className="bg-primary-black min-h-screen flex items-center justify-center">
+        <div className="text-white">Cargando...</div>
+      </div>
+    )
   }
 
   return (
@@ -24,46 +47,106 @@ const ArticleSEOImportance = () => {
           content="SEO importancia, posicionamiento web, optimización SEO, estrategia digital, SEO Villa del Dique, posicionamiento web Córdoba"
         />
         <link rel="canonical" href="https://www.dualitydomain.com/articulos/importancia-seo" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+        {/* Preload critical resources */}
+        <link rel="preload" href={article.imgUrl} as="image" />
+        <link rel="preload" href="/logo.png" as="image" />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://www.dualitydomain.com/articulos/importancia-seo" />
+        <meta property="og:title" content={article.title} />
+        <meta property="og:description" content={article.subtitle} />
+        <meta property="og:image" content={`https://www.dualitydomain.com${article.imgUrl}`} />
+        <meta property="og:article:published_time" content="2025-06-28" />
+        <meta property="og:article:author" content={article.author} />
+
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              "@id": "https://www.dualitydomain.com/articulos/importancia-seo#article",
+              headline: article.title,
+              description: article.subtitle,
+              image: `https://www.dualitydomain.com${article.imgUrl}`,
+              datePublished: "2025-06-28",
+              dateModified: "2025-06-28",
+              author: {
+                "@type": "Person",
+                name: article.author,
+                jobTitle: article.authorRole,
+              },
+              publisher: {
+                "@type": "Organization",
+                "@id": "https://www.dualitydomain.com/#organization",
+              },
+              mainEntityOfPage: {
+                "@type": "WebPage",
+                "@id": "https://www.dualitydomain.com/articulos/importancia-seo",
+              },
+              articleSection: "SEO",
+              keywords: ["SEO", "posicionamiento web", "optimización", "estrategia digital", "motores de búsqueda"],
+            }),
+          }}
+        />
       </Head>
 
       <div className="bg-primary-black min-h-screen">
         <Navbar />
 
-        <div className="bg-primary-black w-full min-h-screen">
+        <main className="bg-primary-black w-full min-h-screen">
           <article className={`${styles.paddings} bg-primary-black`}>
             <div className={`${styles.innerWidth} mx-auto flex flex-col bg-primary-black`}>
-              {/* Breadcrumb */}
-              <nav className="mb-8">
-                <ol className="flex items-center space-x-2 text-sm text-secondary-white">
+              {/* Breadcrumb Navigation */}
+              <nav aria-label="Breadcrumb" className="mb-6 sm:mb-8">
+                <ol className="flex items-center space-x-1 sm:space-x-2 text-sm text-secondary-white">
                   <li>
-                    <Link href="/" className="hover:text-white transition-colors">
+                    <Link
+                      href="/"
+                      className="hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-[#25618B] rounded px-1"
+                      aria-label="Ir a página de inicio"
+                    >
                       Inicio
                     </Link>
                   </li>
-                  <li>/</li>
+                  <li aria-hidden="true">/</li>
                   <li>
-                    <Link href="/articulos" className="hover:text-white transition-colors">
+                    <Link
+                      href="/articulos"
+                      className="hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-[#25618B] rounded px-1"
+                      aria-label="Ir a página de artículos"
+                    >
                       Artículos
                     </Link>
                   </li>
-                  <li>/</li>
-                  <li className="text-white">{article.title}</li>
+                  <li aria-hidden="true">/</li>
+                  <li className="text-white" aria-current="page">
+                    {article.title}
+                  </li>
                 </ol>
               </nav>
 
-              {/* Header */}
-              <header className="text-center mb-12 bg-primary-black">
-                <h1 className="font-bold text-white text-[28px] md:text-[40px] lg:text-[48px] leading-tight mb-6">
+              {/* Article Header */}
+              <header className="text-center mb-8 sm:mb-12 bg-primary-black">
+                <h1 className="font-bold text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight mb-4 sm:mb-6 px-2">
                   {article.title}
                 </h1>
-                <p className="text-secondary-white text-[16px] md:text-[18px] max-w-3xl mx-auto mb-8">
+                <p className="text-secondary-white text-base sm:text-lg md:text-xl max-w-4xl mx-auto mb-6 sm:mb-8 px-4 leading-relaxed">
                   {article.subtitle}
                 </p>
 
-                <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-8">
+                {/* Author and Date Info */}
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-6 sm:mb-8 px-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-[#25618B] rounded-full flex items-center justify-center">
-                      <span className="text-white font-bold">
+                    <div
+                      className="w-10 h-10 sm:w-12 sm:h-12 bg-[#25618B] rounded-full flex items-center justify-center flex-shrink-0"
+                      aria-hidden="true"
+                    >
+                      <span className="text-white font-bold text-sm sm:text-base">
                         {article.author
                           .split(" ")
                           .map((n) => n[0])
@@ -71,91 +154,108 @@ const ArticleSEOImportance = () => {
                       </span>
                     </div>
                     <div className="text-left">
-                      <p className="text-white font-semibold">{article.author}</p>
-                      <p className="text-secondary-white text-sm">{article.authorRole}</p>
+                      <p className="text-white font-semibold text-sm sm:text-base">{article.author}</p>
+                      <p className="text-secondary-white text-xs sm:text-sm">{article.authorRole}</p>
                     </div>
                   </div>
-                  <div className="text-secondary-white text-sm">
-                    <time dateTime="2025-06-28">{article.date}</time>
+                  <div className="text-secondary-white text-sm sm:text-base">
+                    <time dateTime="2025-06-28" className="font-medium">
+                      {article.date}
+                    </time>
                   </div>
                 </div>
               </header>
 
               {/* Featured Image */}
-              <div className="mb-12 bg-primary-black">
-                <div className="relative h-[300px] md:h-[400px] lg:h-[500px] rounded-[24px] overflow-hidden">
+              <figure className="mb-8 sm:mb-12 bg-primary-black">
+                <div className="relative h-48 sm:h-64 md:h-80 lg:h-96 xl:h-[500px] rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden">
                   <Image
                     src={article.imgUrl || "/placeholder.svg"}
-                    alt={article.title}
+                    alt={`Imagen del artículo: ${article.title}`}
                     fill
                     className="object-cover"
                     priority
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 80vw"
                   />
                 </div>
-              </div>
+                <figcaption className="sr-only">Imagen ilustrativa sobre {article.title}</figcaption>
+              </figure>
 
               {/* Article Content */}
-              <div className="max-w-4xl mx-auto bg-primary-black p-6 rounded-lg">
+              <section className="max-w-4xl mx-auto bg-primary-black p-4 sm:p-6 md:p-8 rounded-lg">
                 <div
-                  className="blog-content prose prose-invert max-w-none text-white"
+                  className="blog-content prose prose-invert max-w-none text-white text-sm sm:text-base md:text-lg leading-relaxed"
                   dangerouslySetInnerHTML={{ __html: article.content }}
                 />
-              </div>
+              </section>
 
               {/* Call to Action */}
-              <div className="mt-16 p-8 bg-[#25618B] rounded-[24px] text-center">
-                <h3 className="text-white font-bold text-[24px] md:text-[32px] mb-4">
+              <aside className="mt-12 sm:mt-16 p-6 sm:p-8 bg-[#25618B] rounded-lg sm:rounded-xl md:rounded-2xl text-center">
+                <h2 className="text-white font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-4 sm:mb-6">
                   ¿Quieres mejorar el SEO de tu sitio web?
-                </h3>
-                <p className="text-white text-[16px] md:text-[18px] mb-6 max-w-2xl mx-auto">
+                </h2>
+                <p className="text-white text-sm sm:text-base md:text-lg mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed px-2">
                   Nuestros especialistas en SEO pueden ayudarte a implementar una estrategia completa para mejorar tu
                   posicionamiento. Solicita una auditoría SEO gratuita.
                 </p>
                 <Link
                   href="/solicitar-demo"
-                  className="inline-block bg-white text-[#25618B] py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors font-semibold"
+                  className="inline-block bg-white text-[#25618B] py-3 sm:py-4 px-6 sm:px-8 rounded-lg hover:bg-gray-100 focus:bg-gray-100 transition-colors font-semibold text-sm sm:text-base md:text-lg focus:outline-none focus:ring-4 focus:ring-white/50 min-h-[44px] min-w-[44px]"
+                  aria-label="Solicitar auditoría SEO gratuita"
                 >
                   Solicitar auditoría SEO gratuita
                 </Link>
-              </div>
+              </aside>
 
               {/* Related Articles */}
-              <section className="mt-16 bg-primary-black">
-                <h3 className="text-white font-bold text-[24px] md:text-[32px] mb-8 text-center">
+              <section className="mt-12 sm:mt-16 bg-primary-black" aria-labelledby="related-articles">
+                <h2
+                  id="related-articles"
+                  className="text-white font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-6 sm:mb-8 text-center"
+                >
                   Artículos relacionados
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                   {insights
                     .filter((insight) => insight.id !== article.id)
                     .slice(0, 2)
-                    .map((relatedArticle) => (
-                      <Link
+                    .map((relatedArticle, index) => (
+                      <article
                         key={relatedArticle.id}
-                        href={`/articulos/${relatedArticle.id}`}
-                        className="bg-[#323f5d] rounded-[24px] overflow-hidden hover:bg-[#445175] transition-all duration-300 group"
+                        className="bg-[#323f5d] rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden hover:bg-[#445175] focus-within:bg-[#445175] transition-all duration-300 group"
                       >
-                        <div className="relative h-[150px] overflow-hidden">
-                          <Image
-                            src={relatedArticle.imgUrl || "/placeholder.svg"}
-                            alt={relatedArticle.title}
-                            width={400}
-                            height={150}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                          />
-                        </div>
-                        <div className="p-6">
-                          <h4 className="text-white font-bold text-[18px] mb-2 group-hover:text-[#25618B] transition-colors">
-                            {relatedArticle.title}
-                          </h4>
-                          <p className="text-secondary-white text-[14px] line-clamp-2">{relatedArticle.subtitle}</p>
-                        </div>
-                      </Link>
+                        <Link
+                          href={`/articulos/${relatedArticle.id}`}
+                          className="block focus:outline-none focus:ring-4 focus:ring-[#25618B] rounded-lg sm:rounded-xl md:rounded-2xl"
+                          aria-label={`Leer artículo: ${relatedArticle.title}`}
+                        >
+                          <div className="relative h-32 sm:h-40 md:h-48 overflow-hidden">
+                            <Image
+                              src={relatedArticle.imgUrl || "/placeholder.svg"}
+                              alt={`Imagen del artículo: ${relatedArticle.title}`}
+                              width={400}
+                              height={200}
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                              loading="lazy"
+                              sizes="(max-width: 768px) 100vw, 50vw"
+                            />
+                          </div>
+                          <div className="p-4 sm:p-6">
+                            <h3 className="text-white font-bold text-base sm:text-lg md:text-xl mb-2 sm:mb-3 group-hover:text-[#25618B] transition-colors leading-tight">
+                              {relatedArticle.title}
+                            </h3>
+                            <p className="text-secondary-white text-sm sm:text-base leading-relaxed line-clamp-2 sm:line-clamp-3">
+                              {relatedArticle.subtitle}
+                            </p>
+                          </div>
+                        </Link>
+                      </article>
                     ))}
                 </div>
               </section>
             </div>
           </article>
-        </div>
+        </main>
 
         <Footer />
       </div>

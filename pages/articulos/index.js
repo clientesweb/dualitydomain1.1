@@ -84,16 +84,16 @@ const ArticulosIndex = () => {
         />
       </Head>
 
-      <div className="bg-primary-black overflow-hidden min-h-screen">
+      <div className="bg-primary-black overflow-hidden min-h-screen relative z-0">
         <Navbar />
 
-        <section className={`${styles.paddings} relative`}>
+        <section className={`${styles.paddings} relative z-50 bg-primary-black`}>
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.25 }}
-            className={`${styles.innerWidth} mx-auto flex flex-col relative z-10`}
+            className={`${styles.innerWidth} mx-auto flex flex-col relative z-50`}
           >
             <div className="text-center mb-12">
               <motion.h1

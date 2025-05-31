@@ -10,22 +10,10 @@ import styles from "../../styles"
 
 const ArticulosIndex = () => {
   const [isLoading, setIsLoading] = useState(true)
-  const [searchTerm, setSearchTerm] = useState("")
-  const [filteredArticles, setFilteredArticles] = useState(insights)
 
   useEffect(() => {
     setIsLoading(false)
   }, [])
-
-  useEffect(() => {
-    const filtered = insights.filter(
-      (article) =>
-        article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        article.subtitle.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        article.author.toLowerCase().includes(searchTerm.toLowerCase()),
-    )
-    setFilteredArticles(filtered)
-  }, [searchTerm])
 
   if (isLoading) {
     return (
@@ -110,160 +98,119 @@ const ArticulosIndex = () => {
           <section className={`${styles.paddings} bg-primary-black`}>
             <div className={`${styles.innerWidth} mx-auto flex flex-col bg-primary-black`}>
               {/* Page Header */}
-              <header className="text-center mb-8 sm:mb-12">
-                <h1 className="font-bold text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight mb-4 sm:mb-6">
+              <header className="text-center mb-8 xs:mb-10 sm:mb-12 md:mb-14 lg:mb-16 xl:mb-20 2xl:mb-24">
+                <h1 className="font-bold text-white text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl 3xl:text-8xl leading-tight mb-3 xs:mb-4 sm:mb-5 md:mb-6 lg:mb-8 xl:mb-10 px-2 xs:px-3 sm:px-4">
                   Artículos sobre Desarrollo Web
                 </h1>
-                <p className="text-secondary-white text-base sm:text-lg md:text-xl max-w-4xl mx-auto mb-6 sm:mb-8 px-4 leading-relaxed">
+                <p className="text-secondary-white text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl max-w-xs xs:max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto leading-relaxed px-3 xs:px-4 sm:px-6 md:px-8">
                   Descubre consejos prácticos, estrategias y las mejores prácticas en desarrollo web, SEO, e-commerce y
                   experiencia de usuario. Conocimiento especializado para impulsar tu presencia digital.
                 </p>
-
-                {/* Search Bar */}
-                <div className="max-w-md mx-auto mb-8 px-4">
-                  <label htmlFor="search" className="sr-only">
-                    Buscar artículos
-                  </label>
-                  <div className="relative">
-                    <input
-                      type="search"
-                      id="search"
-                      placeholder="Buscar artículos..."
-                      value={searchTerm}
-                      onChange={(e) => setSearchTerm(e.target.value)}
-                      className="w-full bg-[#323f5d] text-white px-4 py-3 pl-10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#25618B] border border-[#445175] hover:border-[#5b6898] transition-all"
-                      aria-label="Buscar artículos por título, contenido o autor"
-                    />
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                      <svg
-                        className="h-5 w-5 text-secondary-white"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
               </header>
 
               {/* Articles Grid */}
               <section aria-label="Lista de artículos">
-                {filteredArticles.length === 0 ? (
-                  <div className="text-center py-12">
-                    <p className="text-secondary-white text-lg mb-4">
-                      No se encontraron artículos que coincidan con tu búsqueda.
-                    </p>
-                    <button
-                      onClick={() => setSearchTerm("")}
-                      className="text-[#25618B] hover:underline focus:outline-none focus:ring-2 focus:ring-[#25618B] rounded px-2 py-1"
+                <div className="grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-4 gap-4 xs:gap-5 sm:gap-6 md:gap-7 lg:gap-8 xl:gap-10 2xl:gap-12">
+                  {insights.map((insight, index) => (
+                    <article
+                      key={insight.id}
+                      className="bg-[#323f5d] rounded-lg xs:rounded-xl sm:rounded-xl md:rounded-2xl lg:rounded-2xl xl:rounded-3xl overflow-hidden hover:bg-[#445175] focus-within:bg-[#445175] transition-all duration-300 group w-full max-w-sm xs:max-w-md sm:max-w-none mx-auto"
                     >
-                      Limpiar búsqueda
-                    </button>
-                  </div>
-                ) : (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                    {filteredArticles.map((insight, index) => (
-                      <article
-                        key={insight.id}
-                        className="bg-[#323f5d] rounded-lg sm:rounded-xl md:rounded-2xl overflow-hidden hover:bg-[#445175] focus-within:bg-[#445175] transition-all duration-300 group"
+                      <Link
+                        href={`/articulos/${insight.id}`}
+                        className="block focus:outline-none focus:ring-4 focus:ring-[#25618B] rounded-lg xs:rounded-xl sm:rounded-xl md:rounded-2xl lg:rounded-2xl xl:rounded-3xl"
+                        aria-label={`Leer artículo: ${insight.title}`}
                       >
-                        <Link
-                          href={`/articulos/${insight.id}`}
-                          className="block focus:outline-none focus:ring-4 focus:ring-[#25618B] rounded-lg sm:rounded-xl md:rounded-2xl"
-                          aria-label={`Leer artículo: ${insight.title}`}
-                        >
-                          <div className="relative h-40 sm:h-48 md:h-52 overflow-hidden">
-                            <Image
-                              src={insight.imgUrl || "/placeholder.svg"}
-                              alt={`Imagen del artículo: ${insight.title}`}
-                              width={400}
-                              height={200}
-                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                              loading={index < 3 ? "eager" : "lazy"}
-                              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                            />
+                        <div className="relative h-32 xs:h-36 sm:h-40 md:h-44 lg:h-48 xl:h-52 2xl:h-56 3xl:h-64 overflow-hidden">
+                          <Image
+                            src={insight.imgUrl || "/placeholder.svg"}
+                            alt={`Imagen del artículo: ${insight.title}`}
+                            width={400}
+                            height={200}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            loading={index < 3 ? "eager" : "lazy"}
+                            sizes="(max-width: 375px) 100vw, (max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, (max-width: 1920px) 33vw, 25vw"
+                          />
+                        </div>
+
+                        <div className="p-3 xs:p-4 sm:p-5 md:p-6 lg:p-7 xl:p-8 2xl:p-10">
+                          <div className="flex justify-between items-center mb-2 xs:mb-3 sm:mb-3 md:mb-4">
+                            <span className="bg-[#25618B] text-white text-xs xs:text-xs sm:text-sm md:text-sm lg:text-base xl:text-lg px-2 xs:px-3 sm:px-3 md:px-4 py-1 xs:py-1 sm:py-1 md:py-2 rounded-full font-medium">
+                              Artículo
+                            </span>
+                            <time
+                              dateTime={insight.date}
+                              className="text-secondary-white text-xs xs:text-xs sm:text-sm md:text-sm lg:text-base xl:text-lg font-medium"
+                            >
+                              {insight.date}
+                            </time>
                           </div>
 
-                          <div className="p-4 sm:p-6">
-                            <div className="flex justify-between items-center mb-3">
-                              <span className="bg-[#25618B] text-white text-xs px-3 py-1 rounded-full font-medium">
-                                Artículo
-                              </span>
-                              <time dateTime={insight.date} className="text-secondary-white text-xs font-medium">
-                                {insight.date}
-                              </time>
-                            </div>
+                          <h2 className="text-white font-bold text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl mb-2 xs:mb-3 sm:mb-3 md:mb-4 lg:mb-5 group-hover:text-[#25618B] transition-colors leading-tight">
+                            {insight.title}
+                          </h2>
 
-                            <h2 className="text-white font-bold text-lg sm:text-xl md:text-2xl mb-3 group-hover:text-[#25618B] transition-colors leading-tight">
-                              {insight.title}
-                            </h2>
+                          <p className="text-secondary-white text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl leading-relaxed mb-3 xs:mb-4 sm:mb-4 md:mb-5 lg:mb-6 line-clamp-2 xs:line-clamp-3 sm:line-clamp-3 md:line-clamp-4">
+                            {insight.subtitle}
+                          </p>
 
-                            <p className="text-secondary-white text-sm sm:text-base leading-relaxed mb-4 line-clamp-3">
-                              {insight.subtitle}
-                            </p>
-
-                            <div className="flex items-center justify-between">
-                              <div className="flex items-center gap-2">
-                                <div
-                                  className="w-8 h-8 bg-[#25618B] rounded-full flex items-center justify-center flex-shrink-0"
-                                  aria-hidden="true"
-                                >
-                                  <span className="text-white text-xs font-bold">
-                                    {insight.author
-                                      .split(" ")
-                                      .map((n) => n[0])
-                                      .join("")}
-                                  </span>
-                                </div>
-                                <div>
-                                  <p className="text-white text-sm font-medium">{insight.author}</p>
-                                  <p className="text-secondary-white text-xs">{insight.authorRole}</p>
-                                </div>
-                              </div>
-
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-2 xs:gap-2 sm:gap-3 md:gap-3 lg:gap-4">
                               <div
-                                className="text-[#25618B] group-hover:translate-x-1 transition-transform"
+                                className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 xl:w-12 xl:h-12 bg-[#25618B] rounded-full flex items-center justify-center flex-shrink-0"
                                 aria-hidden="true"
                               >
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  className="h-5 w-5"
-                                  fill="none"
-                                  viewBox="0 0 24 24"
-                                  stroke="currentColor"
-                                >
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                </svg>
+                                <span className="text-white text-xs xs:text-xs sm:text-sm md:text-sm lg:text-base xl:text-lg font-bold">
+                                  {insight.author
+                                    .split(" ")
+                                    .map((n) => n[0])
+                                    .join("")}
+                                </span>
+                              </div>
+                              <div className="min-w-0 flex-1">
+                                <p className="text-white text-xs xs:text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl font-medium truncate">
+                                  {insight.author}
+                                </p>
+                                <p className="text-secondary-white text-xs xs:text-xs sm:text-sm md:text-sm lg:text-base xl:text-lg truncate">
+                                  {insight.authorRole}
+                                </p>
                               </div>
                             </div>
+
+                            <div
+                              className="text-[#25618B] group-hover:translate-x-1 transition-transform flex-shrink-0"
+                              aria-hidden="true"
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-4 w-4 xs:h-5 xs:w-5 sm:h-5 sm:w-5 md:h-6 md:w-6 lg:h-7 lg:w-7 xl:h-8 xl:w-8"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                              >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
+                            </div>
                           </div>
-                        </Link>
-                      </article>
-                    ))}
-                  </div>
-                )}
+                        </div>
+                      </Link>
+                    </article>
+                  ))}
+                </div>
               </section>
 
               {/* Call to Action */}
-              <aside className="text-center mt-12 sm:mt-16 p-6 sm:p-8 bg-[#323f5d] rounded-lg sm:rounded-xl md:rounded-2xl">
-                <h2 className="text-white font-bold text-xl sm:text-2xl md:text-3xl mb-4 sm:mb-6">
+              <aside className="text-center mt-8 xs:mt-10 sm:mt-12 md:mt-14 lg:mt-16 xl:mt-20 2xl:mt-24 p-4 xs:p-5 sm:p-6 md:p-7 lg:p-8 xl:p-10 2xl:p-12 bg-[#323f5d] rounded-lg xs:rounded-xl sm:rounded-xl md:rounded-2xl lg:rounded-2xl xl:rounded-3xl max-w-xs xs:max-w-sm sm:max-w-2xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto">
+                <h2 className="text-white font-bold text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl mb-3 xs:mb-4 sm:mb-5 md:mb-6 lg:mb-8 xl:mb-10">
                   ¿Necesitas ayuda con tu proyecto?
                 </h2>
-                <p className="text-secondary-white text-sm sm:text-base md:text-lg mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed px-2">
+                <p className="text-secondary-white text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl mb-4 xs:mb-5 sm:mb-6 md:mb-7 lg:mb-8 xl:mb-10 2xl:mb-12 leading-relaxed px-2 xs:px-3 sm:px-4 md:px-6 lg:px-8">
                   Si tienes preguntas específicas sobre alguno de estos temas o necesitas ayuda personalizada para tu
                   proyecto, no dudes en contactarnos.
                 </p>
                 <Link
                   href="/solicitar-demo"
-                  className="inline-block bg-[#25618B] text-white py-3 sm:py-4 px-6 sm:px-8 rounded-lg hover:bg-[#1a4a6e] focus:bg-[#1a4a6e] transition-colors font-semibold text-sm sm:text-base md:text-lg focus:outline-none focus:ring-4 focus:ring-[#25618B]/50 min-h-[44px] min-w-[44px]"
+                  className="inline-block bg-[#25618B] text-white py-2 xs:py-3 sm:py-3 md:py-4 lg:py-5 xl:py-6 px-4 xs:px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 rounded-lg xs:rounded-xl sm:rounded-xl md:rounded-2xl hover:bg-[#1a4a6e] focus:bg-[#1a4a6e] transition-colors font-semibold text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl focus:outline-none focus:ring-4 focus:ring-[#25618B]/50 min-h-[44px] min-w-[44px]"
                   aria-label="Solicitar consulta gratuita sobre desarrollo web"
                 >
                   Solicitar consulta gratuita

@@ -85,10 +85,10 @@ const ArticleDesignConversions = () => {
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.25 }}
-            className={`${styles.innerWidth} mx-auto flex flex-col relative z-50`}
+            className={`${styles.innerWidth} mx-auto flex flex-col`}
           >
             {/* Breadcrumb */}
-            <motion.nav variants={fadeIn("up", "tween", 0.1, 1)} className="mb-8 relative z-50">
+            <motion.nav variants={fadeIn("up", "tween", 0.1, 1)} className="mb-8 relative">
               <ol className="flex items-center space-x-2 text-sm text-secondary-white">
                 <li>
                   <Link href="/" className="hover:text-white transition-colors">
@@ -107,7 +107,7 @@ const ArticleDesignConversions = () => {
             </motion.nav>
 
             {/* Header */}
-            <motion.header variants={fadeIn("up", "tween", 0.2, 1)} className="text-center mb-12 relative z-50">
+            <motion.header variants={fadeIn("up", "tween", 0.2, 1)} className="text-center mb-12 relative">
               <h1 className="font-bold text-white text-[28px] md:text-[40px] lg:text-[48px] leading-tight mb-6">
                 {article.title}
               </h1>
@@ -137,7 +137,7 @@ const ArticleDesignConversions = () => {
             </motion.header>
 
             {/* Featured Image */}
-            <motion.div variants={fadeIn("up", "tween", 0.3, 1)} className="mb-12 relative z-50">
+            <motion.div variants={fadeIn("up", "tween", 0.3, 1)} className="mb-12 relative">
               <div className="relative h-[300px] md:h-[400px] lg:h-[500px] rounded-[24px] overflow-hidden">
                 <Image
                   src={article.imgUrl || "/placeholder.svg"}
@@ -151,7 +151,7 @@ const ArticleDesignConversions = () => {
             </motion.div>
 
             {/* Article Content */}
-            <motion.div variants={fadeIn("up", "tween", 0.4, 1)} className="max-w-4xl mx-auto relative z-50">
+            <motion.div variants={fadeIn("up", "tween", 0.4, 1)} className="max-w-4xl mx-auto relative">
               <div
                 className="blog-content prose prose-invert max-w-none"
                 dangerouslySetInnerHTML={{ __html: article.content }}
@@ -161,7 +161,7 @@ const ArticleDesignConversions = () => {
             {/* Call to Action */}
             <motion.div
               variants={fadeIn("up", "tween", 0.5, 1)}
-              className="mt-16 p-8 bg-gradient-to-r from-[#25618B] to-[#1a4a6e] rounded-[24px] text-center relative z-50"
+              className="mt-16 p-8 bg-gradient-to-r from-[#25618B] to-[#1a4a6e] rounded-[24px] text-center relative"
             >
               <h3 className="text-white font-bold text-[24px] md:text-[32px] mb-4">
                 ¿Listo para mejorar las conversiones de tu sitio web?
@@ -179,7 +179,7 @@ const ArticleDesignConversions = () => {
             </motion.div>
 
             {/* Related Articles */}
-            <motion.section variants={fadeIn("up", "tween", 0.6, 1)} className="mt-16 relative z-50">
+            <motion.section variants={fadeIn("up", "tween", 0.6, 1)} className="mt-16 relative">
               <h3 className="text-white font-bold text-[24px] md:text-[32px] mb-8 text-center">
                 Artículos relacionados
               </h3>

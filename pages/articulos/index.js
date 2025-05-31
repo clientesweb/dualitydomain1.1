@@ -93,7 +93,7 @@ const ArticulosIndex = () => {
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.25 }}
-            className={`${styles.innerWidth} mx-auto flex flex-col relative z-50`}
+            className={`${styles.innerWidth} mx-auto flex flex-col relative z-10`}
           >
             <div className="text-center mb-12">
               <motion.h1

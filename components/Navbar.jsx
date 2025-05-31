@@ -112,11 +112,11 @@ const Navbar = () => {
                     Servicios
                   </Link>
                   <Link
-                    href="/blog"
+                    href="/#projects"
                     className="font-normal text-[16px] text-white hover:text-secondary-white transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    Blog
+                    Proyectos
                   </Link>
                   <Link
                     href="/solicitar-demo"
@@ -148,10 +148,10 @@ const Navbar = () => {
             Servicios
           </Link>
           <Link
-            href="/blog"
+            href="/#projects"
             className="font-normal text-[16px] text-white hover:text-secondary-white transition-colors"
           >
-            Blog
+            Proyectos
           </Link>
           <Link
             href="/solicitar-demo"

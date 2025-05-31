@@ -998,3 +998,82 @@ select {
     opacity: 1 !important;
   }
 }
+
+/* FORZAR VISIBILIDAD ABSOLUTA EN MÓVILES */
+@media (max-width: 768px) {
+  .blog-content,
+  .blog-content *,
+  .blog-content p,
+  .blog-content h1,
+  .blog-content h2,
+  .blog-content h3,
+  .blog-content h4,
+  .blog-content li,
+  .blog-content div,
+  .blog-content span {
+    color: #ffffff !important;
+    background-color: transparent !important;
+    position: relative !important;
+    z-index: 9999 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
+  }
+
+  /* Asegurar que no hay elementos tapando */
+  .blog-content::before,
+  .blog-content::after {
+    display: none !important;
+  }
+
+  /* Fondo negro sólido para el contenedor */
+  .blog-content {
+    background: #1a232e !important;
+    padding: 1rem !important;
+    border-radius: 8px !important;
+    margin: 1rem 0 !important;
+  }
+
+  /* Elementos específicos con fondo para contraste */
+  .highlight-box,
+  .summary-section,
+  .cta-section,
+  .contact-info,
+  .checklist {
+    background: rgba(37, 97, 139, 0.8) !important;
+    border: 2px solid #25618b !important;
+    color: #ffffff !important;
+  }
+
+  .lead-text {
+    background: rgba(37, 97, 139, 0.6) !important;
+    color: #ffffff !important;
+    border: 2px solid #25618b !important;
+  }
+}
+
+/* Eliminar cualquier pseudo-elemento que pueda estar tapando */
+*::before,
+*::after {
+  z-index: -1 !important;
+}
+
+/* Asegurar que el contenido principal esté siempre visible */
+@media (max-width: 768px) {
+  article,
+  section {
+    background: #1a232e !important;
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  /* Eliminar cualquier gradiente en móviles */
+  .gradient-01,
+  .gradient-02,
+  .gradient-03,
+  .gradient-04,
+  .gradient-05 {
+    display: none !important;
+  }
+}

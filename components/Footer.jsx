@@ -57,6 +57,11 @@ const Footer = () => (
                   </Link>
                 </li>
                 <li>
+                  <Link href="/articulos" className="text-secondary-white hover:text-white transition-colors">
+                    Artículos
+                  </Link>
+                </li>
+                <li>
                   <Link href="/solicitar-demo" className="text-secondary-white hover:text-white transition-colors">
                     Solicitar demo
                   </Link>

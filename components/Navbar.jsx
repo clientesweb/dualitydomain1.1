@@ -79,7 +79,7 @@ const Navbar = () => {
           </motion.div>
 
           {/* Menu icon - Right side */}
-          <div className="absolute right-0 top-1/2 transform -translate-y-1/2 z-20">
+          <div className="absolute right-0 top-1/2 transform -translate-y-1/2 z-[9998]">
             <Image
               src={menu || "/placeholder.svg"}
               alt="menu-Icon"
@@ -88,7 +88,7 @@ const Navbar = () => {
             />
 
             {isMenuOpen && (
-              <div className="absolute top-10 right-0 bg-[#1A232E] p-5 rounded-lg shadow-lg z-50 min-w-[200px]">
+              <div className="absolute top-10 right-0 bg-[#1A232E] p-5 rounded-lg shadow-lg z-[9999] min-w-[200px]">
                 <div className="flex flex-col gap-4">
                   <Link
                     href="/"

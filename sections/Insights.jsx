@@ -13,15 +13,22 @@ const Insights = () => (
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
-      className={`${styles.innerWidth} mx-auto flex flex-col `}
+      className={`${styles.innerWidth} mx-auto flex flex-col`}
     >
-      <TypingText title="| Nuestro Blog" textStyles="text-center" />
-      <TitleText title={<>Artículos y recursos para tu negocio</>} textStyles="text-center" />
+      <TypingText title="| Recursos y Conocimiento" textStyles="text-center" />
+      <TitleText title={<>Artículos sobre desarrollo web y tecnología</>} textStyles="text-center" />
 
-      <div className="mt-[50px] flex flex-col gap-[30px] ">
+      <div className="mt-[50px] flex flex-col gap-[30px]">
         {insights.map((insight, index) => (
           <InsightCard key={`insight-${index}`} {...insight} index={index + 1} />
         ))}
+      </div>
+
+      <div className="mt-[50px] text-center">
+        <p className="text-secondary-white text-[18px] max-w-2xl mx-auto">
+          Estos artículos representan nuestro conocimiento y experiencia en desarrollo web. Si tienes preguntas
+          específicas sobre alguno de estos temas, no dudes en contactarnos.
+        </p>
       </div>
     </motion.div>
   </section>

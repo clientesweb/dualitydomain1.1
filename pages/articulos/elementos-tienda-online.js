@@ -82,21 +82,19 @@ const ArticleEcommerceElements = () => {
         />
       </Head>
 
-      <div className="bg-primary-black overflow-hidden">
+      <div className="bg-primary-black overflow-hidden min-h-screen">
         <Navbar />
 
-        <article className={`${styles.paddings} relative z-10`}>
-          <div className="absolute w-[50%] inset-0 gradient-01 z-0" />
-
+        <article className={`${styles.paddings} relative`}>
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.25 }}
-            className={`${styles.innerWidth} mx-auto flex flex-col relative z-10`}
+            className={`${styles.innerWidth} mx-auto flex flex-col relative z-50`}
           >
             {/* Breadcrumb */}
-            <motion.nav variants={fadeIn("up", "tween", 0.1, 1)} className="mb-8">
+            <motion.nav variants={fadeIn("up", "tween", 0.1, 1)} className="mb-8 relative z-50">
               <ol className="flex items-center space-x-2 text-sm text-secondary-white">
                 <li>
                   <Link href="/" className="hover:text-white transition-colors">
@@ -115,7 +113,7 @@ const ArticleEcommerceElements = () => {
             </motion.nav>
 
             {/* Header */}
-            <motion.header variants={fadeIn("up", "tween", 0.2, 1)} className="text-center mb-12">
+            <motion.header variants={fadeIn("up", "tween", 0.2, 1)} className="text-center mb-12 relative z-50">
               <h1 className="font-bold text-white text-[28px] md:text-[40px] lg:text-[48px] leading-tight mb-6">
                 {article.title}
               </h1>
@@ -145,7 +143,7 @@ const ArticleEcommerceElements = () => {
             </motion.header>
 
             {/* Featured Image */}
-            <motion.div variants={fadeIn("up", "tween", 0.3, 1)} className="mb-12">
+            <motion.div variants={fadeIn("up", "tween", 0.3, 1)} className="mb-12 relative z-50">
               <div className="relative h-[300px] md:h-[400px] lg:h-[500px] rounded-[24px] overflow-hidden">
                 <Image
                   src={article.imgUrl || "/placeholder.svg"}
@@ -159,7 +157,7 @@ const ArticleEcommerceElements = () => {
             </motion.div>
 
             {/* Article Content */}
-            <motion.div variants={fadeIn("up", "tween", 0.4, 1)} className="max-w-4xl mx-auto">
+            <motion.div variants={fadeIn("up", "tween", 0.4, 1)} className="max-w-4xl mx-auto relative z-50">
               <div
                 className="blog-content prose prose-invert max-w-none"
                 dangerouslySetInnerHTML={{ __html: article.content }}
@@ -169,7 +167,7 @@ const ArticleEcommerceElements = () => {
             {/* Call to Action */}
             <motion.div
               variants={fadeIn("up", "tween", 0.5, 1)}
-              className="mt-16 p-8 bg-gradient-to-r from-[#25618B] to-[#1a4a6e] rounded-[24px] text-center"
+              className="mt-16 p-8 bg-gradient-to-r from-[#25618B] to-[#1a4a6e] rounded-[24px] text-center relative z-50"
             >
               <h3 className="text-white font-bold text-[24px] md:text-[32px] mb-4">
                 ¿Necesitas una tienda online profesional?
@@ -187,7 +185,7 @@ const ArticleEcommerceElements = () => {
             </motion.div>
 
             {/* Related Articles */}
-            <motion.section variants={fadeIn("up", "tween", 0.6, 1)} className="mt-16">
+            <motion.section variants={fadeIn("up", "tween", 0.6, 1)} className="mt-16 relative z-50">
               <h3 className="text-white font-bold text-[24px] md:text-[32px] mb-8 text-center">
                 Artículos relacionados
               </h3>

@@ -33,7 +33,7 @@ const ArticleEcommerceElements = () => {
         <meta property="og:title" content={article.title} />
         <meta property="og:description" content={article.subtitle} />
         <meta property="og:image" content={`https://www.dualitydomain.com${article.imgUrl}`} />
-        <meta property="og:article:published_time" content="2024-06-28" />
+        <meta property="og:article:published_time" content="2025-06-15" />
         <meta property="og:article:author" content={article.author} />
 
         {/* Twitter */}
@@ -54,8 +54,8 @@ const ArticleEcommerceElements = () => {
               headline: article.title,
               description: article.subtitle,
               image: `https://www.dualitydomain.com${article.imgUrl}`,
-              datePublished: "2024-06-28",
-              dateModified: "2024-06-28",
+              datePublished: "2025-06-15",
+              dateModified: "2025-06-15",
               author: {
                 "@type": "Person",
                 name: article.author,
@@ -96,7 +96,7 @@ const ArticleEcommerceElements = () => {
             className={`${styles.innerWidth} mx-auto flex flex-col relative z-10`}
           >
             {/* Breadcrumb */}
-            <motion.nav variants={fadeIn("up", "tween", 0.1, 1)} className="mb-8">
+            <motion.nav variants={fadeIn("up", "tween", 0.1, 1)} className="mb-6 md:mb-8">
               <ol className="flex items-center space-x-2 text-sm text-secondary-white">
                 <li>
                   <Link href="/" className="hover:text-white transition-colors">
@@ -110,23 +110,23 @@ const ArticleEcommerceElements = () => {
                   </Link>
                 </li>
                 <li>/</li>
-                <li className="text-white">{article.title}</li>
+                <li className="text-white truncate">{article.title}</li>
               </ol>
             </motion.nav>
 
             {/* Header */}
-            <motion.header variants={fadeIn("up", "tween", 0.2, 1)} className="text-center mb-12">
-              <h1 className="font-bold text-white text-[28px] md:text-[40px] lg:text-[48px] leading-tight mb-6">
+            <motion.header variants={fadeIn("up", "tween", 0.2, 1)} className="text-center mb-8 md:mb-12">
+              <h1 className="font-bold text-white text-[24px] sm:text-[32px] md:text-[40px] lg:text-[48px] leading-tight mb-4 md:mb-6 px-4">
                 {article.title}
               </h1>
-              <p className="text-secondary-white text-[16px] md:text-[18px] max-w-3xl mx-auto mb-8">
+              <p className="text-secondary-white text-[14px] sm:text-[16px] md:text-[18px] max-w-3xl mx-auto mb-6 md:mb-8 px-4">
                 {article.subtitle}
               </p>
 
-              <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-8">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 md:mb-8 px-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-[#25618B] rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-[#25618B] rounded-full flex items-center justify-center">
+                    <span className="text-white font-bold text-sm md:text-base">
                       {article.author
                         .split(" ")
                         .map((n) => n[0])
@@ -134,19 +134,19 @@ const ArticleEcommerceElements = () => {
                     </span>
                   </div>
                   <div className="text-left">
-                    <p className="text-white font-semibold">{article.author}</p>
-                    <p className="text-secondary-white text-sm">{article.authorRole}</p>
+                    <p className="text-white font-semibold text-sm md:text-base">{article.author}</p>
+                    <p className="text-secondary-white text-xs md:text-sm">{article.authorRole}</p>
                   </div>
                 </div>
-                <div className="text-secondary-white text-sm">
-                  <time dateTime="2024-06-28">{article.date}</time>
+                <div className="text-secondary-white text-xs md:text-sm">
+                  <time dateTime="2025-06-15">{article.date}</time>
                 </div>
               </div>
             </motion.header>
 
             {/* Featured Image */}
-            <motion.div variants={fadeIn("up", "tween", 0.3, 1)} className="mb-12">
-              <div className="relative h-[300px] md:h-[400px] lg:h-[500px] rounded-[24px] overflow-hidden">
+            <motion.div variants={fadeIn("up", "tween", 0.3, 1)} className="mb-8 md:mb-12 px-4">
+              <div className="relative h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] rounded-[16px] md:rounded-[24px] overflow-hidden">
                 <Image
                   src={article.imgUrl || "/placeholder.svg"}
                   alt={article.title}
@@ -159,7 +159,7 @@ const ArticleEcommerceElements = () => {
             </motion.div>
 
             {/* Article Content */}
-            <motion.div variants={fadeIn("up", "tween", 0.4, 1)} className="max-w-4xl mx-auto">
+            <motion.div variants={fadeIn("up", "tween", 0.4, 1)} className="max-w-4xl mx-auto px-4">
               <div
                 className="blog-content prose prose-invert max-w-none"
                 dangerouslySetInnerHTML={{ __html: article.content }}
@@ -169,29 +169,29 @@ const ArticleEcommerceElements = () => {
             {/* Call to Action */}
             <motion.div
               variants={fadeIn("up", "tween", 0.5, 1)}
-              className="mt-16 p-8 bg-gradient-to-r from-[#25618B] to-[#1a4a6e] rounded-[24px] text-center"
+              className="mt-12 md:mt-16 p-6 md:p-8 bg-gradient-to-r from-[#25618B] to-[#1a4a6e] rounded-[16px] md:rounded-[24px] text-center mx-4"
             >
-              <h3 className="text-white font-bold text-[24px] md:text-[32px] mb-4">
+              <h3 className="text-white font-bold text-[20px] sm:text-[24px] md:text-[32px] mb-4">
                 ¿Necesitas una tienda online profesional?
               </h3>
-              <p className="text-white text-[16px] md:text-[18px] mb-6 max-w-2xl mx-auto">
+              <p className="text-white text-[14px] sm:text-[16px] md:text-[18px] mb-6 max-w-2xl mx-auto">
                 Creamos tiendas online que incorporan todos estos elementos esenciales y más. Solicita una consulta
                 gratuita y descubre cómo podemos ayudarte a vender más online.
               </p>
               <Link
                 href="/solicitar-demo"
-                className="inline-block bg-white text-[#25618B] py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors font-semibold"
+                className="inline-block bg-white text-[#25618B] py-3 px-6 md:px-8 rounded-lg hover:bg-gray-100 transition-colors font-semibold text-sm md:text-base"
               >
                 Solicitar consulta gratuita
               </Link>
             </motion.div>
 
             {/* Related Articles */}
-            <motion.section variants={fadeIn("up", "tween", 0.6, 1)} className="mt-16">
-              <h3 className="text-white font-bold text-[24px] md:text-[32px] mb-8 text-center">
+            <motion.section variants={fadeIn("up", "tween", 0.6, 1)} className="mt-12 md:mt-16 px-4">
+              <h3 className="text-white font-bold text-[20px] sm:text-[24px] md:text-[32px] mb-6 md:mb-8 text-center">
                 Artículos relacionados
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 {insights
                   .filter((insight) => insight.id !== article.id)
                   .slice(0, 2)
@@ -199,9 +199,9 @@ const ArticleEcommerceElements = () => {
                     <Link
                       key={relatedArticle.id}
                       href={`/articulos/${relatedArticle.id}`}
-                      className="bg-[rgba(0,0,0,0.3)] backdrop-blur-sm rounded-[24px] overflow-hidden hover:bg-[rgba(0,0,0,0.5)] transition-all duration-300 group"
+                      className="bg-[rgba(0,0,0,0.3)] backdrop-blur-sm rounded-[16px] md:rounded-[24px] overflow-hidden hover:bg-[rgba(0,0,0,0.5)] transition-all duration-300 group"
                     >
-                      <div className="relative h-[150px] overflow-hidden">
+                      <div className="relative h-[120px] sm:h-[150px] overflow-hidden">
                         <Image
                           src={relatedArticle.imgUrl || "/placeholder.svg"}
                           alt={relatedArticle.title}
@@ -210,11 +210,13 @@ const ArticleEcommerceElements = () => {
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         />
                       </div>
-                      <div className="p-6">
-                        <h4 className="text-white font-bold text-[18px] mb-2 group-hover:text-[#25618B] transition-colors">
+                      <div className="p-4 md:p-6">
+                        <h4 className="text-white font-bold text-[16px] md:text-[18px] mb-2 group-hover:text-[#25618B] transition-colors line-clamp-2">
                           {relatedArticle.title}
                         </h4>
-                        <p className="text-secondary-white text-[14px] line-clamp-2">{relatedArticle.subtitle}</p>
+                        <p className="text-secondary-white text-[12px] md:text-[14px] line-clamp-2">
+                          {relatedArticle.subtitle}
+                        </p>
                       </div>
                     </Link>
                   ))}

@@ -145,8 +145,8 @@ const ArticleEcommerceElements = () => {
             </motion.header>
 
             {/* Featured Image */}
-            <motion.div variants={fadeIn("up", "tween", 0.3, 1)} className="mb-8 md:mb-12 px-4">
-              <div className="relative h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] rounded-[16px] md:rounded-[24px] overflow-hidden">
+            <motion.div variants={fadeIn("up", "tween", 0.3, 1)} className="mb-8 md:mb-12">
+              <div className="relative h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] rounded-[16px] md:rounded-[24px] overflow-hidden mx-4">
                 <Image
                   src={article.imgUrl || "/placeholder.svg"}
                   alt={article.title}
@@ -159,11 +159,13 @@ const ArticleEcommerceElements = () => {
             </motion.div>
 
             {/* Article Content */}
-            <motion.div variants={fadeIn("up", "tween", 0.4, 1)} className="max-w-4xl mx-auto px-4">
-              <div
-                className="blog-content prose prose-invert max-w-none"
-                dangerouslySetInnerHTML={{ __html: article.content }}
-              />
+            <motion.div variants={fadeIn("up", "tween", 0.4, 1)} className="w-full">
+              <div className="max-w-4xl mx-auto px-4">
+                <div
+                  className="blog-content prose prose-invert max-w-none w-full"
+                  dangerouslySetInnerHTML={{ __html: article.content }}
+                />
+              </div>
             </motion.div>
 
             {/* Call to Action */}

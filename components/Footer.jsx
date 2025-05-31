@@ -52,8 +52,8 @@ const Footer = () => (
                   </Link>
                 </li>
                 <li>
-                  <Link href="/blog" className="text-secondary-white hover:text-white transition-colors">
-                    Blog
+                  <Link href="/#projects" className="text-secondary-white hover:text-white transition-colors">
+                    Proyectos
                   </Link>
                 </li>
                 <li>
@@ -98,9 +98,9 @@ const Footer = () => (
             <div>
               <h5 className="text-white font-bold text-[18px] mb-4">Contacto</h5>
               <ul className="space-y-2">
-                <li className="text-secondary-white">Villa del Dique, Córdoba, Argentina</li>
+                <li className="text-secondary-white">Ruta 5, km 107, Villa del Dique, Córdoba, Argentina</li>
                 <li className="text-secondary-white">+54 9 3546 50-1537</li>
-                <li className="text-secondary-white">info@dualitydomain.com</li>
+                <li className="text-secondary-white">dualitydomainoficial@gmail.com</li>
               </ul>
               <div className="flex gap-4 mt-4">
                 {socials.map((social) => (

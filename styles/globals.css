@@ -213,54 +213,75 @@ select {
   background-size: 1em;
 }
 
-/* ===== ESTILOS PARA BLOG - SÚPER RESPONSIVO ===== */
+/* ===== ESTILOS PARA BLOG - SÚPER RESPONSIVO Y VISIBLE EN MÓVILES ===== */
 
 .blog-content {
-  color: #e0e0e0;
+  color: #ffffff !important;
   line-height: 1.8;
   font-size: 1.1rem;
   width: 100%;
   max-width: 100%;
+  position: relative;
+  z-index: 50;
+  background: transparent;
 }
 
-/* Texto principal del blog */
+/* Texto principal del blog - FORZAR VISIBILIDAD EN MÓVILES */
 .blog-content p {
-  margin-bottom: 1.5rem;
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #e0e0e0;
+  margin-bottom: 1.5rem !important;
+  font-size: 1.1rem !important;
+  line-height: 1.8 !important;
+  color: #ffffff !important;
+  position: relative;
+  z-index: 50;
+  background: transparent;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* Texto de introducción destacado */
 .blog-intro {
   margin-bottom: 2rem;
   width: 100%;
+  position: relative;
+  z-index: 50;
 }
 
 .lead-text {
   font-size: 1.25rem !important;
   line-height: 1.7 !important;
-  color: #f0f0f0 !important;
+  color: #ffffff !important;
   font-weight: 400;
   margin-bottom: 2rem !important;
   padding: 1.5rem;
-  background: rgba(37, 97, 139, 0.1);
+  background: rgba(37, 97, 139, 0.2) !important;
   border-left: 4px solid #25618b;
   border-radius: 0 8px 8px 0;
   width: 100%;
   box-sizing: border-box;
+  position: relative;
+  z-index: 50;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
-/* Títulos del blog */
+/* Títulos del blog - FORZAR VISIBILIDAD */
 .blog-content h1,
 .blog-content h2,
 .blog-content h3,
 .blog-content h4 {
-  color: white !important;
+  color: #ffffff !important;
   font-weight: 700;
   margin-top: 2.5rem;
   margin-bottom: 1.5rem;
   width: 100%;
+  position: relative;
+  z-index: 50;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .blog-content h1 {
@@ -289,19 +310,29 @@ select {
   margin-top: 1.5rem;
 }
 
-/* Listas */
+/* Listas - FORZAR VISIBILIDAD */
 .blog-content ul,
 .blog-content ol {
   margin-left: 2rem;
   margin-bottom: 2rem;
   width: 100%;
+  position: relative;
+  z-index: 50;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .blog-content li {
   margin-bottom: 0.75rem;
   font-size: 1.05rem;
   line-height: 1.7;
-  color: #e0e0e0;
+  color: #ffffff !important;
+  position: relative;
+  z-index: 50;
+  display: list-item !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* Lista de verificación especial */
@@ -309,35 +340,55 @@ select {
   list-style: none !important;
   margin-left: 0 !important;
   padding: 1.5rem;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.5) !important;
   border-radius: 12px;
-  border: 1px solid rgba(37, 97, 139, 0.3);
+  border: 1px solid rgba(37, 97, 139, 0.5);
   width: 100%;
   box-sizing: border-box;
+  position: relative;
+  z-index: 50;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .checklist li {
   padding: 0.5rem 0;
   font-size: 1.1rem;
-  color: #f0f0f0;
+  color: #ffffff !important;
+  position: relative;
+  z-index: 50;
+  display: list-item !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
-/* Cajas destacadas */
+/* Cajas destacadas - FORZAR VISIBILIDAD */
 .highlight-box {
-  background: linear-gradient(135deg, rgba(37, 97, 139, 0.2), rgba(37, 97, 139, 0.1));
-  border: 1px solid rgba(37, 97, 139, 0.4);
+  background: rgba(37, 97, 139, 0.3) !important;
+  border: 2px solid rgba(37, 97, 139, 0.6) !important;
   border-radius: 12px;
   padding: 1.5rem;
   margin: 2rem 0;
   backdrop-filter: blur(10px);
   width: 100%;
   box-sizing: border-box;
+  position: relative;
+  z-index: 50;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .highlight-box p {
   margin: 0 !important;
-  font-size: 1.1rem;
-  color: #f0f0f0;
+  font-size: 1.1rem !important;
+  color: #ffffff !important;
+  position: relative;
+  z-index: 50;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* Divisores de sección */
@@ -347,36 +398,56 @@ select {
   margin: 3rem 0;
   border-radius: 2px;
   width: 100%;
+  position: relative;
+  z-index: 50;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
-/* Sección de resumen */
+/* Sección de resumen - FORZAR VISIBILIDAD */
 .summary-section {
-  background: rgba(37, 97, 139, 0.15);
-  border: 2px solid #25618b;
+  background: rgba(37, 97, 139, 0.25) !important;
+  border: 2px solid #25618b !important;
   border-radius: 16px;
   padding: 2rem;
   margin: 3rem 0;
   text-align: center;
   width: 100%;
   box-sizing: border-box;
+  position: relative;
+  z-index: 50;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .summary-section h2 {
-  color: white !important;
+  color: #ffffff !important;
   border: none !important;
   margin-bottom: 1rem !important;
   font-size: 1.75rem;
+  position: relative;
+  z-index: 50;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .summary-section p {
-  font-size: 1.2rem;
-  color: #f0f0f0;
+  font-size: 1.2rem !important;
+  color: #ffffff !important;
   margin: 0;
+  position: relative;
+  z-index: 50;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
-/* Sección de llamada a la acción */
+/* Sección de llamada a la acción - FORZAR VISIBILIDAD */
 .cta-section {
-  background: linear-gradient(135deg, #25618b, #1a4a6e);
+  background: linear-gradient(135deg, #25618b, #1a4a6e) !important;
   border-radius: 16px;
   padding: 2.5rem;
   margin: 3rem 0;
@@ -384,93 +455,174 @@ select {
   color: white;
   width: 100%;
   box-sizing: border-box;
+  position: relative;
+  z-index: 50;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .cta-section h3 {
-  color: white !important;
+  color: #ffffff !important;
   font-size: 1.75rem;
   margin-bottom: 1rem !important;
   margin-top: 0 !important;
+  position: relative;
+  z-index: 50;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .cta-section p {
-  font-size: 1.1rem;
+  font-size: 1.1rem !important;
   margin-bottom: 1.5rem;
-  color: white;
+  color: #ffffff !important;
+  position: relative;
+  z-index: 50;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
-/* Información de contacto */
+/* Información de contacto - FORZAR VISIBILIDAD */
 .contact-info {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15) !important;
   border-radius: 12px;
   padding: 1.5rem;
   margin-top: 1.5rem;
   text-align: left;
   width: 100%;
   box-sizing: border-box;
+  position: relative;
+  z-index: 50;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .contact-info p {
   margin-bottom: 1rem !important;
-  font-size: 1.1rem;
-  color: white;
+  font-size: 1.1rem !important;
+  color: #ffffff !important;
+  position: relative;
+  z-index: 50;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .contact-info ul {
   list-style: none;
   margin: 0 !important;
   padding: 0;
+  position: relative;
+  z-index: 50;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .contact-info li {
   margin-bottom: 0.75rem;
-  font-size: 1rem;
-  color: white;
+  font-size: 1rem !important;
+  color: #ffffff !important;
+  position: relative;
+  z-index: 50;
+  display: list-item !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* Enlaces */
 .blog-content a {
-  color: #4fc3f7;
+  color: #4fc3f7 !important;
   text-decoration: underline;
   transition: color 0.3s ease;
+  position: relative;
+  z-index: 50;
+  display: inline !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .blog-content a:hover {
-  color: #29b6f6;
+  color: #29b6f6 !important;
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
+/* ===== RESPONSIVE DESIGN - MÓVILES PRIORITARIOS ===== */
 
 /* Tablets */
 @media (max-width: 768px) {
   .blog-content {
-    font-size: 1rem;
+    font-size: 1rem !important;
+    color: #ffffff !important;
+    position: relative;
+    z-index: 100;
+    background: transparent;
   }
 
   .blog-content p {
-    font-size: 1rem;
-    margin-bottom: 1.25rem;
+    font-size: 1rem !important;
+    margin-bottom: 1.25rem !important;
+    color: #ffffff !important;
+    position: relative;
+    z-index: 100;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .lead-text {
     font-size: 1.15rem !important;
     padding: 1rem;
+    color: #ffffff !important;
+    background: rgba(37, 97, 139, 0.3) !important;
+    position: relative;
+    z-index: 100;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .blog-content h1 {
-    font-size: 2rem;
+    font-size: 2rem !important;
+    color: #ffffff !important;
+    position: relative;
+    z-index: 100;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .blog-content h2 {
-    font-size: 1.75rem;
+    font-size: 1.75rem !important;
+    color: #25618b !important;
+    position: relative;
+    z-index: 100;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .blog-content h3 {
-    font-size: 1.35rem;
+    font-size: 1.35rem !important;
+    color: #25618b !important;
+    position: relative;
+    z-index: 100;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .blog-content h4 {
-    font-size: 1.15rem;
+    font-size: 1.15rem !important;
+    color: #25618b !important;
+    position: relative;
+    z-index: 100;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .highlight-box,
@@ -478,135 +630,298 @@ select {
   .cta-section {
     padding: 1.5rem;
     margin: 2rem 0;
+    position: relative;
+    z-index: 100;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .contact-info {
     padding: 1rem;
+    position: relative;
+    z-index: 100;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .checklist {
     padding: 1rem;
+    position: relative;
+    z-index: 100;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .blog-content ul,
   .blog-content ol {
     margin-left: 1.5rem;
+    position: relative;
+    z-index: 100;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .blog-content li {
+    color: #ffffff !important;
+    position: relative;
+    z-index: 100;
+    display: list-item !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 }
 
 /* Móviles */
 @media (max-width: 480px) {
   .blog-content {
-    font-size: 0.95rem;
+    font-size: 0.95rem !important;
+    color: #ffffff !important;
+    position: relative;
+    z-index: 150;
+    background: transparent;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
   .blog-content p {
-    font-size: 1rem;
-    margin-bottom: 1.25rem;
-    line-height: 1.6;
+    font-size: 1rem !important;
+    margin-bottom: 1.25rem !important;
+    line-height: 1.6 !important;
+    color: #ffffff !important;
+    position: relative;
+    z-index: 150;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    background: transparent;
+    padding: 0;
   }
 
   .lead-text {
     font-size: 1.1rem !important;
-    padding: 1rem;
+    padding: 1rem !important;
     line-height: 1.6 !important;
+    color: #ffffff !important;
+    background: rgba(37, 97, 139, 0.4) !important;
+    position: relative;
+    z-index: 150;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .blog-content h1 {
-    font-size: 1.75rem;
-    line-height: 1.3;
+    font-size: 1.75rem !important;
+    line-height: 1.3 !important;
+    color: #ffffff !important;
+    position: relative;
+    z-index: 150;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .blog-content h2 {
-    font-size: 1.5rem;
-    line-height: 1.3;
+    font-size: 1.5rem !important;
+    line-height: 1.3 !important;
+    color: #25618b !important;
+    position: relative;
+    z-index: 150;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .blog-content h3 {
-    font-size: 1.25rem;
-    line-height: 1.3;
+    font-size: 1.25rem !important;
+    line-height: 1.3 !important;
+    color: #25618b !important;
+    position: relative;
+    z-index: 150;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .blog-content h4 {
-    font-size: 1.1rem;
-    line-height: 1.3;
+    font-size: 1.1rem !important;
+    line-height: 1.3 !important;
+    color: #25618b !important;
+    position: relative;
+    z-index: 150;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .highlight-box,
   .summary-section,
   .cta-section {
-    padding: 1rem;
-    margin: 1.5rem 0;
+    padding: 1rem !important;
+    margin: 1.5rem 0 !important;
+    position: relative;
+    z-index: 150;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .contact-info {
-    padding: 0.75rem;
+    padding: 0.75rem !important;
+    position: relative;
+    z-index: 150;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .checklist {
-    padding: 1rem;
+    padding: 1rem !important;
+    position: relative;
+    z-index: 150;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .cta-section h3 {
-    font-size: 1.5rem;
-    line-height: 1.3;
+    font-size: 1.5rem !important;
+    line-height: 1.3 !important;
+    color: #ffffff !important;
+    position: relative;
+    z-index: 150;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .summary-section h2 {
-    font-size: 1.5rem;
-    line-height: 1.3;
+    font-size: 1.5rem !important;
+    line-height: 1.3 !important;
+    color: #ffffff !important;
+    position: relative;
+    z-index: 150;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .blog-content ul,
   .blog-content ol {
-    margin-left: 1.25rem;
+    margin-left: 1.25rem !important;
+    position: relative;
+    z-index: 150;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .blog-content li {
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+    color: #ffffff !important;
+    position: relative;
+    z-index: 150;
+    display: list-item !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .highlight-box p {
-    font-size: 1rem;
+    font-size: 1rem !important;
+    color: #ffffff !important;
+    position: relative;
+    z-index: 150;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .contact-info p {
-    font-size: 1rem;
+    font-size: 1rem !important;
+    color: #ffffff !important;
+    position: relative;
+    z-index: 150;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .contact-info li {
-    font-size: 0.95rem;
+    font-size: 0.95rem !important;
+    color: #ffffff !important;
+    position: relative;
+    z-index: 150;
+    display: list-item !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 }
 
 /* Móviles muy pequeños */
 @media (max-width: 320px) {
   .blog-content {
-    font-size: 0.9rem;
+    font-size: 0.9rem !important;
+    color: #ffffff !important;
+    position: relative;
+    z-index: 200;
   }
 
   .blog-content p {
-    font-size: 0.95rem;
-    line-height: 1.5;
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+    color: #ffffff !important;
+    position: relative;
+    z-index: 200;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .lead-text {
     font-size: 1rem !important;
-    padding: 0.75rem;
+    padding: 0.75rem !important;
     line-height: 1.5 !important;
+    color: #ffffff !important;
+    position: relative;
+    z-index: 200;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .blog-content h1 {
-    font-size: 1.5rem;
+    font-size: 1.5rem !important;
+    color: #ffffff !important;
+    position: relative;
+    z-index: 200;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .blog-content h2 {
-    font-size: 1.35rem;
+    font-size: 1.35rem !important;
+    color: #25618b !important;
+    position: relative;
+    z-index: 200;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .blog-content h3 {
-    font-size: 1.15rem;
+    font-size: 1.15rem !important;
+    color: #25618b !important;
+    position: relative;
+    z-index: 200;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .highlight-box,
@@ -614,29 +929,72 @@ select {
   .cta-section,
   .contact-info,
   .checklist {
-    padding: 0.75rem;
+    padding: 0.75rem !important;
+    position: relative;
+    z-index: 200;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .blog-content li {
-    font-size: 0.95rem;
+    font-size: 0.95rem !important;
+    color: #ffffff !important;
+    position: relative;
+    z-index: 200;
+    display: list-item !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 }
 
-/* Asegurar que todos los elementos sean visibles */
+/* Asegurar que todos los elementos sean visibles - FORZAR VISIBILIDAD TOTAL */
 .blog-content * {
-  max-width: 100%;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+  max-width: 100% !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  position: relative !important;
+  z-index: 50 !important;
+  color: inherit !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
-/* Mejorar la visibilidad en móviles */
+/* Mejorar la visibilidad en móviles - FORZAR TODO */
 @media (max-width: 768px) {
   .blog-content {
-    overflow-x: hidden;
+    overflow-x: hidden !important;
+    position: relative !important;
+    z-index: 100 !important;
   }
 
   .blog-content > * {
     max-width: 100% !important;
     box-sizing: border-box !important;
+    position: relative !important;
+    z-index: 100 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #ffffff !important;
+  }
+
+  /* Forzar visibilidad de todos los elementos de texto */
+  .blog-content p,
+  .blog-content h1,
+  .blog-content h2,
+  .blog-content h3,
+  .blog-content h4,
+  .blog-content li,
+  .blog-content span,
+  .blog-content div {
+    color: #ffffff !important;
+    background: transparent !important;
+    position: relative !important;
+    z-index: 100 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 }

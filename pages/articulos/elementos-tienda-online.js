@@ -5,6 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect } from "react"
 import { Navbar, Footer } from "../../components"
+import WhatsAppButton from "../../components/WhatsAppButton"
 import { insights } from "../../constants"
 import styles from "../../styles"
 
@@ -44,10 +45,13 @@ const ArticleEcommerceElements = () => {
         <meta name="description" content={article.subtitle} />
         <meta
           name="keywords"
-          content="tienda online elementos, e-commerce esenciales, comercio electrónico, tienda virtual, e-commerce Villa del Dique, desarrollo e-commerce Córdoba"
+          content="tienda online elementos, e-commerce esenciales, comercio electrónico, tienda virtual, e-commerce Villa del Dique, desarrollo e-commerce Córdoba, elementos tienda online, diseño e-commerce"
         />
         <link rel="canonical" href="https://www.dualitydomain.com/articulos/elementos-tienda-online" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="author" content={article.author} />
+        <meta name="publisher" content="Duality Domain" />
 
         {/* Preload critical resources */}
         <link rel="preload" href={article.imgUrl} as="image" />
@@ -59,10 +63,31 @@ const ArticleEcommerceElements = () => {
         <meta property="og:title" content={article.title} />
         <meta property="og:description" content={article.subtitle} />
         <meta property="og:image" content={`https://www.dualitydomain.com${article.imgUrl}`} />
-        <meta property="og:article:published_time" content="2025-06-15" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:article:published_time" content="2025-06-15T00:00:00Z" />
+        <meta property="og:article:modified_time" content="2025-06-15T00:00:00Z" />
         <meta property="og:article:author" content={article.author} />
+        <meta property="og:article:section" content="E-commerce" />
+        <meta property="og:article:tag" content="tienda online" />
+        <meta property="og:article:tag" content="e-commerce" />
+        <meta property="og:article:tag" content="comercio electrónico" />
+        <meta property="og:locale" content="es_AR" />
+        <meta property="og:site_name" content="Duality Domain" />
 
-        {/* Structured Data */}
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@dualitydomain" />
+        <meta name="twitter:creator" content="@dualitydomain" />
+        <meta name="twitter:title" content={article.title} />
+        <meta name="twitter:description" content={article.subtitle} />
+        <meta name="twitter:image" content={`https://www.dualitydomain.com${article.imgUrl}`} />
+
+        {/* Additional SEO */}
+        <meta name="theme-color" content="#25618B" />
+        <link rel="alternate" type="application/rss+xml" title="Duality Domain Blog RSS" href="/rss.xml" />
+
+        {/* Structured Data - Article */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -72,17 +97,31 @@ const ArticleEcommerceElements = () => {
               "@id": "https://www.dualitydomain.com/articulos/elementos-tienda-online#article",
               headline: article.title,
               description: article.subtitle,
-              image: `https://www.dualitydomain.com${article.imgUrl}`,
-              datePublished: "2025-06-15",
-              dateModified: "2025-06-15",
+              image: {
+                "@type": "ImageObject",
+                url: `https://www.dualitydomain.com${article.imgUrl}`,
+                width: 1200,
+                height: 630,
+              },
+              datePublished: "2025-06-15T00:00:00Z",
+              dateModified: "2025-06-15T00:00:00Z",
               author: {
                 "@type": "Person",
                 name: article.author,
                 jobTitle: article.authorRole,
+                worksFor: {
+                  "@type": "Organization",
+                  name: "Duality Domain",
+                },
               },
               publisher: {
                 "@type": "Organization",
                 "@id": "https://www.dualitydomain.com/#organization",
+                name: "Duality Domain",
+                logo: {
+                  "@type": "ImageObject",
+                  url: "https://www.dualitydomain.com/logo.png",
+                },
               },
               mainEntityOfPage: {
                 "@type": "WebPage",
@@ -95,13 +134,51 @@ const ArticleEcommerceElements = () => {
                 "comercio electrónico",
                 "elementos esenciales",
                 "tienda virtual",
+                "Villa del Dique",
+              ],
+              wordCount: article.content.split(" ").length,
+              inLanguage: "es-AR",
+              isPartOf: {
+                "@type": "Blog",
+                "@id": "https://www.dualitydomain.com/articulos#blog",
+              },
+            }),
+          }}
+        />
+
+        {/* Structured Data - BreadcrumbList */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Inicio",
+                  item: "https://www.dualitydomain.com",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Artículos",
+                  item: "https://www.dualitydomain.com/articulos",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 3,
+                  name: article.title,
+                  item: "https://www.dualitydomain.com/articulos/elementos-tienda-online",
+                },
               ],
             }),
           }}
         />
       </Head>
 
-      <div className="bg-primary-black min-h-screen">
+      <div className="bg-primary-black min-h-screen relative">
         <Navbar />
 
         <main className="bg-primary-black w-full min-h-screen">
@@ -119,7 +196,9 @@ const ArticleEcommerceElements = () => {
                       Inicio
                     </Link>
                   </li>
-                  <li aria-hidden="true">/</li>
+                  <li aria-hidden="true" className="text-secondary-white">
+                    /
+                  </li>
                   <li>
                     <Link
                       href="/articulos"
@@ -129,8 +208,10 @@ const ArticleEcommerceElements = () => {
                       Artículos
                     </Link>
                   </li>
-                  <li aria-hidden="true">/</li>
-                  <li className="text-white" aria-current="page">
+                  <li aria-hidden="true" className="text-secondary-white">
+                    /
+                  </li>
+                  <li className="text-white font-medium" aria-current="page">
                     <span className="line-clamp-1">{article.title}</span>
                   </li>
                 </ol>
@@ -271,6 +352,7 @@ const ArticleEcommerceElements = () => {
         </main>
 
         <Footer />
+        <WhatsAppButton />
       </div>
     </>
   )

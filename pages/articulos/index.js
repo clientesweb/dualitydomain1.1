@@ -84,18 +84,16 @@ const ArticulosIndex = () => {
         />
       </Head>
 
-      <div className="bg-primary-black overflow-hidden">
+      <div className="bg-primary-black overflow-hidden min-h-screen">
         <Navbar />
 
-        <section className={`${styles.paddings} relative z-10`}>
-          {/* Eliminamos el gradiente problemático que tapaba el contenido */}
-
+        <section className={`${styles.paddings} relative`}>
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.25 }}
-            className={`${styles.innerWidth} mx-auto flex flex-col relative z-20`}
+            className={`${styles.innerWidth} mx-auto flex flex-col relative z-50`}
           >
             <div className="text-center mb-12">
               <motion.h1

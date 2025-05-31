@@ -381,3 +381,27 @@ select {
     margin-bottom: 1.25rem;
   }
 }
+
+/* Fix para visibilidad en móviles */
+@media (max-width: 768px) {
+  .bg-primary-black {
+    position: relative;
+    z-index: 1;
+  }
+
+  article {
+    position: relative;
+    z-index: 10 !important;
+  }
+
+  .blog-content {
+    position: relative;
+    z-index: 15 !important;
+  }
+
+  /* Asegurar que el navbar no interfiera */
+  nav {
+    position: relative;
+    z-index: 100;
+  }
+}

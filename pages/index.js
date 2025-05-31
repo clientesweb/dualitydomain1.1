@@ -8,11 +8,11 @@ const Home = () => (
       <title>Duality Domain | Desarrollo Web Profesional en Villa del Dique, Córdoba</title>
       <meta
         name="description"
-        content="Empresa líder en desarrollo web profesional ubicada en Villa del Dique, Córdoba, Argentina. Especializada en sitios web, e-commerce, SEO y aplicaciones web personalizadas. Más de 20 años de experiencia transformando negocios digitales."
+        content="Empresa líder en desarrollo web profesional ubicada en Villa del Dique, Córdoba, Argentina. Especializada en sitios web, e-commerce, SEO y aplicaciones web personalizadas. Más de 20 años de experiencia transformando negocios digitales en LATAM."
       />
       <meta
         name="keywords"
-        content="desarrollo web Villa del Dique, diseño web Córdoba, empresa desarrollo web Argentina, e-commerce personalizado, SEO Villa del Dique, aplicaciones web Córdoba, sitios web profesionales, desarrollo web LATAM, agencia digital Argentina"
+        content="desarrollo web Villa del Dique, diseño web Córdoba, empresa desarrollo web Argentina, e-commerce personalizado, SEO Villa del Dique, aplicaciones web Córdoba, sitios web profesionales, desarrollo web LATAM, agencia digital Argentina, programación web Villa del Dique, tiendas online Córdoba, optimización web SEO, UX UI design Argentina, desarrollo responsive, páginas web empresariales, landing pages profesionales, mantenimiento web, hosting web Argentina"
       />
       <link rel="canonical" href="https://www.dualitydomain.com" />
 
@@ -27,10 +27,7 @@ const Home = () => (
       <meta property="og:image" content="https://www.dualitydomain.com/og-image.jpg" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
-      <meta
-        property="og:image:alt"
-        content="Duality Domain - Crea tu Web - Demos gratuitas, actualizaciones constantes y mantenimientos bonificados"
-      />
+      <meta property="og:image:alt" content="Duality Domain - Desarrollo Web Profesional - Villa del Dique, Córdoba" />
       <meta property="og:locale" content="es_AR" />
       <meta property="og:site_name" content="Duality Domain" />
 
@@ -47,13 +44,14 @@ const Home = () => (
       />
       <meta property="twitter:image" content="https://www.dualitydomain.com/og-image.jpg" />
 
-      {/* Structured Data */}
+      {/* Structured Data - WebSite */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebSite",
+            "@id": "https://www.dualitydomain.com/#website",
             name: "Duality Domain",
             description: "Empresa líder en desarrollo web profesional ubicada en Villa del Dique, Córdoba, Argentina.",
             url: "https://www.dualitydomain.com",
@@ -64,27 +62,51 @@ const Home = () => (
             },
             publisher: {
               "@type": "Organization",
-              name: "Duality Domain",
-              logo: {
-                "@type": "ImageObject",
-                url: "https://www.dualitydomain.com/logo.png",
-              },
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "Los Reartes, Cordoba",
-                addressLocality: "Villa del Dique",
-                addressRegion: "Córdoba",
-                postalCode: "X5856",
-                addressCountry: "AR",
-              },
-              contactPoint: {
-                "@type": "ContactPoint",
-                telephone: "+54-9-3546-45-5010",
-                contactType: "customer service",
-                areaServed: "AR",
-                availableLanguage: ["Spanish"],
-              },
+              "@id": "https://www.dualitydomain.com/#organization",
             },
+            inLanguage: "es-AR",
+            copyrightYear: 2024,
+            copyrightHolder: {
+              "@type": "Organization",
+              "@id": "https://www.dualitydomain.com/#organization",
+            },
+          }),
+        }}
+      />
+
+      {/* Structured Data - BreadcrumbList */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Inicio",
+                item: "https://www.dualitydomain.com",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Servicios",
+                item: "https://www.dualitydomain.com/#explore",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: "Proyectos",
+                item: "https://www.dualitydomain.com/#projects",
+              },
+              {
+                "@type": "ListItem",
+                position: 4,
+                name: "Blog",
+                item: "https://www.dualitydomain.com/blog",
+              },
+            ],
           }),
         }}
       />

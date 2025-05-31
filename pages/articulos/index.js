@@ -5,6 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect } from "react"
 import { Navbar, Footer } from "../../components"
+import WhatsAppButton from "../../components/WhatsAppButton"
 import { insights } from "../../constants"
 import styles from "../../styles"
 
@@ -26,20 +27,24 @@ const ArticulosIndex = () => {
   return (
     <>
       <Head>
-        <title>Artículos sobre Desarrollo Web | Duality Domain - Blog Técnico</title>
+        <title>Artículos sobre Desarrollo Web | Duality Domain - Blog Técnico Villa del Dique</title>
         <meta
           name="description"
-          content="Descubre artículos especializados sobre desarrollo web, SEO, e-commerce y UX/UI. Consejos prácticos y estrategias para mejorar tu presencia digital en Villa del Dique, Córdoba."
+          content="Descubre artículos especializados sobre desarrollo web, SEO, e-commerce y UX/UI escritos por expertos de Duality Domain en Villa del Dique, Córdoba. Consejos prácticos y estrategias para mejorar tu presencia digital."
         />
         <meta
           name="keywords"
-          content="artículos desarrollo web, blog desarrollo web, SEO tips, e-commerce consejos, UX UI design, Villa del Dique, Córdoba, Argentina"
+          content="artículos desarrollo web, blog desarrollo web, SEO tips, e-commerce consejos, UX UI design, Villa del Dique, Córdoba, Argentina, desarrollo web profesional, optimización web, diseño responsivo, tiendas online"
         />
         <link rel="canonical" href="https://www.dualitydomain.com/articulos" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta name="author" content="Duality Domain" />
+        <meta name="publisher" content="Duality Domain" />
 
         {/* Preload critical resources */}
         <link rel="preload" href="/logo.png" as="image" />
+        <link rel="preload" href="/como-tener-un-buen-diseno-web.png" as="image" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
@@ -50,8 +55,28 @@ const ArticulosIndex = () => {
           content="Descubre artículos especializados sobre desarrollo web, SEO, e-commerce y UX/UI. Consejos prácticos y estrategias para mejorar tu presencia digital."
         />
         <meta property="og:image" content="https://www.dualitydomain.com/og-image.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="es_AR" />
+        <meta property="og:site_name" content="Duality Domain" />
 
-        {/* Structured Data */}
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@dualitydomain" />
+        <meta name="twitter:creator" content="@dualitydomain" />
+        <meta name="twitter:title" content="Artículos sobre Desarrollo Web | Duality Domain" />
+        <meta
+          name="twitter:description"
+          content="Descubre artículos especializados sobre desarrollo web, SEO, e-commerce y UX/UI."
+        />
+        <meta name="twitter:image" content="https://www.dualitydomain.com/og-image.jpg" />
+
+        {/* Additional SEO */}
+        <meta name="theme-color" content="#25618B" />
+        <meta name="msapplication-TileColor" content="#1A232E" />
+        <link rel="alternate" type="application/rss+xml" title="Duality Domain Blog RSS" href="/rss.xml" />
+
+        {/* Structured Data - Blog */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -59,13 +84,27 @@ const ArticulosIndex = () => {
               "@context": "https://schema.org",
               "@type": "Blog",
               "@id": "https://www.dualitydomain.com/articulos#blog",
-              name: "Blog de Duality Domain",
+              name: "Blog de Desarrollo Web - Duality Domain",
               description:
-                "Artículos especializados sobre desarrollo web, SEO, e-commerce y UX/UI por expertos de Duality Domain.",
+                "Artículos especializados sobre desarrollo web, SEO, e-commerce y UX/UI por expertos de Duality Domain en Villa del Dique, Córdoba.",
               url: "https://www.dualitydomain.com/articulos",
               publisher: {
                 "@type": "Organization",
                 "@id": "https://www.dualitydomain.com/#organization",
+                name: "Duality Domain",
+                url: "https://www.dualitydomain.com",
+                logo: {
+                  "@type": "ImageObject",
+                  url: "https://www.dualitydomain.com/logo.png",
+                },
+                address: {
+                  "@type": "PostalAddress",
+                  streetAddress: "Ruta 5, km 107",
+                  addressLocality: "Villa del Dique",
+                  addressRegion: "Córdoba",
+                  postalCode: "X5856",
+                  addressCountry: "AR",
+                },
               },
               inLanguage: "es-AR",
               blogPost: insights.map((insight) => ({
@@ -75,6 +114,7 @@ const ArticulosIndex = () => {
                 description: insight.subtitle,
                 url: `https://www.dualitydomain.com/articulos/${insight.id}`,
                 datePublished: insight.date,
+                dateModified: insight.date,
                 author: {
                   "@type": "Person",
                   name: insight.author,
@@ -84,19 +124,101 @@ const ArticulosIndex = () => {
                   "@type": "Organization",
                   "@id": "https://www.dualitydomain.com/#organization",
                 },
-                image: `https://www.dualitydomain.com${insight.imgUrl}`,
+                image: {
+                  "@type": "ImageObject",
+                  url: `https://www.dualitydomain.com${insight.imgUrl}`,
+                  width: 1200,
+                  height: 630,
+                },
+                mainEntityOfPage: {
+                  "@type": "WebPage",
+                  "@id": `https://www.dualitydomain.com/articulos/${insight.id}`,
+                },
+                keywords: ["desarrollo web", "SEO", "e-commerce", "UX/UI", "Villa del Dique", "Córdoba"],
               })),
+            }),
+          }}
+        />
+
+        {/* Structured Data - BreadcrumbList */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Inicio",
+                  item: "https://www.dualitydomain.com",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Artículos",
+                  item: "https://www.dualitydomain.com/articulos",
+                },
+              ],
+            }),
+          }}
+        />
+
+        {/* Structured Data - WebSite */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "@id": "https://www.dualitydomain.com/#website",
+              name: "Duality Domain",
+              url: "https://www.dualitydomain.com",
+              potentialAction: {
+                "@type": "SearchAction",
+                target: {
+                  "@type": "EntryPoint",
+                  urlTemplate: "https://www.dualitydomain.com/articulos?q={search_term_string}",
+                },
+                "query-input": "required name=search_term_string",
+              },
+              publisher: {
+                "@type": "Organization",
+                "@id": "https://www.dualitydomain.com/#organization",
+              },
             }),
           }}
         />
       </Head>
 
-      <div className="bg-primary-black min-h-screen">
+      <div className="bg-primary-black min-h-screen relative">
         <Navbar />
 
         <main className="bg-primary-black w-full min-h-screen">
           <section className={`${styles.paddings} bg-primary-black`}>
             <div className={`${styles.innerWidth} mx-auto flex flex-col bg-primary-black`}>
+              {/* Breadcrumb Navigation */}
+              <nav aria-label="Breadcrumb" className="mb-4 xs:mb-5 sm:mb-6 md:mb-7 lg:mb-8 xl:mb-10">
+                <ol className="flex items-center space-x-1 xs:space-x-1 sm:space-x-2 md:space-x-2 text-xs xs:text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl text-secondary-white">
+                  <li>
+                    <Link
+                      href="/"
+                      className="hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-[#25618B] rounded px-1"
+                      aria-label="Ir a página de inicio"
+                    >
+                      Inicio
+                    </Link>
+                  </li>
+                  <li aria-hidden="true" className="text-secondary-white">
+                    /
+                  </li>
+                  <li className="text-white font-medium" aria-current="page">
+                    Artículos
+                  </li>
+                </ol>
+              </nav>
+
               {/* Page Header */}
               <header className="text-center mb-8 xs:mb-10 sm:mb-12 md:mb-14 lg:mb-16 xl:mb-20 2xl:mb-24">
                 <h1 className="font-bold text-white text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl 3xl:text-8xl leading-tight mb-3 xs:mb-4 sm:mb-5 md:mb-6 lg:mb-8 xl:mb-10 px-2 xs:px-3 sm:px-4">
@@ -221,6 +343,7 @@ const ArticulosIndex = () => {
         </main>
 
         <Footer />
+        <WhatsAppButton />
       </div>
     </>
   )

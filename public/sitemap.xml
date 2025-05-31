@@ -40,6 +40,36 @@
     <priority>0.8</priority>
   </url>
   
+  <!-- Artículos - Página principal -->
+  <url>
+    <loc>https://www.dualitydomain.com/articulos</loc>
+    <lastmod>2024-12-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Artículos individuales -->
+  <url>
+    <loc>https://www.dualitydomain.com/articulos/como-un-buen-diseno-web-puede-aumentar-tus-conversiones</loc>
+    <lastmod>2024-12-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.dualitydomain.com/articulos/7-elementos-esenciales-que-toda-tienda-online-debe-tener</loc>
+    <lastmod>2024-12-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.dualitydomain.com/articulos/la-importancia-del-seo-en-tu-estrategia-digital</loc>
+    <lastmod>2024-12-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
   <!-- Servicios específicos -->
   <url>
     <loc>https://www.dualitydomain.com/servicios/desarrollo-web-villa-del-dique</loc>

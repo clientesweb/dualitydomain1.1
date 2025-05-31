@@ -1,14 +1,19 @@
-# Robots.txt para Duality Domain
+# Robots.txt para Duality Domain - Desarrollo Web Villa del Dique, Córdoba
 User-agent: *
 Allow: /
 
 # Permitir acceso a todos los recursos importantes
 Allow: /blog
+Allow: /blog/*
 Allow: /solicitar-demo
 Allow: /servicios
+Allow: /servicios/*
+Allow: /proyectos
+Allow: /proyectos/*
 Allow: /_next/static/
 Allow: /images/
 Allow: /favicon.ico
+Allow: /manifest.json
 
 # Bloquear archivos administrativos y de desarrollo
 Disallow: /admin/
@@ -16,6 +21,7 @@ Disallow: /_next/
 Disallow: /api/
 Disallow: /.well-known/
 Disallow: /private/
+Disallow: /*.json$
 
 # Configuración específica para bots de búsqueda principales
 User-agent: Googlebot
@@ -29,6 +35,12 @@ Crawl-delay: 1
 User-agent: Slurp
 Allow: /
 Crawl-delay: 2
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
 
 # Sitemap
 Sitemap: https://www.dualitydomain.com/sitemap.xml

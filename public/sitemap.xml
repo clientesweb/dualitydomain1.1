@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <!-- Página principal -->
   <url>
     <loc>https://www.dualitydomain.com/</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-05-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -11,7 +11,7 @@
   <!-- Sección Nosotros -->
   <url>
     <loc>https://www.dualitydomain.com/#about</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -19,7 +19,7 @@
   <!-- Servicios -->
   <url>
     <loc>https://www.dualitydomain.com/#explore</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -27,7 +27,7 @@
   <!-- Proyectos -->
   <url>
     <loc>https://www.dualitydomain.com/#projects</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-05-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -35,7 +35,7 @@
   <!-- Solicitar demo -->
   <url>
     <loc>https://www.dualitydomain.com/solicitar-demo</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -43,65 +43,65 @@
   <!-- Artículos - Página principal -->
   <url>
     <loc>https://www.dualitydomain.com/articulos</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-05-31</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   
   <!-- Artículos individuales -->
   <url>
     <loc>https://www.dualitydomain.com/articulos/diseno-web-conversiones</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-05-31</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://www.dualitydomain.com/articulos/elementos-tienda-online</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-06-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://www.dualitydomain.com/articulos/importancia-seo</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   
   <!-- Servicios específicos -->
   <url>
     <loc>https://www.dualitydomain.com/servicios/desarrollo-web-villa-del-dique</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://www.dualitydomain.com/servicios/ecommerce-personalizado-cordoba</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://www.dualitydomain.com/servicios/seo-optimizacion-web</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://www.dualitydomain.com/servicios/aplicaciones-web-interactivas</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://www.dualitydomain.com/servicios/ux-research-mejora-experiencia</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -109,28 +109,65 @@
   <!-- Páginas de proyectos específicos -->
   <url>
     <loc>https://www.dualitydomain.com/proyectos/electricidad-villa-del-dique</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.dualitydomain.com/proyectos/perimetrales-las-flores</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.dualitydomain.com/proyectos/asociacion-comercio-villa-del-dique</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.dualitydomain.com/proyectos/j-murrieta-rifles-aire-comprimido</loc>
-    <lastmod>2024-12-31</lastmod>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Categorías de artículos -->
+  <url>
+    <loc>https://www.dualitydomain.com/articulos/categoria/desarrollo-web</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.dualitydomain.com/articulos/categoria/seo</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.dualitydomain.com/articulos/categoria/ecommerce</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Páginas de contacto y ubicación -->
+  <url>
+    <loc>https://www.dualitydomain.com/contacto</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.dualitydomain.com/ubicacion-villa-del-dique</loc>
+    <lastmod>2025-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

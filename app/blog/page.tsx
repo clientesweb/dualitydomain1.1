@@ -13,66 +13,109 @@ const BlogPage = () => {
   return (
     <>
       <Head>
-        <title>Blog de Desarrollo Web | Duality Domain - Guías y Recursos</title>
+        <title>Blog de Desarrollo Web | Duality Domain - Guías y Recursos SEO</title>
         <meta
           name="description"
-          content="Artículos especializados sobre desarrollo web, e-commerce, SEO y UX. Guías prácticas y recursos para mejorar tu presencia digital y hacer crecer tu negocio online en Villa del Dique, Córdoba."
+          content="Artículos especializados sobre desarrollo web, e-commerce, SEO y UX en Villa del Dique, Córdoba. Guías prácticas y recursos para mejorar tu presencia digital y hacer crecer tu negocio online en Argentina y LATAM."
         />
         <meta
           name="keywords"
-          content="blog desarrollo web, guías SEO, tutoriales e-commerce, artículos UX, recursos desarrollo web, blog tecnología Villa del Dique, consejos diseño web Córdoba"
+          content="blog desarrollo web, guías SEO, tutoriales e-commerce, artículos UX, recursos desarrollo web, blog tecnología Villa del Dique, consejos diseño web Córdoba, marketing digital Argentina, optimización web, conversiones online"
         />
-        <link rel="canonical" href="https://dualitydomain.com/blog" />
+        <link rel="canonical" href="https://www.dualitydomain.com/blog" />
 
         {/* Open Graph */}
-        <meta property="og:title" content="Blog de Desarrollo Web | Duality Domain - Guías y Recursos" />
+        <meta property="og:title" content="Blog de Desarrollo Web | Duality Domain - Guías y Recursos SEO" />
         <meta
           property="og:description"
           content="Artículos especializados sobre desarrollo web, e-commerce, SEO y UX. Guías prácticas y recursos para mejorar tu presencia digital."
         />
-        <meta property="og:image" content="https://dualitydomain.com/og-image.jpg" />
+        <meta property="og:image" content="https://www.dualitydomain.com/og-image.jpg" />
+        <meta
+          property="og:image:alt"
+          content="Duality Domain - Blog de Desarrollo Web - Guías y recursos especializados"
+        />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://dualitydomain.com/blog" />
+        <meta property="og:url" content="https://www.dualitydomain.com/blog" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Blog de Desarrollo Web | Duality Domain - Guías y Recursos" />
+        <meta name="twitter:title" content="Blog de Desarrollo Web | Duality Domain - Guías y Recursos SEO" />
         <meta
           property="twitter:description"
           content="Artículos especializados sobre desarrollo web, e-commerce, SEO y UX. Guías prácticas y recursos para mejorar tu presencia digital."
         />
-        <meta name="twitter:image" content="https://dualitydomain.com/og-image.jpg" />
+        <meta name="twitter:image" content="https://www.dualitydomain.com/og-image.jpg" />
 
-        {/* Structured Data */}
+        {/* Structured Data - Blog */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Blog",
-              name: "Blog de Duality Domain",
+              "@id": "https://www.dualitydomain.com/blog#blog",
+              name: "Blog de Desarrollo Web - Duality Domain",
               description: "Artículos especializados sobre desarrollo web, e-commerce, SEO y UX",
-              url: "https://dualitydomain.com/blog",
+              url: "https://www.dualitydomain.com/blog",
+              inLanguage: "es-AR",
               publisher: {
                 "@type": "Organization",
-                name: "Duality Domain",
-                logo: {
-                  "@type": "ImageObject",
-                  url: "https://dualitydomain.com/logo.png",
-                },
+                "@id": "https://www.dualitydomain.com/#organization",
               },
               blogPost: insights.map((post) => ({
                 "@type": "BlogPosting",
+                "@id": `https://www.dualitydomain.com/blog/${post.id}#article`,
                 headline: post.title,
                 description: post.subtitle,
-                url: `https://dualitydomain.com/blog/${post.id}`,
+                url: `https://www.dualitydomain.com/blog/${post.id}`,
                 datePublished: post.date,
+                dateModified: post.date,
                 author: {
                   "@type": "Person",
                   name: post.author,
+                  jobTitle: post.authorRole,
                 },
-                image: `https://dualitydomain.com${post.imgUrl}`,
+                publisher: {
+                  "@type": "Organization",
+                  "@id": "https://www.dualitydomain.com/#organization",
+                },
+                image: {
+                  "@type": "ImageObject",
+                  url: `https://www.dualitydomain.com${post.imgUrl}`,
+                  width: 1200,
+                  height: 630,
+                },
+                mainEntityOfPage: {
+                  "@type": "WebPage",
+                  "@id": `https://www.dualitydomain.com/blog/${post.id}`,
+                },
               })),
+            }),
+          }}
+        />
+
+        {/* Structured Data - BreadcrumbList */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Inicio",
+                  item: "https://www.dualitydomain.com",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Blog",
+                  item: "https://www.dualitydomain.com/blog",
+                },
+              ],
             }),
           }}
         />
@@ -103,7 +146,7 @@ const BlogPage = () => {
                 className="mt-4 text-secondary-white text-[18px] max-w-3xl mx-auto"
               >
                 Artículos especializados, guías prácticas y recursos para ayudarte a mejorar tu presencia digital y
-                hacer crecer tu negocio online.
+                hacer crecer tu negocio online en Villa del Dique, Córdoba y toda Argentina.
               </motion.p>
             </div>
 

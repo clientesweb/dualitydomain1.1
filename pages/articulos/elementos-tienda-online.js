@@ -86,14 +86,14 @@ const ArticleEcommerceElements = () => {
         <Navbar />
 
         <article className={`${styles.paddings} relative z-10`}>
-          <div className="absolute w-[50%] inset-0 gradient-01 z-0" />
+          {/* Eliminamos el gradiente problemático que tapaba el contenido */}
 
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.25 }}
-            className={`${styles.innerWidth} mx-auto flex flex-col relative z-10`}
+            className={`${styles.innerWidth} mx-auto flex flex-col relative z-20`}
           >
             {/* Breadcrumb */}
             <motion.nav variants={fadeIn("up", "tween", 0.1, 1)} className="mb-6 md:mb-8">

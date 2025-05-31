@@ -66,7 +66,7 @@ export const newFeatures = [
 
 export const insights = [
   {
-    id: "blog-1",
+    id: "como-aumentar-conversiones-diseno-web",
     imgUrl: "/como-tener-un-buen-diseno-web.png",
     title: "Cómo un buen diseño web puede aumentar tus conversiones",
     subtitle:
@@ -117,7 +117,7 @@ export const insights = [
     authorRole: "Diseñadora UX/UI Senior",
   },
   {
-    id: "blog-2",
+    id: "elementos-esenciales-tienda-online-exitosa",
     imgUrl: "/7-elementos-para-tu-tienda-online.png",
     title: "7 elementos esenciales que toda tienda online debe tener",
     subtitle:
@@ -189,7 +189,7 @@ export const insights = [
     authorRole: "Especialista en E-commerce",
   },
   {
-    id: "blog-3",
+    id: "importancia-seo-estrategia-digital",
     imgUrl: "/la-importancia-del-seo.png",
     title: "La importancia del SEO en tu estrategia digital",
     subtitle:

@@ -119,6 +119,13 @@ const Navbar = () => {
                     Proyectos
                   </Link>
                   <Link
+                    href="/articulos"
+                    className="font-normal text-[16px] text-white hover:text-secondary-white transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Artículos
+                  </Link>
+                  <Link
                     href="/solicitar-demo"
                     className="bg-[#25618B] py-2 px-4 rounded-[20px] text-white font-medium hover:bg-[#1a4a6e] transition-colors text-center"
                     onClick={() => setIsMenuOpen(false)}
@@ -152,6 +159,12 @@ const Navbar = () => {
             className="font-normal text-[16px] text-white hover:text-secondary-white transition-colors"
           >
             Proyectos
+          </Link>
+          <Link
+            href="/articulos"
+            className="font-normal text-[16px] text-white hover:text-secondary-white transition-colors"
+          >
+            Artículos
           </Link>
           <Link
             href="/solicitar-demo"

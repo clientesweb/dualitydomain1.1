@@ -1,14 +1,15 @@
 {
   "name": "Duality Domain - Desarrollo Web Profesional en Villa del Dique, Córdoba",
   "short_name": "Duality Domain",
-  "description": "Empresa líder en desarrollo web profesional ubicada en Villa del Dique, Córdoba, Argentina. Especializada en sitios web, e-commerce, SEO y aplicaciones web personalizadas para impulsar tu negocio digital.",
+  "description": "Empresa líder en desarrollo web profesional ubicada en Villa del Dique, Córdoba, Argentina. Especializada en sitios web, e-commerce, SEO y aplicaciones web personalizadas para impulsar tu negocio digital en LATAM.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#1A232E",
   "theme_color": "#25618B",
   "orientation": "portrait-primary",
-  "categories": ["business", "productivity", "technology"],
+  "categories": ["business", "productivity", "technology", "web development"],
   "lang": "es-AR",
+  "scope": "/",
   "icons": [
     {
       "src": "/favicon-16x16.png",
@@ -39,6 +40,38 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/og-image.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg",
+      "platform": "wide",
+      "label": "Duality Domain - Desarrollo Web Profesional"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Solicitar Demo",
+      "short_name": "Demo",
+      "description": "Solicita una demo personalizada de nuestros servicios",
+      "url": "/solicitar-demo",
+      "icons": [{ "src": "/favicon-32x32.png", "sizes": "32x32" }]
+    },
+    {
+      "name": "Blog",
+      "short_name": "Blog",
+      "description": "Lee nuestros artículos sobre desarrollo web",
+      "url": "/blog",
+      "icons": [{ "src": "/favicon-32x32.png", "sizes": "32x32" }]
+    },
+    {
+      "name": "Servicios",
+      "short_name": "Servicios",
+      "description": "Conoce todos nuestros servicios de desarrollo web",
+      "url": "/#explore",
+      "icons": [{ "src": "/favicon-32x32.png", "sizes": "32x32" }]
     }
   ]
 }

@@ -8,7 +8,7 @@ export const metadata = {
     template: "%s | Duality Domain",
   },
   description:
-    "Empresa líder en desarrollo web profesional ubicada en Villa del Dique, Córdoba, Argentina. Especializada en sitios web, e-commerce, SEO y aplicaciones web personalizadas. Más de 20 años de experiencia transformando negocios digitales.",
+    "Empresa líder en desarrollo web profesional ubicada en Villa del Dique, Córdoba, Argentina. Especializada en sitios web, e-commerce, SEO y aplicaciones web personalizadas. Más de 20 años de experiencia transformando negocios digitales en LATAM.",
   keywords: [
     "desarrollo web Villa del Dique",
     "diseño web Córdoba",
@@ -25,6 +25,11 @@ export const metadata = {
     "UX UI design Argentina",
     "desarrollo responsive",
     "páginas web empresariales",
+    "landing pages profesionales",
+    "mantenimiento web",
+    "hosting web Argentina",
+    "diseño gráfico digital",
+    "marketing digital Córdoba",
   ],
   authors: [{ name: "Duality Domain", url: "https://www.dualitydomain.com" }],
   creator: "Duality Domain",
@@ -47,7 +52,7 @@ export const metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Duality Domain - Crea tu Web - Demos gratuitas, actualizaciones constantes y mantenimientos bonificados",
+        alt: "Duality Domain - Desarrollo Web Profesional - Villa del Dique, Córdoba",
         type: "image/jpeg",
       },
     ],
@@ -124,6 +129,10 @@ export const metadata = {
     "application-name": "Duality Domain",
     "mobile-web-app-capable": "yes",
     "theme-color": "#25618B",
+    "geo.region": "AR-X",
+    "geo.placename": "Villa del Dique, Córdoba",
+    "geo.position": "-32.1833;-64.4833",
+    ICBM: "-32.1833, -64.4833",
   },
 }
 
@@ -135,7 +144,7 @@ const RootLayout = ({ children }) => (
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
-      {/* Structured Data */}
+      {/* Structured Data - Organization */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -143,7 +152,8 @@ const RootLayout = ({ children }) => (
             "@context": "https://schema.org",
             "@type": "Organization",
             name: "Duality Domain",
-            description: "Empresa líder en desarrollo web profesional ubicada en Villa del Dique, Córdoba, Argentina.",
+            description:
+              "Empresa líder en desarrollo web profesional ubicada en Villa del Dique, Córdoba, Argentina. Especializada en sitios web, e-commerce, SEO y aplicaciones web personalizadas.",
             url: "https://www.dualitydomain.com",
             logo: "https://www.dualitydomain.com/logo.png",
             image: "https://www.dualitydomain.com/og-image.jpg",
@@ -154,6 +164,7 @@ const RootLayout = ({ children }) => (
               streetAddress: "Ruta 5, km 107",
               addressLocality: "Villa del Dique",
               addressRegion: "Córdoba",
+              postalCode: "X5856",
               addressCountry: "AR",
             },
             geo: {
@@ -170,10 +181,97 @@ const RootLayout = ({ children }) => (
                 "@type": "AdministrativeArea",
                 name: "LATAM",
               },
+              {
+                "@type": "State",
+                name: "Córdoba",
+              },
             ],
-            serviceType: ["Desarrollo Web", "Diseño Web", "E-commerce", "SEO", "Aplicaciones Web", "UX/UI Design"],
+            serviceType: [
+              "Desarrollo Web",
+              "Diseño Web",
+              "E-commerce",
+              "SEO",
+              "Aplicaciones Web",
+              "UX/UI Design",
+              "Landing Pages",
+              "Mantenimiento Web",
+              "Optimización Web",
+            ],
             foundingDate: "2020",
             sameAs: ["https://www.instagram.com/dualitydomain"],
+            hasOfferCatalog: {
+              "@type": "OfferCatalog",
+              name: "Servicios de Desarrollo Web",
+              itemListElement: [
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Desarrollo Web Profesional",
+                    description: "Creación de sitios web modernos, responsivos y optimizados",
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "E-commerce Personalizado",
+                    description: "Tiendas online únicas con integración de pagos seguros",
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "SEO y Optimización Web",
+                    description: "Mejora de velocidad, rendimiento y posicionamiento en buscadores",
+                  },
+                },
+              ],
+            },
+          }),
+        }}
+      />
+
+      {/* Structured Data - LocalBusiness */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "@id": "https://www.dualitydomain.com/#organization",
+            name: "Duality Domain",
+            description: "Empresa de desarrollo web profesional en Villa del Dique, Córdoba",
+            url: "https://www.dualitydomain.com",
+            telephone: "+54-9-3546-50-1537",
+            email: "dualitydomainoficial@gmail.com",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "Ruta 5, km 107",
+              addressLocality: "Villa del Dique",
+              addressRegion: "Córdoba",
+              postalCode: "X5856",
+              addressCountry: "AR",
+            },
+            geo: {
+              "@type": "GeoCoordinates",
+              latitude: -32.1833,
+              longitude: -64.4833,
+            },
+            openingHoursSpecification: {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              opens: "09:00",
+              closes: "18:00",
+            },
+            priceRange: "$$",
+            currenciesAccepted: "ARS",
+            paymentAccepted: "Cash, Credit Card, Bank Transfer",
+            areaServed: {
+              "@type": "State",
+              name: "Córdoba",
+            },
           }),
         }}
       />
@@ -194,6 +292,19 @@ const RootLayout = ({ children }) => (
                 );
               });
             }
+          `,
+        }}
+      />
+
+      {/* Google Analytics */}
+      <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'GA_MEASUREMENT_ID');
           `,
         }}
       />

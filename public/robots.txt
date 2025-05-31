@@ -3,8 +3,6 @@ User-agent: *
 Allow: /
 
 # Permitir acceso a todos los recursos importantes
-Allow: /blog
-Allow: /blog/*
 Allow: /solicitar-demo
 Allow: /servicios
 Allow: /servicios/*

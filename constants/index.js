@@ -283,7 +283,7 @@ export const projects = [
       "Desarrollamos una landing page profesional y funcional para Electricidad Villa del Dique, una empresa familiar con más de 20 años de experiencia en servicios eléctricos en Córdoba, Argentina. El objetivo principal fue potenciar su presencia digital y facilitar el contacto con nuevos clientes.",
     image: "/electricidad-villa-del-dique.png",
     category: "Landing Page",
-    date: "2024",
+    date: "2025",
     link: "https://www.electricidadvilladeldique.com.ar",
   },
   {
@@ -293,7 +293,7 @@ export const projects = [
       "Diseñamos y desarrollamos un sitio web funcional y visualmente atractivo para Perimetrales Las Flores, una empresa especializada en cercos perimetrales con fuerte presencia en Córdoba. Esta solución digital fue creada para presentar sus servicios y productos de forma clara, con el valor agregado de una tienda online simplificada que permite realizar pedidos directos vía WhatsApp.",
     image: "/perimetrales-las-flores.png",
     category: "Sitio Web + Tienda Online",
-    date: "2024",
+    date: "2025",
     link: "https://www.perimetraleslasflores.com",
   },
   {
@@ -303,7 +303,7 @@ export const projects = [
       "Desarrollamos el sitio web oficial de la Asociación de Comercio de Villa del Dique, con el objetivo de visibilizar sus acciones, conectar con sus más de 100 socios registrados y difundir novedades relevantes para la comunidad comercial local. La plataforma actúa como un medio informativo y una herramienta institucional de referencia en la región.",
     image: "/asociacion-de-comercio-villa-del-dique.png",
     category: "Sitio Web Institucional",
-    date: "2024",
+    date: "2025",
     link: "https://www.villadeldique.org",
   },
   {
@@ -313,8 +313,8 @@ export const projects = [
       "Creamos un sitio de comercio electrónico totalmente personalizado para J. Murrieta, una empresa argentina dedicada a la fabricación artesanal de rifles de aire comprimido tipo PCP. El objetivo fue ofrecer una plataforma moderna que reflejara la calidad técnica y el legado familiar del emprendimiento, permitiendo gestionar productos, consultas y ventas de forma profesional.",
     image: "/j-murrieta-rifles.png",
     category: "E-commerce Especializado",
-    date: "2024",
-    link: "https://jmurrieta.com",
+    date: "2025",
+    link: "https://jmurrietapcp.com",
   },
 ]
 

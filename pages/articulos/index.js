@@ -4,10 +4,12 @@ import Head from "next/head"
 import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect } from "react"
+import { motion } from "framer-motion"
 import { Navbar, Footer } from "../../components"
 import WhatsAppButton from "../../components/WhatsAppButton"
 import { insights } from "../../constants"
 import styles from "../../styles"
+import { staggerContainer, fadeIn } from "../../utils/motion"
 
 const ArticulosIndex = () => {
   const [isLoading, setIsLoading] = useState(true)
@@ -44,7 +46,6 @@ const ArticulosIndex = () => {
 
         {/* Preload critical resources */}
         <link rel="preload" href="/logo.png" as="image" />
-        <link rel="preload" href="/como-tener-un-buen-diseno-web.png" as="image" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
@@ -126,7 +127,7 @@ const ArticulosIndex = () => {
                 },
                 image: {
                   "@type": "ImageObject",
-                  url: `https://www.dualitydomain.com${insight.imgUrl}`,
+                  url: insight.imgUrl,
                   width: 1200,
                   height: 630,
                 },
@@ -192,15 +193,26 @@ const ArticulosIndex = () => {
         />
       </Head>
 
-      <div className="bg-primary-black min-h-screen relative">
+      <div className="bg-primary-black overflow-hidden">
+        <div className="absolute w-[50%] inset-0 gradient-01" />
         <Navbar />
 
-        <main className="bg-primary-black w-full min-h-screen">
-          <section className={`${styles.paddings} bg-primary-black`}>
+        <main className="bg-primary-black w-full min-h-screen relative z-10">
+          <motion.section
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.25 }}
+            className={`${styles.paddings} bg-primary-black relative z-10`}
+          >
             <div className={`${styles.innerWidth} mx-auto flex flex-col bg-primary-black`}>
               {/* Breadcrumb Navigation */}
-              <nav aria-label="Breadcrumb" className="mb-4 xs:mb-5 sm:mb-6 md:mb-7 lg:mb-8 xl:mb-10">
-                <ol className="flex items-center space-x-1 xs:space-x-1 sm:space-x-2 md:space-x-2 text-xs xs:text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl text-secondary-white">
+              <motion.nav
+                variants={fadeIn("down", "tween", 0.1, 1)}
+                aria-label="Breadcrumb"
+                className="mb-6 sm:mb-8 md:mb-10 lg:mb-12"
+              >
+                <ol className="flex items-center space-x-2 text-sm sm:text-base text-secondary-white">
                   <li>
                     <Link
                       href="/"
@@ -217,72 +229,80 @@ const ArticulosIndex = () => {
                     Artículos
                   </li>
                 </ol>
-              </nav>
+              </motion.nav>
 
               {/* Page Header */}
-              <header className="text-center mb-8 xs:mb-10 sm:mb-12 md:mb-14 lg:mb-16 xl:mb-20 2xl:mb-24">
-                <h1 className="font-bold text-white text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl 3xl:text-8xl leading-tight mb-3 xs:mb-4 sm:mb-5 md:mb-6 lg:mb-8 xl:mb-10 px-2 xs:px-3 sm:px-4">
-                  Artículos sobre Desarrollo Web
-                </h1>
-                <p className="text-secondary-white text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl max-w-xs xs:max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto leading-relaxed px-3 xs:px-4 sm:px-6 md:px-8">
-                  Descubre consejos prácticos, estrategias y las mejores prácticas en desarrollo web, SEO, e-commerce y
-                  experiencia de usuario. Conocimiento especializado para impulsar tu presencia digital.
-                </p>
-              </header>
+              <motion.header
+                variants={fadeIn("up", "tween", 0.2, 1)}
+                className="text-center mb-12 sm:mb-16 md:mb-20 lg:mb-24"
+              >
+                <div className="relative">
+                  <h4 className="text-[#25618B] font-medium text-[14px] sm:text-[16px] uppercase tracking-wider mb-2">
+                    | Recursos y Conocimiento
+                  </h4>
+                  <h1 className="font-bold text-white text-[32px] sm:text-[48px] md:text-[64px] lg:text-[80px] leading-tight mb-4 sm:mb-6">
+                    Artículos sobre desarrollo web
+                  </h1>
+                  <p className="text-secondary-white text-[16px] sm:text-[18px] md:text-[20px] max-w-4xl mx-auto leading-relaxed px-4">
+                    Descubre consejos prácticos, estrategias y las mejores prácticas en desarrollo web, SEO, e-commerce
+                    y experiencia de usuario. Conocimiento especializado para impulsar tu presencia digital.
+                  </p>
+                </div>
+              </motion.header>
 
               {/* Articles Grid */}
-              <section aria-label="Lista de artículos">
-                <div className="grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-4 gap-4 xs:gap-5 sm:gap-6 md:gap-7 lg:gap-8 xl:gap-10 2xl:gap-12">
+              <motion.section variants={fadeIn("up", "tween", 0.3, 1)} aria-label="Lista de artículos">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
                   {insights.map((insight, index) => (
-                    <article
+                    <motion.article
                       key={insight.id}
-                      className="bg-[#323f5d] rounded-lg xs:rounded-xl sm:rounded-xl md:rounded-2xl lg:rounded-2xl xl:rounded-3xl overflow-hidden hover:bg-[#445175] focus-within:bg-[#445175] transition-all duration-300 group w-full max-w-sm xs:max-w-md sm:max-w-none mx-auto"
+                      variants={fadeIn("up", "spring", index * 0.1, 0.75)}
+                      className="bg-[rgba(0,0,0,0.3)] rounded-[20px] sm:rounded-[24px] overflow-hidden hover:bg-[rgba(255,255,255,0.05)] transition-all duration-300 group border-[1px] border-[#6a6a6a] hover:border-[#25618B]"
                     >
                       <Link
                         href={`/articulos/${insight.id}`}
-                        className="block focus:outline-none focus:ring-4 focus:ring-[#25618B] rounded-lg xs:rounded-xl sm:rounded-xl md:rounded-2xl lg:rounded-2xl xl:rounded-3xl"
+                        className="block focus:outline-none focus:ring-4 focus:ring-[#25618B] rounded-[20px] sm:rounded-[24px]"
                         aria-label={`Leer artículo: ${insight.title}`}
                       >
-                        <div className="relative h-32 xs:h-36 sm:h-40 md:h-44 lg:h-48 xl:h-52 2xl:h-56 3xl:h-64 overflow-hidden">
+                        <div className="relative h-[200px] sm:h-[220px] md:h-[240px] overflow-hidden">
                           <Image
                             src={insight.imgUrl || "/placeholder.svg"}
                             alt={`Imagen del artículo: ${insight.title}`}
-                            width={400}
-                            height={200}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-300"
                             loading={index < 3 ? "eager" : "lazy"}
-                            sizes="(max-width: 375px) 100vw, (max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, (max-width: 1920px) 33vw, 25vw"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                           />
                         </div>
 
-                        <div className="p-3 xs:p-4 sm:p-5 md:p-6 lg:p-7 xl:p-8 2xl:p-10">
-                          <div className="flex justify-between items-center mb-2 xs:mb-3 sm:mb-3 md:mb-4">
-                            <span className="bg-[#25618B] text-white text-xs xs:text-xs sm:text-sm md:text-sm lg:text-base xl:text-lg px-2 xs:px-3 sm:px-3 md:px-4 py-1 xs:py-1 sm:py-1 md:py-2 rounded-full font-medium">
+                        <div className="p-6 sm:p-8">
+                          <div className="flex justify-between items-center mb-4">
+                            <span className="bg-[#25618B] text-white text-xs sm:text-sm px-3 py-1 rounded-full font-medium">
                               Artículo
                             </span>
                             <time
                               dateTime={insight.date}
-                              className="text-secondary-white text-xs xs:text-xs sm:text-sm md:text-sm lg:text-base xl:text-lg font-medium"
+                              className="text-secondary-white text-xs sm:text-sm font-medium"
                             >
                               {insight.date}
                             </time>
                           </div>
 
-                          <h2 className="text-white font-bold text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl mb-2 xs:mb-3 sm:mb-3 md:mb-4 lg:mb-5 group-hover:text-[#25618B] transition-colors leading-tight">
+                          <h2 className="text-white font-bold text-[20px] sm:text-[24px] md:text-[28px] mb-4 group-hover:text-[#25618B] transition-colors leading-tight">
                             {insight.title}
                           </h2>
 
-                          <p className="text-secondary-white text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl leading-relaxed mb-3 xs:mb-4 sm:mb-4 md:mb-5 lg:mb-6 line-clamp-2 xs:line-clamp-3 sm:line-clamp-3 md:line-clamp-4">
+                          <p className="text-secondary-white text-[14px] sm:text-[16px] leading-relaxed mb-6 line-clamp-3">
                             {insight.subtitle}
                           </p>
 
                           <div className="flex items-center justify-between">
-                            <div className="flex items-center gap-2 xs:gap-2 sm:gap-3 md:gap-3 lg:gap-4">
+                            <div className="flex items-center gap-3">
                               <div
-                                className="w-6 h-6 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 xl:w-12 xl:h-12 bg-[#25618B] rounded-full flex items-center justify-center flex-shrink-0"
+                                className="w-10 h-10 sm:w-12 sm:h-12 bg-[#25618B] rounded-full flex items-center justify-center flex-shrink-0"
                                 aria-hidden="true"
                               >
-                                <span className="text-white text-xs xs:text-xs sm:text-sm md:text-sm lg:text-base xl:text-lg font-bold">
+                                <span className="text-white text-sm sm:text-base font-bold">
                                   {insight.author
                                     .split(" ")
                                     .map((n) => n[0])
@@ -290,12 +310,8 @@ const ArticulosIndex = () => {
                                 </span>
                               </div>
                               <div className="min-w-0 flex-1">
-                                <p className="text-white text-xs xs:text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl font-medium truncate">
-                                  {insight.author}
-                                </p>
-                                <p className="text-secondary-white text-xs xs:text-xs sm:text-sm md:text-sm lg:text-base xl:text-lg truncate">
-                                  {insight.authorRole}
-                                </p>
+                                <p className="text-white text-sm sm:text-base font-medium truncate">{insight.author}</p>
+                                <p className="text-secondary-white text-xs sm:text-sm truncate">{insight.authorRole}</p>
                               </div>
                             </div>
 
@@ -305,7 +321,7 @@ const ArticulosIndex = () => {
                             >
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="h-4 w-4 xs:h-5 xs:w-5 sm:h-5 sm:w-5 md:h-6 md:w-6 lg:h-7 lg:w-7 xl:h-8 xl:w-8"
+                                className="h-5 w-5 sm:h-6 sm:w-6"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
@@ -316,30 +332,33 @@ const ArticulosIndex = () => {
                           </div>
                         </div>
                       </Link>
-                    </article>
+                    </motion.article>
                   ))}
                 </div>
-              </section>
+              </motion.section>
 
               {/* Call to Action */}
-              <aside className="text-center mt-8 xs:mt-10 sm:mt-12 md:mt-14 lg:mt-16 xl:mt-20 2xl:mt-24 p-4 xs:p-5 sm:p-6 md:p-7 lg:p-8 xl:p-10 2xl:p-12 bg-[#323f5d] rounded-lg xs:rounded-xl sm:rounded-xl md:rounded-2xl lg:rounded-2xl xl:rounded-3xl max-w-xs xs:max-w-sm sm:max-w-2xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto">
-                <h2 className="text-white font-bold text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl mb-3 xs:mb-4 sm:mb-5 md:mb-6 lg:mb-8 xl:mb-10">
+              <motion.aside
+                variants={fadeIn("up", "tween", 0.4, 1)}
+                className="text-center mt-16 sm:mt-20 md:mt-24 p-8 sm:p-10 md:p-12 bg-[rgba(0,0,0,0.3)] rounded-[24px] sm:rounded-[32px] max-w-4xl mx-auto border-[1px] border-[#6a6a6a]"
+              >
+                <h2 className="text-white font-bold text-[24px] sm:text-[32px] md:text-[40px] mb-4 sm:mb-6">
                   ¿Necesitas ayuda con tu proyecto?
                 </h2>
-                <p className="text-secondary-white text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl mb-4 xs:mb-5 sm:mb-6 md:mb-7 lg:mb-8 xl:mb-10 2xl:mb-12 leading-relaxed px-2 xs:px-3 sm:px-4 md:px-6 lg:px-8">
+                <p className="text-secondary-white text-[16px] sm:text-[18px] md:text-[20px] mb-8 sm:mb-10 leading-relaxed max-w-2xl mx-auto">
                   Si tienes preguntas específicas sobre alguno de estos temas o necesitas ayuda personalizada para tu
                   proyecto, no dudes en contactarnos.
                 </p>
                 <Link
                   href="/solicitar-demo"
-                  className="inline-block bg-[#25618B] text-white py-2 xs:py-3 sm:py-3 md:py-4 lg:py-5 xl:py-6 px-4 xs:px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 rounded-lg xs:rounded-xl sm:rounded-xl md:rounded-2xl hover:bg-[#1a4a6e] focus:bg-[#1a4a6e] transition-colors font-semibold text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl focus:outline-none focus:ring-4 focus:ring-[#25618B]/50 min-h-[44px] min-w-[44px]"
+                  className="inline-block bg-[#25618B] text-white py-4 px-8 sm:py-5 sm:px-10 rounded-[32px] hover:bg-[#1a4a6e] focus:bg-[#1a4a6e] transition-colors font-semibold text-[16px] sm:text-[18px] focus:outline-none focus:ring-4 focus:ring-[#25618B]/50 min-h-[44px] min-w-[44px]"
                   aria-label="Solicitar consulta gratuita sobre desarrollo web"
                 >
                   Solicitar consulta gratuita
                 </Link>
-              </aside>
+              </motion.aside>
             </div>
-          </section>
+          </motion.section>
         </main>
 
         <Footer />

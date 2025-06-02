@@ -391,12 +391,12 @@ select {
 
   article {
     position: relative;
-    z-index: 10 !important;
+    z-index: 50 !important;
   }
 
   .blog-content {
     position: relative;
-    z-index: 15 !important;
+    z-index: 50 !important;
   }
 
   /* Asegurar que el navbar no interfiera */
@@ -404,4 +404,20 @@ select {
     position: relative;
     z-index: 100;
   }
+}
+
+/* Asegurar consistencia en todos los dispositivos */
+.blog-content {
+  position: relative;
+  z-index: 50 !important;
+}
+
+article {
+  position: relative;
+  z-index: 50 !important;
+}
+
+main {
+  position: relative;
+  z-index: 50 !important;
 }

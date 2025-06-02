@@ -4,12 +4,10 @@ import Head from "next/head"
 import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
 import { Navbar, Footer } from "../../components"
 import WhatsAppButton from "../../components/WhatsAppButton"
 import { insights } from "../../constants"
 import styles from "../../styles"
-import { staggerContainer, fadeIn } from "../../utils/motion"
 
 const ArticleDesignConversions = () => {
   const [isLoading, setIsLoading] = useState(true)
@@ -68,24 +66,18 @@ const ArticleDesignConversions = () => {
       </Head>
 
       <div className="bg-primary-black overflow-hidden min-h-screen">
-        <Navbar />
+        <div style={{ position: "relative", zIndex: 1 }}>
+          <Navbar />
+        </div>
 
-        <main className="relative z-50 w-full">
-          <article className={`${styles.paddings} relative z-50`}>
-            <div className="gradient-02 z-0" />
-            <motion.div
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: false, amount: 0.25 }}
-              className={`${styles.innerWidth} mx-auto flex flex-col relative z-50`}
+        <main style={{ position: "relative", zIndex: 10000, background: "#1A232E" }}>
+          <article className={`${styles.paddings}`} style={{ position: "relative", zIndex: 10001 }}>
+            <div
+              className={`${styles.innerWidth} mx-auto flex flex-col`}
+              style={{ position: "relative", zIndex: 10002 }}
             >
               {/* Breadcrumb Navigation */}
-              <motion.nav
-                variants={fadeIn("down", "tween", 0.1, 1)}
-                aria-label="Breadcrumb"
-                className="mb-4 sm:mb-6 relative z-50"
-              >
+              <nav aria-label="Breadcrumb" className="mb-4 sm:mb-6" style={{ position: "relative", zIndex: 10003 }}>
                 <ol className="flex items-center space-x-2 text-sm text-secondary-white">
                   <li>
                     <Link href="/" className="hover:text-white transition-colors">
@@ -101,13 +93,10 @@ const ArticleDesignConversions = () => {
                   <li>/</li>
                   <li className="text-white font-medium">Diseño Web</li>
                 </ol>
-              </motion.nav>
+              </nav>
 
               {/* Article Header */}
-              <motion.header
-                variants={fadeIn("up", "tween", 0.2, 1)}
-                className="text-center mb-8 sm:mb-12 relative z-50"
-              >
+              <header className="text-center mb-8 sm:mb-12" style={{ position: "relative", zIndex: 10003 }}>
                 <p className="font-normal text-[14px] text-secondary-white uppercase tracking-wider">
                   | Desarrollo Web
                 </p>
@@ -138,10 +127,10 @@ const ArticleDesignConversions = () => {
                     <time dateTime="2025-05-31">{article.date}</time>
                   </div>
                 </div>
-              </motion.header>
+              </header>
 
               {/* Featured Image */}
-              <motion.figure variants={fadeIn("up", "tween", 0.3, 1)} className="mb-8 sm:mb-12 relative z-50">
+              <figure className="mb-8 sm:mb-12" style={{ position: "relative", zIndex: 10003 }}>
                 <div className="relative h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] rounded-[20px] sm:rounded-[32px] overflow-hidden mx-4 sm:mx-0">
                   <Image
                     src={article.imgUrl || "/placeholder.svg"}
@@ -152,24 +141,21 @@ const ArticleDesignConversions = () => {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw"
                   />
                 </div>
-              </motion.figure>
+              </figure>
 
               {/* Article Content */}
-              <motion.section
-                variants={fadeIn("up", "tween", 0.4, 1)}
-                className="max-w-4xl mx-auto relative z-[9999] bg-primary-black"
-              >
+              <section className="max-w-4xl mx-auto" style={{ position: "relative", zIndex: 10003 }}>
                 <div
-                  className="blog-content prose prose-invert max-w-none text-white leading-relaxed px-4 sm:px-6 md:px-8 relative z-[9999] bg-primary-black"
-                  style={{ position: "relative", zIndex: 9999, backgroundColor: "#1A232E" }}
+                  className="blog-content prose prose-invert max-w-none text-white leading-relaxed px-4 sm:px-6 md:px-8"
+                  style={{ position: "relative", zIndex: 10004, color: "#e0e0e0" }}
                   dangerouslySetInnerHTML={{ __html: article.content }}
                 />
-              </motion.section>
+              </section>
 
               {/* Call to Action */}
-              <motion.aside
-                variants={fadeIn("up", "tween", 0.5, 1)}
-                className="mt-12 sm:mt-16 p-6 sm:p-8 bg-[#25618B] rounded-[20px] sm:rounded-[32px] text-center max-w-4xl mx-auto relative z-50 mx-4 sm:mx-auto"
+              <aside
+                className="mt-12 sm:mt-16 p-6 sm:p-8 bg-[#25618B] rounded-[20px] sm:rounded-[32px] text-center max-w-4xl mx-auto mx-4 sm:mx-auto"
+                style={{ position: "relative", zIndex: 10003 }}
               >
                 <h2 className="text-white font-bold text-[24px] sm:text-[32px] mb-4">
                   ¿Listo para mejorar las conversiones de tu sitio web?
@@ -184,13 +170,10 @@ const ArticleDesignConversions = () => {
                 >
                   Solicitar consulta gratuita
                 </Link>
-              </motion.aside>
+              </aside>
 
               {/* Related Articles */}
-              <motion.section
-                variants={fadeIn("up", "tween", 0.6, 1)}
-                className="mt-12 sm:mt-16 relative z-50 px-4 sm:px-0"
-              >
+              <section className="mt-12 sm:mt-16 px-4 sm:px-0" style={{ position: "relative", zIndex: 10003 }}>
                 <h2 className="text-white font-bold text-[24px] sm:text-[32px] mb-6 sm:mb-8 text-center">
                   Artículos relacionados
                 </h2>
@@ -224,13 +207,15 @@ const ArticleDesignConversions = () => {
                       </Link>
                     ))}
                 </div>
-              </motion.section>
-            </motion.div>
+              </section>
+            </div>
           </article>
         </main>
 
-        <Footer />
-        <WhatsAppButton />
+        <div style={{ position: "relative", zIndex: 1 }}>
+          <Footer />
+          <WhatsAppButton />
+        </div>
       </div>
     </>
   )

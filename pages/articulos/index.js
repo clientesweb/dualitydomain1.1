@@ -4,12 +4,10 @@ import Head from "next/head"
 import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
 import { Navbar, Footer } from "../../components"
 import WhatsAppButton from "../../components/WhatsAppButton"
 import { insights } from "../../constants"
 import styles from "../../styles"
-import { staggerContainer, fadeIn } from "../../utils/motion"
 
 const ArticulosIndex = () => {
   const [isLoading, setIsLoading] = useState(true)
@@ -73,15 +71,9 @@ const ArticulosIndex = () => {
 
         <section className={`${styles.paddings} relative z-10`}>
           <div className="gradient-02 z-0" />
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: false, amount: 0.25 }}
-            className={`${styles.innerWidth} mx-auto flex flex-col`}
-          >
+          <div className={`${styles.innerWidth} mx-auto flex flex-col`}>
             {/* Breadcrumb Navigation */}
-            <motion.nav variants={fadeIn("down", "tween", 0.1, 1)} aria-label="Breadcrumb" className="mb-6">
+            <nav aria-label="Breadcrumb" className="mb-6">
               <ol className="flex items-center space-x-2 text-sm text-secondary-white">
                 <li>
                   <Link href="/" className="hover:text-white transition-colors">
@@ -91,10 +83,10 @@ const ArticulosIndex = () => {
                 <li>/</li>
                 <li className="text-white font-medium">Artículos</li>
               </ol>
-            </motion.nav>
+            </nav>
 
             {/* Page Header */}
-            <motion.div variants={fadeIn("up", "tween", 0.2, 1)} className="text-center mb-16">
+            <div className="text-center mb-16">
               <p className="font-normal text-[14px] text-secondary-white uppercase tracking-wider">
                 | Recursos y Conocimiento
               </p>
@@ -105,16 +97,13 @@ const ArticulosIndex = () => {
                 Descubre consejos prácticos, estrategias y las mejores prácticas en desarrollo web, SEO, e-commerce y
                 experiencia de usuario. Conocimiento especializado para impulsar tu presencia digital.
               </p>
-            </motion.div>
+            </div>
 
             {/* Articles Grid */}
-            <motion.div variants={fadeIn("up", "tween", 0.3, 1)} className="flex flex-col gap-[30px]">
+            <div className="flex flex-col gap-[30px]">
               {insights.map((insight, index) => (
                 <Link key={insight.id} href={`/articulos/${insight.id}`}>
-                  <motion.div
-                    variants={fadeIn("up", "spring", index * 0.5, 1)}
-                    className="flex md:flex-row flex-col gap-4 hover:bg-[rgba(255,255,255,0.05)] transition-colors p-4 rounded-xl group cursor-pointer"
-                  >
+                  <div className="flex md:flex-row flex-col gap-4 hover:bg-[rgba(255,255,255,0.05)] transition-colors p-4 rounded-xl group cursor-pointer">
                     <Image
                       src={insight.imgUrl || "/placeholder.svg"}
                       alt={insight.title}
@@ -169,16 +158,13 @@ const ArticulosIndex = () => {
                         </div>
                       </div>
                     </div>
-                  </motion.div>
+                  </div>
                 </Link>
               ))}
-            </motion.div>
+            </div>
 
             {/* Call to Action */}
-            <motion.div
-              variants={fadeIn("up", "tween", 0.4, 1)}
-              className="text-center mt-16 p-8 bg-[rgba(0,0,0,0.3)] rounded-[32px] max-w-4xl mx-auto border-[1px] border-[#6a6a6a]"
-            >
+            <div className="text-center mt-16 p-8 bg-[rgba(0,0,0,0.3)] rounded-[32px] max-w-4xl mx-auto border-[1px] border-[#6a6a6a]">
               <h2 className="text-white font-bold text-[32px] mb-6">¿Necesitas ayuda con tu proyecto?</h2>
               <p className="text-secondary-white text-[18px] mb-8 leading-relaxed max-w-2xl mx-auto">
                 Si tienes preguntas específicas sobre alguno de estos temas o necesitas ayuda personalizada para tu
@@ -190,8 +176,8 @@ const ArticulosIndex = () => {
               >
                 Solicitar consulta gratuita
               </Link>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </section>
 
         <Footer />

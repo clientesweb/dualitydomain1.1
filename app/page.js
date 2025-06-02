@@ -11,7 +11,9 @@ const Page = () => (
       <Explore />
     </div>
     <div className="relative">
-      <Projects />
+      <div className="relative z-10">
+        <Projects />
+      </div>
       <div className="gradient-04 z-0" />
     </div>
     <div className="relative">

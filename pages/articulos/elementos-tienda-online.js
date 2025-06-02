@@ -55,319 +55,153 @@ const ArticleEcommerceElements = () => {
         <meta name="author" content={article.author} />
         <meta name="publisher" content="Duality Domain" />
 
-        {/* Preload critical resources */}
-        <link rel="preload" href={article.imgUrl} as="image" />
-        <link rel="preload" href="/logo.png" as="image" />
-
         {/* Open Graph */}
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://www.dualitydomain.com/articulos/elementos-tienda-online" />
         <meta property="og:title" content={article.title} />
         <meta property="og:description" content={article.subtitle} />
-        <meta property="og:image" content={`https://www.dualitydomain.com${article.imgUrl}`} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:article:published_time" content="2025-06-15T00:00:00Z" />
-        <meta property="og:article:modified_time" content="2025-06-15T00:00:00Z" />
-        <meta property="og:article:author" content={article.author} />
-        <meta property="og:article:section" content="E-commerce" />
-        <meta property="og:article:tag" content="tienda online" />
-        <meta property="og:article:tag" content="e-commerce" />
-        <meta property="og:article:tag" content="comercio electrónico" />
+        <meta property="og:image" content={article.imgUrl} />
         <meta property="og:locale" content="es_AR" />
         <meta property="og:site_name" content="Duality Domain" />
 
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@dualitydomain" />
-        <meta name="twitter:creator" content="@dualitydomain" />
-        <meta name="twitter:title" content={article.title} />
-        <meta name="twitter:description" content={article.subtitle} />
-        <meta name="twitter:image" content={`https://www.dualitydomain.com${article.imgUrl}`} />
-
-        {/* Additional SEO */}
         <meta name="theme-color" content="#25618B" />
-        <link rel="alternate" type="application/rss+xml" title="Duality Domain Blog RSS" href="/rss.xml" />
-
-        {/* Structured Data - Article */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BlogPosting",
-              "@id": "https://www.dualitydomain.com/articulos/elementos-tienda-online#article",
-              headline: article.title,
-              description: article.subtitle,
-              image: {
-                "@type": "ImageObject",
-                url: `https://www.dualitydomain.com${article.imgUrl}`,
-                width: 1200,
-                height: 630,
-              },
-              datePublished: "2025-06-15T00:00:00Z",
-              dateModified: "2025-06-15T00:00:00Z",
-              author: {
-                "@type": "Person",
-                name: article.author,
-                jobTitle: article.authorRole,
-                worksFor: {
-                  "@type": "Organization",
-                  name: "Duality Domain",
-                },
-              },
-              publisher: {
-                "@type": "Organization",
-                "@id": "https://www.dualitydomain.com/#organization",
-                name: "Duality Domain",
-                logo: {
-                  "@type": "ImageObject",
-                  url: "https://www.dualitydomain.com/logo.png",
-                },
-              },
-              mainEntityOfPage: {
-                "@type": "WebPage",
-                "@id": "https://www.dualitydomain.com/articulos/elementos-tienda-online",
-              },
-              articleSection: "E-commerce",
-              keywords: [
-                "tienda online",
-                "e-commerce",
-                "comercio electrónico",
-                "elementos esenciales",
-                "tienda virtual",
-                "Villa del Dique",
-              ],
-              wordCount: article.content.split(" ").length,
-              inLanguage: "es-AR",
-              isPartOf: {
-                "@type": "Blog",
-                "@id": "https://www.dualitydomain.com/articulos#blog",
-              },
-            }),
-          }}
-        />
-
-        {/* Structured Data - BreadcrumbList */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BreadcrumbList",
-              itemListElement: [
-                {
-                  "@type": "ListItem",
-                  position: 1,
-                  name: "Inicio",
-                  item: "https://www.dualitydomain.com",
-                },
-                {
-                  "@type": "ListItem",
-                  position: 2,
-                  name: "Artículos",
-                  item: "https://www.dualitydomain.com/articulos",
-                },
-                {
-                  "@type": "ListItem",
-                  position: 3,
-                  name: article.title,
-                  item: "https://www.dualitydomain.com/articulos/elementos-tienda-online",
-                },
-              ],
-            }),
-          }}
-        />
       </Head>
 
-      <div className="bg-primary-black min-h-screen relative">
+      <div className="bg-primary-black overflow-hidden">
         <Navbar />
 
-        <motion.main
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: false, amount: 0.25 }}
-          className="bg-primary-black w-full min-h-screen"
-        >
-          <article className={`${styles.paddings} bg-primary-black`}>
-            <div className={`${styles.innerWidth} mx-auto flex flex-col bg-primary-black`}>
-              {/* Breadcrumb Navigation */}
-              <motion.nav
-                variants={fadeIn("down", "tween", 0.2, 1)}
-                aria-label="Breadcrumb"
-                className="mb-4 xs:mb-5 sm:mb-6 md:mb-7 lg:mb-8 xl:mb-10"
-              >
-                <ol className="flex items-center space-x-1 xs:space-x-1 sm:space-x-2 md:space-x-2 text-xs xs:text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl text-secondary-white">
-                  <li>
-                    <Link
-                      href="/"
-                      className="hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-[#25618B] rounded px-1"
-                      aria-label="Ir a página de inicio"
-                    >
-                      Inicio
-                    </Link>
-                  </li>
-                  <li aria-hidden="true" className="text-secondary-white">
-                    /
-                  </li>
-                  <li>
-                    <Link
-                      href="/articulos"
-                      className="hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-[#25618B] rounded px-1"
-                      aria-label="Ir a página de artículos"
-                    >
-                      Artículos
-                    </Link>
-                  </li>
-                  <li aria-hidden="true" className="text-secondary-white">
-                    /
-                  </li>
-                  <li className="text-white font-medium" aria-current="page">
-                    <span className="line-clamp-1">{article.title}</span>
-                  </li>
-                </ol>
-              </motion.nav>
+        <section className={`${styles.paddings} relative z-10`}>
+          <div className="gradient-02 z-0" />
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.25 }}
+            className={`${styles.innerWidth} mx-auto flex flex-col`}
+          >
+            {/* Breadcrumb Navigation */}
+            <motion.nav variants={fadeIn("down", "tween", 0.1, 1)} aria-label="Breadcrumb" className="mb-6">
+              <ol className="flex items-center space-x-2 text-sm text-secondary-white">
+                <li>
+                  <Link href="/" className="hover:text-white transition-colors">
+                    Inicio
+                  </Link>
+                </li>
+                <li>/</li>
+                <li>
+                  <Link href="/articulos" className="hover:text-white transition-colors">
+                    Artículos
+                  </Link>
+                </li>
+                <li>/</li>
+                <li className="text-white font-medium">E-commerce</li>
+              </ol>
+            </motion.nav>
 
-              {/* Article Header */}
-              <motion.header
-                variants={fadeIn("up", "tween", 0.2, 1)}
-                className="text-center mb-6 xs:mb-7 sm:mb-8 md:mb-10 lg:mb-12 xl:mb-16 2xl:mb-20 bg-primary-black"
-              >
-                <div className="flex flex-row justify-center items-center gap-3">
-                  <p className="text-secondary-white text-sm">Categoría:</p>
-                  <p className={`${styles.paragraph} uppercase text-sm`}>E-commerce</p>
-                </div>
-                <h1 className={`${styles.heroHeadText} text-white`}>{article.title}</h1>
-                <p className={`${styles.heroSubText} text-secondary-white`}>{article.subtitle}</p>
+            {/* Article Header */}
+            <motion.header variants={fadeIn("up", "tween", 0.2, 1)} className="text-center mb-12">
+              <p className="font-normal text-[14px] text-secondary-white uppercase tracking-wider">| E-commerce</p>
+              <h1 className="mt-[8px] font-bold md:text-[64px] text-[40px] text-white leading-tight mb-6">
+                {article.title}
+              </h1>
+              <p className="font-normal text-[18px] text-secondary-white max-w-4xl mx-auto mb-8">{article.subtitle}</p>
 
-                {/* Author and Date Info */}
-                <div className="flex flex-col xs:flex-col sm:flex-row items-center justify-center gap-3 xs:gap-4 sm:gap-5 md:gap-6 lg:gap-8 mb-4 xs:mb-5 sm:mb-6 md:mb-8 lg:mb-10 xl:mb-12 px-3 xs:px-4 sm:px-6">
-                  <div className="flex items-center gap-2 xs:gap-3 sm:gap-3 md:gap-4">
-                    <div
-                      className="w-8 h-8 xs:w-9 xs:h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16 bg-[#25618B] rounded-full flex items-center justify-center flex-shrink-0"
-                      aria-hidden="true"
-                    >
-                      <span className="text-white font-bold text-xs xs:text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl">
-                        {article.author
-                          .split(" ")
-                          .map((n) => n[0])
-                          .join("")}
-                      </span>
-                    </div>
-                    <div className="text-left">
-                      <p className="text-white font-semibold text-sm xs:text-base sm:text-base md:text-lg lg:text-xl xl:text-2xl">
-                        {article.author}
-                      </p>
-                      <p className="text-secondary-white text-xs xs:text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl">
-                        {article.authorRole}
-                      </p>
-                    </div>
+              {/* Author and Date Info */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-[#25618B] rounded-full flex items-center justify-center">
+                    <span className="text-white font-bold text-sm">
+                      {article.author
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")}
+                    </span>
                   </div>
-                  <div className="text-secondary-white text-sm xs:text-base sm:text-base md:text-lg lg:text-xl xl:text-2xl">
-                    <time dateTime="2025-06-15" className="font-medium">
-                      {article.date}
-                    </time>
+                  <div className="text-left">
+                    <p className="text-white font-semibold text-base">{article.author}</p>
+                    <p className="text-secondary-white text-sm">{article.authorRole}</p>
                   </div>
                 </div>
-              </motion.header>
-
-              {/* Featured Image */}
-              <motion.figure
-                variants={fadeIn("right", "tween", 0.2, 1)}
-                className="mb-6 xs:mb-7 sm:mb-8 md:mb-10 lg:mb-12 xl:mb-16 2xl:mb-20 bg-primary-black"
-              >
-                <div className="relative h-40 xs:h-48 sm:h-56 md:h-64 lg:h-80 xl:h-96 2xl:h-[500px] 3xl:h-[600px] rounded-lg xs:rounded-xl sm:rounded-xl md:rounded-2xl lg:rounded-2xl xl:rounded-3xl overflow-hidden max-w-xs xs:max-w-sm sm:max-w-full mx-auto">
-                  <Image
-                    src={article.imgUrl || "/placeholder.svg"}
-                    alt={`Imagen del artículo: ${article.title}`}
-                    fill
-                    className="object-cover"
-                    priority
-                    sizes="(max-width: 375px) 100vw, (max-width: 640px) 100vw, (max-width: 1024px) 90vw, (max-width: 1280px) 80vw, (max-width: 1920px) 70vw, 60vw"
-                  />
+                <div className="text-secondary-white text-sm">
+                  <time dateTime="2025-06-15">{article.date}</time>
                 </div>
-                <figcaption className="sr-only">{article.title}</figcaption>
-              </motion.figure>
+              </div>
+            </motion.header>
 
-              {/* Article Content */}
-              <section className="max-w-xs xs:max-w-sm sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto bg-primary-black p-3 xs:p-4 sm:p-5 md:p-6 lg:p-8 xl:p-10 2xl:p-12 rounded-lg xs:rounded-xl sm:rounded-xl md:rounded-2xl">
-                <div
-                  className="blog-content prose prose-invert max-w-none text-white text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl leading-relaxed"
-                  dangerouslySetInnerHTML={{ __html: article.content }}
+            {/* Featured Image */}
+            <motion.figure variants={fadeIn("up", "tween", 0.3, 1)} className="mb-12">
+              <div className="relative h-[300px] sm:h-[400px] md:h-[500px] rounded-[32px] overflow-hidden">
+                <Image
+                  src={article.imgUrl || "/placeholder.svg"}
+                  alt={article.title}
+                  fill
+                  className="object-cover"
+                  priority
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw"
                 />
-              </section>
+              </div>
+            </motion.figure>
 
-              {/* Call to Action */}
-              <aside className="mt-8 xs:mt-10 sm:mt-12 md:mt-14 lg:mt-16 xl:mt-20 2xl:mt-24 p-4 xs:p-5 sm:p-6 md:p-7 lg:p-8 xl:p-10 2xl:p-12 bg-[#25618B] rounded-lg xs:rounded-xl sm:rounded-xl md:rounded-2xl lg:rounded-2xl xl:rounded-3xl text-center max-w-xs xs:max-w-sm sm:max-w-2xl md:max-w-4xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto">
-                <h2 className="text-white font-bold text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl mb-3 xs:mb-4 sm:mb-5 md:mb-6 lg:mb-8 xl:mb-10">
-                  ¿Necesitas una tienda online profesional?
-                </h2>
-                <p className="text-white text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl mb-4 xs:mb-5 sm:mb-6 md:mb-7 lg:mb-8 xl:mb-10 2xl:mb-12 leading-relaxed px-2 xs:px-3 sm:px-4 md:px-6 lg:px-8">
-                  Creamos tiendas online que incorporan todos estos elementos esenciales y más. Solicita una consulta
-                  gratuita y descubre cómo podemos ayudarte a vender más online.
-                </p>
-                <Link
-                  href="/solicitar-demo"
-                  className="inline-block bg-white text-[#25618B] py-2 xs:py-3 sm:py-3 md:py-4 lg:py-5 xl:py-6 px-4 xs:px-5 sm:px-6 md:px-8 lg:px-10 xl:px-12 rounded-lg xs:rounded-xl sm:rounded-xl md:rounded-2xl hover:bg-gray-100 focus:bg-gray-100 transition-colors font-semibold text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl focus:outline-none focus:ring-4 focus:ring-white/50 min-h-[44px] min-w-[44px]"
-                  aria-label="Solicitar consulta gratuita sobre desarrollo de tienda online"
-                >
-                  Solicitar consulta gratuita
-                </Link>
-              </aside>
+            {/* Article Content */}
+            <motion.section variants={fadeIn("up", "tween", 0.4, 1)} className="max-w-4xl mx-auto">
+              <div
+                className="blog-content prose prose-invert max-w-none text-white leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: article.content }}
+              />
+            </motion.section>
 
-              {/* Related Articles */}
-              <section
-                className="mt-8 xs:mt-10 sm:mt-12 md:mt-14 lg:mt-16 xl:mt-20 2xl:mt-24 bg-primary-black"
-                aria-labelledby="related-articles"
+            {/* Call to Action */}
+            <motion.aside
+              variants={fadeIn("up", "tween", 0.5, 1)}
+              className="mt-16 p-8 bg-[#25618B] rounded-[32px] text-center max-w-4xl mx-auto"
+            >
+              <h2 className="text-white font-bold text-[32px] mb-4">¿Necesitas una tienda online profesional?</h2>
+              <p className="text-white text-[18px] mb-8 leading-relaxed">
+                Creamos tiendas online que incorporan todos estos elementos esenciales y más. Solicita una consulta
+                gratuita y descubre cómo podemos ayudarte a vender más online.
+              </p>
+              <Link
+                href="/solicitar-demo"
+                className="inline-block bg-white text-[#25618B] py-4 px-8 rounded-[32px] hover:bg-gray-100 transition-colors font-semibold text-[16px]"
               >
-                <h2
-                  id="related-articles"
-                  className="text-white font-bold text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl mb-4 xs:mb-5 sm:mb-6 md:mb-7 lg:mb-8 xl:mb-10 2xl:mb-12 text-center"
-                >
-                  Artículos relacionados
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 xs:gap-5 sm:gap-6 md:gap-7 lg:gap-8 xl:gap-10 2xl:gap-12">
-                  {insights
-                    .filter((insight) => insight.id !== article.id)
-                    .slice(0, 2)
-                    .map((relatedArticle, index) => (
-                      <article
-                        key={relatedArticle.id}
-                        className="bg-[#323f5d] rounded-lg xs:rounded-xl sm:rounded-xl md:rounded-2xl lg:rounded-2xl xl:rounded-3xl overflow-hidden hover:bg-[#445175] focus-within:bg-[#445175] transition-all duration-300 group max-w-xs xs:max-w-sm sm:max-w-md md:max-w-none mx-auto w-full"
-                      >
-                        <Link
-                          href={`/articulos/${relatedArticle.id}`}
-                          className="block focus:outline-none focus:ring-4 focus:ring-[#25618B] rounded-lg xs:rounded-xl sm:rounded-xl md:rounded-2xl lg:rounded-2xl xl:rounded-3xl"
-                          aria-label={`Leer artículo: ${relatedArticle.title}`}
-                        >
-                          <div className="relative h-28 xs:h-32 sm:h-36 md:h-40 lg:h-44 xl:h-48 2xl:h-52 overflow-hidden">
-                            <Image
-                              src={relatedArticle.imgUrl || "/placeholder.svg"}
-                              alt={`Imagen del artículo: ${relatedArticle.title}`}
-                              width={400}
-                              height={200}
-                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                              loading="lazy"
-                              sizes="(max-width: 375px) 100vw, (max-width: 640px) 100vw, (max-width: 768px) 100vw, 50vw"
-                            />
-                          </div>
-                          <div className="p-3 xs:p-4 sm:p-5 md:p-6 lg:p-7 xl:p-8">
-                            <h3 className="text-white font-bold text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl mb-2 xs:mb-3 sm:mb-3 md:mb-4 group-hover:text-[#25618B] transition-colors leading-tight">
-                              {relatedArticle.title}
-                            </h3>
-                            <p className="text-secondary-white text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl leading-relaxed line-clamp-2 xs:line-clamp-2 sm:line-clamp-3 md:line-clamp-3">
-                              {relatedArticle.subtitle}
-                            </p>
-                          </div>
-                        </Link>
-                      </article>
-                    ))}
-                </div>
-              </section>
-            </div>
-          </article>
-        </motion.main>
+                Solicitar consulta gratuita
+              </Link>
+            </motion.aside>
+
+            {/* Related Articles */}
+            <motion.section variants={fadeIn("up", "tween", 0.6, 1)} className="mt-16">
+              <h2 className="text-white font-bold text-[32px] mb-8 text-center">Artículos relacionados</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {insights
+                  .filter((insight) => insight.id !== article.id)
+                  .slice(0, 2)
+                  .map((relatedArticle) => (
+                    <Link
+                      key={relatedArticle.id}
+                      href={`/articulos/${relatedArticle.id}`}
+                      className="bg-[rgba(0,0,0,0.3)] rounded-[24px] overflow-hidden hover:bg-[rgba(255,255,255,0.05)] transition-colors group border-[1px] border-[#6a6a6a]"
+                    >
+                      <div className="relative h-[200px] overflow-hidden">
+                        <Image
+                          src={relatedArticle.imgUrl || "/placeholder.svg"}
+                          alt={relatedArticle.title}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-300"
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                        />
+                      </div>
+                      <div className="p-6">
+                        <h3 className="text-white font-bold text-[20px] mb-3 group-hover:text-[#25618B] transition-colors">
+                          {relatedArticle.title}
+                        </h3>
+                        <p className="text-secondary-white text-[14px] leading-relaxed">{relatedArticle.subtitle}</p>
+                      </div>
+                    </Link>
+                  ))}
+              </div>
+            </motion.section>
+          </motion.div>
+        </section>
 
         <Footer />
         <WhatsAppButton />

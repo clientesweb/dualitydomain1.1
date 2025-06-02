@@ -70,12 +70,10 @@ const ArticleDesignConversions = () => {
           <Navbar />
         </div>
 
-        <main style={{ position: "relative", zIndex: 10000, background: "#1A232E" }}>
-          <article className={`${styles.paddings}`} style={{ position: "relative", zIndex: 10001 }}>
-            <div
-              className={`${styles.innerWidth} mx-auto flex flex-col`}
-              style={{ position: "relative", zIndex: 10002 }}
-            >
+        <main className="relative z-50 w-full">
+          <article className={`${styles.paddings} relative z-50`}>
+            <div className="gradient-02 z-0" />
+            <div className={`${styles.innerWidth} mx-auto flex flex-col relative z-50`}>
               {/* Breadcrumb Navigation */}
               <nav aria-label="Breadcrumb" className="mb-4 sm:mb-6" style={{ position: "relative", zIndex: 10003 }}>
                 <ol className="flex items-center space-x-2 text-sm text-secondary-white">

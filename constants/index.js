@@ -67,7 +67,8 @@ export const newFeatures = [
 export const insights = [
   {
     id: "diseno-web-conversiones",
-    imgUrl: "/como-tener-un-buen-diseno-web.png",
+    imgUrl:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/como-tener-un-buen-diseno-web%20%281%29-qKafNK1XDBRrAiiBI9mg1yLK9N1NwI.png",
     title: "Cómo un buen diseño web puede aumentar tus conversiones",
     subtitle:
       "En el mundo digital actual, tener una página web ya no es suficiente. Descubre cómo un diseño estratégico puede convertirse en tu mejor aliado para aumentar conversiones y generar más resultados.",
@@ -132,7 +133,8 @@ export const insights = [
   },
   {
     id: "elementos-tienda-online",
-    imgUrl: "/7-elementos-para-tu-tienda-online.png",
+    imgUrl:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/7-elementos-para-tu-tienda-online%20%281%29-pYAdkUve4WxSQ63EUrSZp1QG7DQvy0.png",
     title: "7 elementos esenciales que toda tienda online debe tener",
     subtitle:
       "En el comercio digital, tu tienda online es tu vendedor, atención al cliente y sistema de cobro, todo en uno. Descubre los elementos clave para vender más y ofrecer una experiencia profesional.",
@@ -203,7 +205,8 @@ export const insights = [
   },
   {
     id: "importancia-seo",
-    imgUrl: "/la-importancia-del-seo.png",
+    imgUrl:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/la-importancia-del-seo%20%281%29-HK750O3A0HjcYom1XKHjwXx4CNQDKD.png",
     title: "La importancia del SEO en tu estrategia digital",
     subtitle:
       "Tener un sitio web no es suficiente. En un mundo donde se hacen millones de búsquedas por segundo, el verdadero desafío es ser encontrado. Descubre por qué el SEO es clave para tu crecimiento.",

@@ -13,7 +13,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <nav className={`${styles.xPaddings} py-8 relative`}>
+    <nav className={`${styles.xPaddings} py-8 relative`} style={{ zIndex: 100 }}>
       <motion.div
         variants={navVariants}
         initial="hidden"
@@ -27,6 +27,7 @@ const Navbar = () => {
         initial="hidden"
         whileInView="show"
         className={`${styles.innerWidth} mx-auto flex justify-between items-center`}
+        style={{ position: "relative", zIndex: 101 }}
       >
         {/* Logo for desktop */}
         <div className="hidden md:block">
@@ -79,7 +80,7 @@ const Navbar = () => {
           </motion.div>
 
           {/* Menu icon - Right side */}
-          <div className="absolute right-0 top-1/2 transform -translate-y-1/2 z-[9998]">
+          <div className="absolute right-0 top-1/2 transform -translate-y-1/2" style={{ zIndex: 102 }}>
             <Image
               src={menu || "/placeholder.svg"}
               alt="menu-Icon"
@@ -88,7 +89,10 @@ const Navbar = () => {
             />
 
             {isMenuOpen && (
-              <div className="absolute top-10 right-0 bg-[#1A232E] p-5 rounded-lg shadow-lg z-[9999] min-w-[200px]">
+              <div
+                className="absolute top-10 right-0 bg-[#1A232E] p-5 rounded-lg shadow-lg min-w-[200px]"
+                style={{ zIndex: 103 }}
+              >
                 <div className="flex flex-col gap-4">
                   <Link
                     href="/"

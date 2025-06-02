@@ -262,14 +262,14 @@ const ArticleEcommerceElements = () => {
                 <div className="relative h-40 xs:h-48 sm:h-56 md:h-64 lg:h-80 xl:h-96 2xl:h-[500px] 3xl:h-[600px] rounded-lg xs:rounded-xl sm:rounded-xl md:rounded-2xl lg:rounded-2xl xl:rounded-3xl overflow-hidden max-w-xs xs:max-w-sm sm:max-w-full mx-auto">
                   <Image
                     src={article.imgUrl || "/placeholder.svg"}
-                    alt={`Imagen ilustrativa: ${article.title}`}
+                    alt={`Imagen del artículo: ${article.title}`}
                     fill
                     className="object-cover"
                     priority
                     sizes="(max-width: 375px) 100vw, (max-width: 640px) 100vw, (max-width: 1024px) 90vw, (max-width: 1280px) 80vw, (max-width: 1920px) 70vw, 60vw"
                   />
                 </div>
-                <figcaption className="sr-only">Imagen ilustrativa sobre {article.title}</figcaption>
+                <figcaption className="sr-only">{article.title}</figcaption>
               </figure>
 
               {/* Article Content */}
@@ -326,9 +326,10 @@ const ArticleEcommerceElements = () => {
                           <div className="relative h-28 xs:h-32 sm:h-36 md:h-40 lg:h-44 xl:h-48 2xl:h-52 overflow-hidden">
                             <Image
                               src={relatedArticle.imgUrl || "/placeholder.svg"}
-                              alt={`Imagen ilustrativa: ${relatedArticle.title}`}
-                              fill
-                              className="object-cover group-hover:scale-105 transition-transform duration-300"
+                              alt={`Imagen del artículo: ${relatedArticle.title}`}
+                              width={400}
+                              height={200}
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                               loading="lazy"
                               sizes="(max-width: 375px) 100vw, (max-width: 640px) 100vw, (max-width: 768px) 100vw, 50vw"
                             />

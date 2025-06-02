@@ -4,10 +4,12 @@ import Head from "next/head"
 import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect } from "react"
+import { motion } from "framer-motion"
 import { Navbar, Footer } from "../../components"
 import WhatsAppButton from "../../components/WhatsAppButton"
 import { insights } from "../../constants"
 import styles from "../../styles"
+import { slideIn, staggerContainer } from "../../utils/motion"
 
 const ArticleSEOImportance = () => {
   const [isLoading, setIsLoading] = useState(true)
@@ -181,11 +183,21 @@ const ArticleSEOImportance = () => {
       <div className="bg-primary-black min-h-screen relative">
         <Navbar />
 
-        <main className="bg-primary-black w-full min-h-screen">
+        <motion.main
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+          className="bg-primary-black w-full min-h-screen"
+        >
           <article className={`${styles.paddings} bg-primary-black`}>
             <div className={`${styles.innerWidth} mx-auto flex flex-col bg-primary-black`}>
               {/* Breadcrumb Navigation */}
-              <nav aria-label="Breadcrumb" className="mb-4 xs:mb-5 sm:mb-6 md:mb-7 lg:mb-8 xl:mb-10">
+              <motion.nav
+                variants={slideIn("down", "tween", 0.2, 1)}
+                aria-label="Breadcrumb"
+                className="mb-4 xs:mb-5 sm:mb-6 md:mb-7 lg:mb-8 xl:mb-10"
+              >
                 <ol className="flex items-center space-x-1 xs:space-x-1 sm:space-x-2 md:space-x-2 text-xs xs:text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl text-secondary-white">
                   <li>
                     <Link
@@ -215,10 +227,21 @@ const ArticleSEOImportance = () => {
                     <span className="line-clamp-1">{article.title}</span>
                   </li>
                 </ol>
-              </nav>
+              </motion.nav>
 
               {/* Article Header */}
-              <header className="text-center mb-6 xs:mb-7 sm:mb-8 md:mb-10 lg:mb-12 xl:mb-16 2xl:mb-20 bg-primary-black">
+              <motion.header
+                variants={slideIn("down", "tween", 0.3, 1)}
+                className="text-center mb-6 xs:mb-7 sm:mb-8 md:mb-10 lg:mb-12 xl:mb-16 2xl:mb-20 bg-primary-black"
+              >
+                <div className="flex items-center justify-center mb-3">
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500 font-bold text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl mr-2">
+                    SEO
+                  </span>
+                  <div
+                    className={`${styles.typingText} text-white text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl`}
+                  ></div>
+                </div>
                 <h1 className="font-bold text-white text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl 3xl:text-7xl leading-tight mb-3 xs:mb-4 sm:mb-5 md:mb-6 lg:mb-8 xl:mb-10 px-2 xs:px-3 sm:px-4 md:px-6">
                   {article.title}
                 </h1>
@@ -255,10 +278,13 @@ const ArticleSEOImportance = () => {
                     </time>
                   </div>
                 </div>
-              </header>
+              </motion.header>
 
               {/* Featured Image */}
-              <figure className="mb-6 xs:mb-7 sm:mb-8 md:mb-10 lg:mb-12 xl:mb-16 2xl:mb-20 bg-primary-black">
+              <motion.figure
+                variants={slideIn("right", "tween", 0.2, 1)}
+                className="mb-6 xs:mb-7 sm:mb-8 md:mb-10 lg:mb-12 xl:mb-16 2xl:mb-20 bg-primary-black"
+              >
                 <div className="relative h-40 xs:h-48 sm:h-56 md:h-64 lg:h-80 xl:h-96 2xl:h-[500px] 3xl:h-[600px] rounded-lg xs:rounded-xl sm:rounded-xl md:rounded-2xl lg:rounded-2xl xl:rounded-3xl overflow-hidden max-w-xs xs:max-w-sm sm:max-w-full mx-auto">
                   <Image
                     src={article.imgUrl || "/placeholder.svg"}
@@ -269,8 +295,8 @@ const ArticleSEOImportance = () => {
                     sizes="(max-width: 375px) 100vw, (max-width: 640px) 100vw, (max-width: 1024px) 90vw, (max-width: 1280px) 80vw, (max-width: 1920px) 70vw, 60vw"
                   />
                 </div>
-                <figcaption className="sr-only">Imagen ilustrativa sobre {article.title}</figcaption>
-              </figure>
+                <figcaption className="sr-only">{article.title}</figcaption>
+              </motion.figure>
 
               {/* Article Content */}
               <section className="max-w-xs xs:max-w-sm sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto bg-primary-black p-3 xs:p-4 sm:p-5 md:p-6 lg:p-8 xl:p-10 2xl:p-12 rounded-lg xs:rounded-xl sm:rounded-xl md:rounded-2xl">
@@ -338,7 +364,7 @@ const ArticleSEOImportance = () => {
                             <h3 className="text-white font-bold text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl mb-2 xs:mb-3 sm:mb-3 md:mb-4 group-hover:text-[#25618B] transition-colors leading-tight">
                               {relatedArticle.title}
                             </h3>
-                            <p className="text-secondary-white text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl leading-relaxed line-clamp-2 xs:line-clamp-2 sm:line-clamp-3 md:line-clamp-3">
+                            <p className="text-secondary-white text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed line-clamp-2 xs:line-clamp-2 sm:line-clamp-3 md:line-clamp-3">
                               {relatedArticle.subtitle}
                             </p>
                           </div>
@@ -349,7 +375,7 @@ const ArticleSEOImportance = () => {
               </section>
             </div>
           </article>
-        </main>
+        </motion.main>
 
         <Footer />
         <WhatsAppButton />

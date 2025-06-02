@@ -389,69 +389,19 @@ select {
     z-index: 1;
   }
 
-  /* Asegurar que el contenido del artículo sea visible */
   article {
     position: relative;
-    z-index: 50 !important;
-    background-color: #1a232e;
+    z-index: 10 !important;
   }
 
   .blog-content {
     position: relative;
-    z-index: 60 !important;
-    background-color: #1a232e;
-    padding: 1rem;
-    border-radius: 8px;
-  }
-
-  /* Asegurar que todos los elementos del artículo tengan z-index alto */
-  article * {
-    position: relative;
-    z-index: 55 !important;
+    z-index: 15 !important;
   }
 
   /* Asegurar que el navbar no interfiera */
   nav {
     position: relative;
     z-index: 100;
-  }
-
-  /* Gradientes no deben interferir en móviles */
-  .gradient-02,
-  .gradient-01,
-  .gradient-03,
-  .gradient-04 {
-    display: none !important;
-  }
-
-  /* Asegurar que el contenido principal tenga fondo sólido en móviles */
-  main {
-    background-color: #1a232e !important;
-    min-height: 100vh;
-  }
-
-  /* Mejorar la legibilidad del texto en móviles */
-  .blog-content p,
-  .blog-content h1,
-  .blog-content h2,
-  .blog-content h3,
-  .blog-content h4,
-  .blog-content li {
-    background-color: transparent !important;
-    color: #e0e0e0 !important;
-    position: relative;
-    z-index: 70 !important;
-  }
-
-  .blog-content h1,
-  .blog-content h2,
-  .blog-content h3,
-  .blog-content h4 {
-    color: white !important;
-  }
-
-  .blog-content strong,
-  .blog-content b {
-    color: white !important;
   }
 }

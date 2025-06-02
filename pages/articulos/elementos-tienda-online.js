@@ -4,10 +4,12 @@ import Head from "next/head"
 import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect } from "react"
+import { motion } from "framer-motion"
 import { Navbar, Footer } from "../../components"
 import WhatsAppButton from "../../components/WhatsAppButton"
 import { insights } from "../../constants"
 import styles from "../../styles"
+import { staggerContainer, fadeIn } from "../../utils/motion"
 
 const ArticleEcommerceElements = () => {
   const [isLoading, setIsLoading] = useState(true)
@@ -181,11 +183,21 @@ const ArticleEcommerceElements = () => {
       <div className="bg-primary-black min-h-screen relative">
         <Navbar />
 
-        <main className="bg-primary-black w-full min-h-screen">
+        <motion.main
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+          className="bg-primary-black w-full min-h-screen"
+        >
           <article className={`${styles.paddings} bg-primary-black`}>
             <div className={`${styles.innerWidth} mx-auto flex flex-col bg-primary-black`}>
               {/* Breadcrumb Navigation */}
-              <nav aria-label="Breadcrumb" className="mb-4 xs:mb-5 sm:mb-6 md:mb-7 lg:mb-8 xl:mb-10">
+              <motion.nav
+                variants={fadeIn("down", "tween", 0.2, 1)}
+                aria-label="Breadcrumb"
+                className="mb-4 xs:mb-5 sm:mb-6 md:mb-7 lg:mb-8 xl:mb-10"
+              >
                 <ol className="flex items-center space-x-1 xs:space-x-1 sm:space-x-2 md:space-x-2 text-xs xs:text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl text-secondary-white">
                   <li>
                     <Link
@@ -215,16 +227,19 @@ const ArticleEcommerceElements = () => {
                     <span className="line-clamp-1">{article.title}</span>
                   </li>
                 </ol>
-              </nav>
+              </motion.nav>
 
               {/* Article Header */}
-              <header className="text-center mb-6 xs:mb-7 sm:mb-8 md:mb-10 lg:mb-12 xl:mb-16 2xl:mb-20 bg-primary-black">
-                <h1 className="font-bold text-white text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl 3xl:text-7xl leading-tight mb-3 xs:mb-4 sm:mb-5 md:mb-6 lg:mb-8 xl:mb-10 px-2 xs:px-3 sm:px-4 md:px-6">
-                  {article.title}
-                </h1>
-                <p className="text-secondary-white text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl max-w-xs xs:max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto mb-4 xs:mb-5 sm:mb-6 md:mb-8 lg:mb-10 xl:mb-12 px-3 xs:px-4 sm:px-6 md:px-8 leading-relaxed">
-                  {article.subtitle}
-                </p>
+              <motion.header
+                variants={fadeIn("up", "tween", 0.2, 1)}
+                className="text-center mb-6 xs:mb-7 sm:mb-8 md:mb-10 lg:mb-12 xl:mb-16 2xl:mb-20 bg-primary-black"
+              >
+                <div className="flex flex-row justify-center items-center gap-3">
+                  <p className="text-secondary-white text-sm">Categoría:</p>
+                  <p className={`${styles.paragraph} uppercase text-sm`}>E-commerce</p>
+                </div>
+                <h1 className={`${styles.heroHeadText} text-white`}>{article.title}</h1>
+                <p className={`${styles.heroSubText} text-secondary-white`}>{article.subtitle}</p>
 
                 {/* Author and Date Info */}
                 <div className="flex flex-col xs:flex-col sm:flex-row items-center justify-center gap-3 xs:gap-4 sm:gap-5 md:gap-6 lg:gap-8 mb-4 xs:mb-5 sm:mb-6 md:mb-8 lg:mb-10 xl:mb-12 px-3 xs:px-4 sm:px-6">
@@ -255,10 +270,13 @@ const ArticleEcommerceElements = () => {
                     </time>
                   </div>
                 </div>
-              </header>
+              </motion.header>
 
               {/* Featured Image */}
-              <figure className="mb-6 xs:mb-7 sm:mb-8 md:mb-10 lg:mb-12 xl:mb-16 2xl:mb-20 bg-primary-black">
+              <motion.figure
+                variants={fadeIn("right", "tween", 0.2, 1)}
+                className="mb-6 xs:mb-7 sm:mb-8 md:mb-10 lg:mb-12 xl:mb-16 2xl:mb-20 bg-primary-black"
+              >
                 <div className="relative h-40 xs:h-48 sm:h-56 md:h-64 lg:h-80 xl:h-96 2xl:h-[500px] 3xl:h-[600px] rounded-lg xs:rounded-xl sm:rounded-xl md:rounded-2xl lg:rounded-2xl xl:rounded-3xl overflow-hidden max-w-xs xs:max-w-sm sm:max-w-full mx-auto">
                   <Image
                     src={article.imgUrl || "/placeholder.svg"}
@@ -270,7 +288,7 @@ const ArticleEcommerceElements = () => {
                   />
                 </div>
                 <figcaption className="sr-only">{article.title}</figcaption>
-              </figure>
+              </motion.figure>
 
               {/* Article Content */}
               <section className="max-w-xs xs:max-w-sm sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mx-auto bg-primary-black p-3 xs:p-4 sm:p-5 md:p-6 lg:p-8 xl:p-10 2xl:p-12 rounded-lg xs:rounded-xl sm:rounded-xl md:rounded-2xl">
@@ -349,7 +367,7 @@ const ArticleEcommerceElements = () => {
               </section>
             </div>
           </article>
-        </main>
+        </motion.main>
 
         <Footer />
         <WhatsAppButton />

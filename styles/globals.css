@@ -34,9 +34,9 @@
   height: 438px;
   top: 0px;
   right: 0px;
-
   background: #7aebfb;
   filter: blur(190px);
+  z-index: 0;
 }
 
 .glassmorphism {
@@ -53,10 +53,10 @@
   height: 800px;
   left: 20%;
   top: 5%;
-
   background: rgba(149, 66, 232, 0.35);
   filter: blur(175px);
   transform: rotate(-114.2deg);
+  z-index: 0;
 }
 
 .gradient-04 {
@@ -65,10 +65,10 @@
   height: 100vh;
   left: 30%;
   top: 10%;
-
   background: rgba(45, 72, 152, 0.75);
   filter: blur(200px);
   transform: rotate(-53.13deg);
+  z-index: 0;
 }
 
 .gradient-05 {
@@ -81,9 +81,9 @@
   height: 316px;
   left: 0px;
   top: 0px;
-
   background: #8d39a3;
   filter: blur(175px);
+  z-index: 0;
 }
 
 .footer-gradient {
@@ -92,9 +92,187 @@
   height: 100px;
   left: 37%;
   bottom: 0;
-
   background: #65c4fa;
   filter: blur(150px);
+  z-index: 0;
+}
+
+/* Enhanced responsive blog content styles */
+.blog-content {
+  color: #e0e0e0 !important;
+  line-height: 1.7;
+  position: relative;
+  z-index: 10005 !important;
+}
+
+.blog-content * {
+  position: relative;
+  z-index: 10006 !important;
+}
+
+.blog-content p {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: #e0e0e0 !important;
+}
+
+@media (min-width: 768px) {
+  .blog-content p {
+    font-size: 1.1rem;
+  }
+}
+
+.blog-content strong,
+.blog-content b {
+  color: white !important;
+  font-weight: 600;
+}
+
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4 {
+  color: white !important;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.blog-content h1 {
+  font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .blog-content h1 {
+    font-size: 2rem;
+  }
+}
+
+.blog-content h2 {
+  font-size: 1.375rem;
+  border-bottom: 2px solid #25618b;
+  padding-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .blog-content h2 {
+    font-size: 1.75rem;
+  }
+}
+
+.blog-content h3 {
+  font-size: 1.25rem;
+  color: #25618b !important;
+}
+
+@media (min-width: 768px) {
+  .blog-content h3 {
+    font-size: 1.5rem;
+  }
+}
+
+.blog-content h4 {
+  font-size: 1.125rem;
+  color: #25618b !important;
+}
+
+@media (min-width: 768px) {
+  .blog-content h4 {
+    font-size: 1.25rem;
+  }
+}
+
+.blog-content ul,
+.blog-content ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .blog-content ul,
+  .blog-content ol {
+    margin-left: 2rem;
+  }
+}
+
+.blog-content li {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  color: #e0e0e0 !important;
+}
+
+@media (min-width: 768px) {
+  .blog-content li {
+    font-size: 1.05rem;
+  }
+}
+
+.blog-content a {
+  color: #25618b !important;
+  text-decoration: underline;
+  word-break: break-word;
+}
+
+.blog-content a:hover {
+  color: #1a4a6e !important;
+}
+
+.blog-content blockquote {
+  border-left: 4px solid #25618b;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #c0c0c0 !important;
+  background: rgba(37, 97, 139, 0.1);
+  padding: 1rem;
+  border-radius: 0 8px 8px 0;
+}
+
+@media (min-width: 768px) {
+  .blog-content blockquote {
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    padding: 1rem 1.5rem;
+  }
+}
+
+/* Responsive emoji and special characters */
+.blog-content p strong {
+  display: inline-block;
+  margin-right: 0.25rem;
+}
+
+/* Responsive contact information */
+.blog-content p:has(br) {
+  line-height: 1.8;
+}
+
+@media (max-width: 767px) {
+  .blog-content p:has(br) br {
+    display: block;
+    margin: 0.25rem 0;
+    content: "";
+  }
+}
+
+/* Enhanced mobile readability */
+@media (max-width: 767px) {
+  .blog-content {
+    font-size: 0.95rem;
+  }
+
+  .blog-content h1,
+  .blog-content h2,
+  .blog-content h3,
+  .blog-content h4 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .blog-content p {
+    margin-bottom: 1.25rem;
+  }
 }
 
 /* Estilos para el contenido de artículos */
@@ -211,252 +389,4 @@ select {
   background-repeat: no-repeat;
   background-position: right 1rem center;
   background-size: 1em;
-}
-
-/* Enhanced responsive blog content styles */
-.blog-content {
-  color: #e0e0e0;
-  line-height: 1.7;
-}
-
-.blog-content p {
-  margin-bottom: 1.5rem;
-  font-size: 1rem;
-}
-
-@media (min-width: 768px) {
-  .blog-content p {
-    font-size: 1.1rem;
-  }
-}
-
-.blog-content strong,
-.blog-content b {
-  color: white;
-  font-weight: 600;
-}
-
-.blog-content h1,
-.blog-content h2,
-.blog-content h3,
-.blog-content h4 {
-  color: white;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  font-weight: 600;
-  line-height: 1.3;
-}
-
-.blog-content h1 {
-  font-size: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .blog-content h1 {
-    font-size: 2rem;
-  }
-}
-
-.blog-content h2 {
-  font-size: 1.375rem;
-  border-bottom: 2px solid #25618b;
-  padding-bottom: 0.5rem;
-}
-
-@media (min-width: 768px) {
-  .blog-content h2 {
-    font-size: 1.75rem;
-  }
-}
-
-.blog-content h3 {
-  font-size: 1.25rem;
-  color: #25618b;
-}
-
-@media (min-width: 768px) {
-  .blog-content h3 {
-    font-size: 1.5rem;
-  }
-}
-
-.blog-content h4 {
-  font-size: 1.125rem;
-  color: #25618b;
-}
-
-@media (min-width: 768px) {
-  .blog-content h4 {
-    font-size: 1.25rem;
-  }
-}
-
-.blog-content ul,
-.blog-content ol {
-  margin-left: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .blog-content ul,
-  .blog-content ol {
-    margin-left: 2rem;
-  }
-}
-
-.blog-content li {
-  margin-bottom: 0.75rem;
-  font-size: 1rem;
-}
-
-@media (min-width: 768px) {
-  .blog-content li {
-    font-size: 1.05rem;
-  }
-}
-
-.blog-content a {
-  color: #25618b;
-  text-decoration: underline;
-  word-break: break-word;
-}
-
-.blog-content a:hover {
-  color: #1a4a6e;
-}
-
-.blog-content blockquote {
-  border-left: 4px solid #25618b;
-  padding-left: 1rem;
-  margin: 1.5rem 0;
-  font-style: italic;
-  color: #c0c0c0;
-  background: rgba(37, 97, 139, 0.1);
-  padding: 1rem;
-  border-radius: 0 8px 8px 0;
-}
-
-@media (min-width: 768px) {
-  .blog-content blockquote {
-    padding-left: 1.5rem;
-    margin: 2rem 0;
-    padding: 1rem 1.5rem;
-  }
-}
-
-/* Responsive emoji and special characters */
-.blog-content p strong {
-  display: inline-block;
-  margin-right: 0.25rem;
-}
-
-/* Responsive contact information */
-.blog-content p:has(br) {
-  line-height: 1.8;
-}
-
-@media (max-width: 767px) {
-  .blog-content p:has(br) br {
-    display: block;
-    margin: 0.25rem 0;
-    content: "";
-  }
-}
-
-/* Enhanced mobile readability */
-@media (max-width: 767px) {
-  .blog-content {
-    font-size: 0.95rem;
-  }
-
-  .blog-content h1,
-  .blog-content h2,
-  .blog-content h3,
-  .blog-content h4 {
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .blog-content p {
-    margin-bottom: 1.25rem;
-  }
-}
-
-/* Fix para visibilidad en móviles - Asegurar que el contenido esté siempre visible */
-@media (max-width: 768px) {
-  .bg-primary-black {
-    position: relative;
-    z-index: 1;
-  }
-
-  /* Forzar que el contenido del artículo esté por encima de todo */
-  article {
-    position: relative !important;
-    z-index: 9999 !important;
-    background: #1a232e !important;
-  }
-
-  .blog-content {
-    position: relative !important;
-    z-index: 9999 !important;
-    background: #1a232e !important;
-    color: #e0e0e0 !important;
-  }
-
-  .blog-content * {
-    position: relative !important;
-    z-index: 9999 !important;
-    color: inherit !important;
-  }
-
-  .blog-content h1,
-  .blog-content h2,
-  .blog-content h3,
-  .blog-content h4 {
-    color: white !important;
-  }
-
-  .blog-content strong,
-  .blog-content b {
-    color: white !important;
-  }
-
-  /* Asegurar que el navbar no interfiera */
-  nav {
-    position: relative;
-    z-index: 100;
-  }
-
-  /* Forzar visibilidad del contenido principal */
-  main {
-    position: relative !important;
-    z-index: 9998 !important;
-    background: #1a232e !important;
-  }
-
-  /* Eliminar cualquier gradiente que pueda interferir en móvil */
-  .gradient-02 {
-    display: none !important;
-  }
-}
-
-/* Asegurar que el contenido sea visible en todos los dispositivos */
-.blog-content {
-  position: relative;
-  z-index: 50;
-  background: #1a232e;
-  padding: 1rem;
-  border-radius: 8px;
-}
-
-.blog-content p,
-.blog-content h1,
-.blog-content h2,
-.blog-content h3,
-.blog-content h4,
-.blog-content ul,
-.blog-content ol,
-.blog-content li {
-  position: relative;
-  z-index: 51;
 }

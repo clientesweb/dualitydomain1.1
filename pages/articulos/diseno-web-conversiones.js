@@ -155,9 +155,13 @@ const ArticleDesignConversions = () => {
               </motion.figure>
 
               {/* Article Content */}
-              <motion.section variants={fadeIn("up", "tween", 0.4, 1)} className="max-w-4xl mx-auto relative z-50">
+              <motion.section
+                variants={fadeIn("up", "tween", 0.4, 1)}
+                className="max-w-4xl mx-auto relative z-[9999] bg-primary-black"
+              >
                 <div
-                  className="blog-content prose prose-invert max-w-none text-white leading-relaxed px-4 sm:px-6 md:px-8"
+                  className="blog-content prose prose-invert max-w-none text-white leading-relaxed px-4 sm:px-6 md:px-8 relative z-[9999] bg-primary-black"
+                  style={{ position: "relative", zIndex: 9999, backgroundColor: "#1A232E" }}
                   dangerouslySetInnerHTML={{ __html: article.content }}
                 />
               </motion.section>

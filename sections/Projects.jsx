@@ -9,25 +9,30 @@ import ProjectCard from "../components/ProjectCard"
 import Link from "next/link"
 
 const Projects = () => (
-  <section className={`${styles.paddings} relative z-20`} id="projects">
+  <section className={`${styles.paddings} relative z-10`} id="projects">
     <motion.div
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
-      className={`${styles.innerWidth} mx-auto flex flex-col`}
+      className={`${styles.innerWidth} mx-auto flex flex-col relative z-20`}
     >
       <TypingText title="| Trabajos Recientes" textStyles="text-center" />
       <TitleText title={<>Proyectos que Impulsan Resultados</>} textStyles="text-center" />
 
-      <div className="mt-[50px] flex flex-wrap justify-center gap-[30px]">
+      <div className="mt-[50px] flex flex-wrap justify-center gap-[30px] relative z-30">
         {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
+          <div key={`project-${index}`} className="relative z-40">
+            <ProjectCard index={index} {...project} />
+          </div>
         ))}
       </div>
 
       {/* Call to Action para ver más trabajos en Instagram */}
-      <motion.div variants={fadeIn("up", "tween", 0.3, 1)} className="flex flex-col items-center mt-[60px] text-center">
+      <motion.div
+        variants={fadeIn("up", "tween", 0.3, 1)}
+        className="flex flex-col items-center mt-[60px] text-center relative z-30"
+      >
         <h3 className="text-white font-bold text-[24px] md:text-[32px] mb-4">¿Quieres ver más de nuestros trabajos?</h3>
         <p className="text-secondary-white text-[16px] md:text-[18px] mb-8 max-w-2xl">
           Síguenos en Instagram para ver más proyectos, casos de éxito y el proceso creativo detrás de cada desarrollo.
@@ -37,7 +42,7 @@ const Projects = () => (
           href="https://www.instagram.com/dualitydomain?igsh=MXFjZXJsbmZtaWphcw=="
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative"
+          className="group relative z-40"
         >
           <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 p-[2px] rounded-[32px] hover:shadow-lg hover:shadow-pink-500/25 transition-all duration-300">
             <div className="bg-[#1A232E] rounded-[30px] px-8 py-4 flex items-center gap-4 group-hover:bg-opacity-90 transition-all duration-300">

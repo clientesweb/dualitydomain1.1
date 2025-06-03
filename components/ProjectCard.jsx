@@ -7,19 +7,21 @@ import { fadeIn } from "../utils/motion"
 const ProjectCard = ({ id, title, description, image, category, date, index, link }) => (
   <motion.div
     variants={fadeIn("up", "spring", index * 0.5, 1)}
-    className="bg-[rgba(0,0,0,0.3)] p-5 rounded-[20px] sm:w-[360px] w-full"
+    className="bg-[rgba(0,0,0,0.3)] p-5 rounded-[20px] sm:w-[360px] w-full relative z-50"
+    style={{ position: "relative", zIndex: 50 }}
   >
-    <div className="relative w-full h-[230px]">
+    <div className="relative w-full h-[230px] z-50">
       <Image
         src={image || "/placeholder.svg"}
         alt={title}
         width={360}
         height={230}
         className="w-full h-full object-cover rounded-[20px]"
+        style={{ position: "relative", zIndex: 51 }}
       />
     </div>
 
-    <div className="mt-5">
+    <div className="mt-5 relative z-50">
       <div className="flex justify-between items-center">
         <span className="bg-[#304f6e] text-white text-xs px-3 py-1 rounded-full">{category}</span>
         <span className="text-white text-xs opacity-60">{date}</span>

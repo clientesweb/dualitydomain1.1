@@ -9,7 +9,7 @@ import ProjectCard from "../components/ProjectCard"
 import Link from "next/link"
 
 const Projects = () => (
-  <section className={`${styles.paddings} relative z-10`} id="projects">
+  <section className={`${styles.paddings} relative z-20`} id="projects">
     <motion.div
       variants={staggerContainer}
       initial="hidden"

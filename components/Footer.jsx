@@ -93,12 +93,8 @@ const Footer = () => (
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#explore" className="text-secondary-white hover:text-white transition-colors">
-                    Investigación y Mejora de UX
-                  </Link>
-                   <li>
-                  <Link href="/https://www.dualitydomain.com/politica-de-reintegro-local.pdf" className="text-secondary-white hover:text-white transition-colors">
-                    Política de Devolución
+                  <Link href="https://www.dualitydomain.com/politica-de-reintegro-local.pdf" className="text-secondary-white hover:text-white transition-colors">
+                   Política de Devolución
                   </Link>
                 </li>
               </ul>
